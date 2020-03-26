@@ -27,5 +27,3 @@ export const loginUser = (login, password) => async dispatch => {
   }
 };
 
-// LOGIN SELECTORS
-export const getUserState = store => store.login.user;

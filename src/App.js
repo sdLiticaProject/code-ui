@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import CustomBrowserRouter from "./helpers/CustomBrowserRouter";
 import { LOGIN, HOME } from "./constants/routes";
+import PrivateRoute from './helpers/PrivateRoute'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <CustomBrowserRouter>
         <Switch>
           <Route exact path={LOGIN} component={LoginPage} />
-          <Route path={HOME} component={HomePage} />
+          <PrivateRoute path={HOME} component={HomePage} />
           <Redirect from="*" to={LOGIN} />
         </Switch>
       </CustomBrowserRouter>

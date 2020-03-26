@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAIL } from "../actions";
+import { LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAIL } from "../actions/loginActions";
 
 export const initialState = {
   user: null,
@@ -24,7 +24,6 @@ export default (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        user: action.payload,
         isLoading: false
       };
 
