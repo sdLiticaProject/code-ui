@@ -18,6 +18,7 @@ const ExampleChart = () => {
   });
 
   let doShow = true;
+  let showZoom = true;
 
   useEffect(() => {
     clearArea(canvas);
@@ -42,20 +43,22 @@ const ExampleChart = () => {
       .on("brush end", brushed);
 
     const line = d3
-      .line()
+      .area()
       .x(function(d) {
         return x(d.x);
       })
-      .y(function(d) {
+      .y0(height)
+      .y1(function(d) {
         return y(d.y);
       });
 
     const line2 = d3
-      .line()
+      .area()
       .x(function(d) {
         return x2(d.x);
       })
-      .y(function(d) {
+      .y0(height2)
+      .y1(function(d) {
         return y2(d.y);
       });
 
@@ -211,13 +214,72 @@ const ExampleChart = () => {
       }
     }
 
+    // make some buttons to drive our zoom
+    d3.select("body")
+      .append("div")
+      .attr("id", "btnDiv")
+      .style("font-size", "75%")
+      .style("width", "250px")
+      .style("position", "absolute")
+      .style("left", "50%")
+      .style("top", "1%");
+
+    let btns = d3
+      .select("#btnDiv")
+      .selectAll("button")
+      .data(["day", "week", "month", "year", "all time"]);
+
+    btns = btns
+      .enter()
+      .append("button")
+      .style("display", "inline-block");
+
+    btns.each(function(d) {
+      this.innerText = d;
+    });
+
+    btns.on("click", drawBrush);
+
+    function drawBrush() {
+      let dateStart = x.invert(0);
+      let dateEnd = x.invert(0);
+      switch (this.innerText) {
+        case "all time":
+          dateStart = data[0].x;
+          dateEnd = data[data.length - 1].x;
+          break;
+        case "year":
+          dateEnd.setFullYear(dateStart.getFullYear() + 1);
+          break;
+        case "month":
+          dateEnd.setMonth(dateStart.getMonth() + 1);
+          break;
+        case "week":
+          dateEnd.setDate(dateStart.getDate() + 7);
+          break;
+        case "day":
+          dateEnd.setDate(dateStart.getDate() + 1);
+          break;
+        default:
+          dateEnd.setDate(dateStart.getDate() + 1);
+          break;
+      }
+      // console.log(x2(data[1000].x));
+      brush.move(d3.select(".brush"), [x2(dateStart), x2(dateEnd)]);
+      x.domain([dateStart, dateEnd]);
+      lineChart.select(".line").attr("d", line);
+      focus.select(".axis--x").call(xAxis);
+      // brush.extent([0, 100]);
+      // brush(d3.select(".brush"));
+    }
+
     function brushed() {
       if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") {
         return;
       } // ignore brush-by-zoom
       const s = d3.event.selection || x2.range();
-      lineChart.select(".line").attr("d", line);
       x.domain(s.map(x2.invert, x2));
+      lineChart.select(".line").attr("d", line);
       focus.select(".axis--x").call(xAxis);
     }
   });
@@ -231,6 +293,14 @@ const ExampleChart = () => {
           defaultChecked={doShow}
           onChange={() => {
             doShow = !doShow;
+          }}
+        />
+        <span>Показывать полосу прокрутки</span>
+        <input
+          type="checkbox"
+          defaultChecked={showZoom}
+          onChange={() => {
+            showZoom = !showZoom;
           }}
         />
       </div>
