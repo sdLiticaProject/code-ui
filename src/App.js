@@ -6,7 +6,7 @@ import store from "./store/createStore";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import CustomBrowserRouter from "./helpers/CustomBrowserRouter";
-import { LOGIN, HOME } from "./constants/routes";
+import { LOGIN, HOME,REGISTR } from "./constants/routes";
 import PrivateRoute from './helpers/PrivateRoute'
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
       <CustomBrowserRouter>
         <Switch>
           <Route exact path={LOGIN} component={LoginPage} />
+          <Route exact path={REGISTR} component={LoginPage}/>
           <PrivateRoute path={HOME} component={HomePage} />
           <Redirect from="*" to={LOGIN} />
         </Switch>
