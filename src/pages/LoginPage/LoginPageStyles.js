@@ -2,11 +2,17 @@ import styled, {keyframes} from "styled-components";
 
 
 const LoginWrapper = styled.div`
+  position:relative;
   box-sizing: border-box;
   padding-top:10%;
   width:  100%;
-  height: 100hr;
+  height: 100vh;
   background-color: #E3ECF4;
+
+  @media (max-height: 500px) {
+    height: 150vh;
+  }
+  
 `;
 
 const move = keyframes`
@@ -45,47 +51,27 @@ const LoginFormWrapper = styled.div`
   z-index: 1;
   box-shadow: 0 10px 7px -10px rgba(0, 0, 0, 0.4);
   text-align:center;
-  margin: auto;
   background: white;
-  width:500px;
-  height: 550px;
+  width:450px;
+  height: 450px;
   border-radius: 10px;
-`;
+  margin: auto;
+  padding:auto;
 
-const Form_group = styled.div`
+  @media (max-width: 500px) {
+    width: 100%;
+    top:50px;
+    border-radius: 0px;
+  }
+
+`;
+const InputFormWrapper = styled.div`
   position: relative;
   padding: 15px 0 0;
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100%;
-`;
-const Button = styled.button`
-  background-color: #FFFFFF;
-  border: 1px solid #9b9b9b;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
-  border-radius: 4px;
-  color: #555555;
-  display:block;
-  width:30%;
-  margin: 5% auto;
-  font-family: sans-serif;
-  font-size: 14px;
-  text-align:center;
-  height: 40px;
-  line-height: 20px;
-  margin-bottom: 10px;
-  padding: 4px 6px;
-  vertical-align: middle;
-  text-decoration:none;
 
-  &:hover,&:focus {
-    border-color: rgba(82, 168, 236, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
-    outline: 0 none;
-  }
-`;
-
-const Input = styled.input`
+  & input {
   font-family: sans-serif;
   width: 70%;
   border: 0;
@@ -98,7 +84,7 @@ const Input = styled.input`
   transition: border-color 0.2s;
 
   &::placeholder {
-    color: #9b9b9b;
+    color: red;
   }
 
   &:focus {
@@ -114,17 +100,64 @@ const Input = styled.input`
   &:required,&:invalid { 
     box-shadow:none;
    }
+  }
+
+  & label {
+    font-size: 1rem;
+    color: #9b9b9b;
+    font-family: sans-serif;
+    position:absolute;
+    bottom:40px;
+  }
+`;
+const Button = styled.button`
+  background-color: #87c6f8;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  border-radius: 6px;
+  color: white;
+  display:block;
+  width:230px;
+  margin: 5% auto;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align:center;
+  height: 40px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  text-decoration:none;
+
+  &:hover,&:focus {
+    border-color: white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
+    outline: 0 none;
+  }
 `;
 
 
-const Label = styled.label`
-font-size: 1rem;
-color: #9b9b9b;
-font-family: sans-serif;
-position:absolute;
-bottom:40px;
-
+const Text = styled.p`
+  font-size: 1.5rem;
+  color: #3eacdc;
+  font-weight:bold;
+  font-family: sans-serif;
+  position:relative;
+  bottom:50px;
 `;
 
+const Link = styled.a`
+  color: #9b9b9b;
+  text-decoration:none;
+  position:absolute;
+  padding-right: 67px;
+  right: 0;
+  font-family:sans-serife;
 
-export { LoginWrapper, LoginFormWrapper, Input, Button, BackImage, Logo, CloudWrapper, Form_group,Label };
+  @media (max-width: 500px) {
+    padding-right: 60px;
+}
+`;
+
+export { LoginWrapper, LoginFormWrapper, Button, BackImage, Logo, CloudWrapper, InputFormWrapper, Text, Link };

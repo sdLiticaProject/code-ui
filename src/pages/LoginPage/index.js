@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 import {loginUser} from '../../actions/loginActions'
 import {useActions} from '../../hooks/useAction'
-import { LoginWrapper, Input, Button, LoginFormWrapper, BackImage, Logo, CloudWrapper, Label,Form_group,Link } from "./LoginPageStyles";
+import { LoginWrapper, Button, LoginFormWrapper, BackImage, Logo, CloudWrapper, InputFormWrapper, Text, Link } from "./LoginPageStyles";
 
 function AuthenticationPage() {
 
@@ -27,22 +27,24 @@ function AuthenticationPage() {
         </CloudWrapper>
         <LoginFormWrapper>
           <Logo src={process.env.PUBLIC_URL + '/image/logo.png'}/>
-          <Form_group>
-        <   Label for="login">Login</Label>
-            <Input
+          <Text>Welcome to sdLitica</Text>
+          <InputFormWrapper>
+            <label for="login">Username</label>
+            <input
             required name="login"
             onChange={e => setLogin(e.target.value)}
             />
-          </Form_group>
+          </InputFormWrapper>
           <br/> 
-          <Form_group>
-            <Label for="password">Password</Label> 
-            <Input
+          <InputFormWrapper>
+            <label for="password">Password</label> 
+            <input
             type="password"
             name="password"
             onChange={e => setPassword(e.target.value)}
             />
-          </Form_group>
+          </InputFormWrapper>
+          <Link href="#">Forgot password</Link>
           <br/>
           <Button onClick={submit}>Log in</Button>
       </LoginFormWrapper>
