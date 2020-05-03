@@ -9,6 +9,11 @@ import { height, height2, margin, margin2, width } from "./ChartConstants";
 
 const ExampleChart = () => {
   const canvas = React.createRef();
+  const quoteRef = React.createRef();
+  const btnsRef = React.createRef();
+  const currencyRef = React.createRef();
+  const firstPercentRef = React.createRef();
+  const percentRef = React.createRef();
 
   const data = rate.map(function(d) {
     return {
@@ -18,7 +23,7 @@ const ExampleChart = () => {
   });
 
   let doShow = true;
-  let showZoom = true;
+  const showZoom = true;
 
   useEffect(() => {
     clearArea(canvas);
@@ -33,6 +38,15 @@ const ExampleChart = () => {
     const xAxis = d3.axisBottom(x);
     const xAxis2 = d3.axisBottom(x2);
     const yAxis = d3.axisLeft(y);
+
+    const bisectDate = d3.bisector(function(d) {
+      return d.x;
+    }).left;
+
+    const money = d3.select(currencyRef.current);
+    const firstpercent = d3.select(firstPercentRef.current);
+    const percent = d3.select(percentRef.current);
+    const quote = d3.select(quoteRef.current);
 
     const brush = d3
       .brushX()
@@ -185,10 +199,6 @@ const ExampleChart = () => {
       })
       .on("mousemove", mousemove);
 
-    const bisectDate = d3.bisector(function(d) {
-      return d.x;
-    }).left;
-
     function mousemove() {
       if (doShow) {
         const x0 = x.invert(d3.mouse(this)[0]);
@@ -214,18 +224,47 @@ const ExampleChart = () => {
       }
     }
 
+    const i0 = bisectDate(data, x2.invert(0), 1);
+    const i = bisectDate(data, x2.invert(width), 1);
+    const first = data[i0].y;
+
+    const current = data[i].y;
+    const prev = data[i - 1].y;
+
+    const style = current > prev ? "green" : "red";
+    const sign = current > prev ? "+" : "-";
+    const diff =
+      current > prev
+        ? ((current - prev) * 100) / prev
+        : ((prev - current) * 100) / prev;
+
+    const styleFirst = current > first ? "green" : "red";
+    const signFisrt = current > first ? "+" : "-";
+    const diffFirst =
+      current > first
+        ? ((current - first) * 100) / first
+        : ((prev - first) * 100) / first;
+
+    quote
+      .style("margin-left", "3%")
+      .style("display", "inline-block")
+      .style("width", "47%");
+
+    money.style("font-size", "150%").html(current);
+
+    firstpercent
+        .style("color", styleFirst)
+        .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
+
+    percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+
     // make some buttons to drive our zoom
-    d3.select("body")
-      .append("div")
-      .attr("id", "btnDiv")
+    d3.select(btnsRef.current)
       .style("font-size", "75%")
-      .style("width", "250px")
-      .style("position", "absolute")
-      .style("left", "50%")
-      .style("top", "1%");
+      .style("width", "250px");
 
     let btns = d3
-      .select("#btnDiv")
+      .select(btnsRef.current)
       .selectAll("button")
       .data(["day", "week", "month", "year", "all time"]);
 
@@ -264,13 +303,17 @@ const ExampleChart = () => {
           dateEnd.setDate(dateStart.getDate() + 1);
           break;
       }
-      // console.log(x2(data[1000].x));
-      brush.move(d3.select(".brush"), [x2(dateStart), x2(dateEnd)]);
-      x.domain([dateStart, dateEnd]);
-      lineChart.select(".line").attr("d", line);
-      focus.select(".axis--x").call(xAxis);
-      // brush.extent([0, 100]);
-      // brush(d3.select(".brush"));
+
+      const start = x2(dateStart);
+      const end = x2(dateEnd) > 800 ? 800 : x2(dateEnd);
+
+      brush.move(
+        d3
+          .select(".brush")
+          .transition()
+          .duration(500),
+        [start, end]
+      );
     }
 
     function brushed() {
@@ -281,6 +324,34 @@ const ExampleChart = () => {
       x.domain(s.map(x2.invert, x2));
       lineChart.select(".line").attr("d", line);
       focus.select(".axis--x").call(xAxis);
+
+      const x0 = x.invert(width);
+      const i0 = bisectDate(data, x.invert(0), 1);
+      const i = bisectDate(data, x0, 1);
+      const first = data[i0].y;
+
+      const current = data[i].y;
+      const prev = data[i - 1].y;
+      const style = current > prev ? "green" : "red";
+      const sign = current > prev ? "+" : "-";
+      const diff =
+        current > prev
+          ? ((current - prev) * 100) / prev
+          : ((prev - current) * 100) / prev;
+
+      const styleFirst = current > first ? "green" : "red";
+      const signFisrt = current > first ? "+" : "-";
+      const diffFirst =
+        current > first
+          ? ((current - first) * 100) / first
+          : ((first - current) * 100) / first;
+
+      money.html(current);
+      firstpercent
+        .style("color", styleFirst)
+        .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
+
+      percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
     }
   });
 
@@ -295,14 +366,14 @@ const ExampleChart = () => {
             doShow = !doShow;
           }}
         />
-        <span>Показывать полосу прокрутки</span>
-        <input
-          type="checkbox"
-          defaultChecked={showZoom}
-          onChange={() => {
-            showZoom = !showZoom;
-          }}
-        />
+      </div>
+      <div>
+        <div ref={quoteRef}>
+          <span ref={currencyRef} />
+          <br />
+          <span ref={firstPercentRef} /> <span ref={percentRef} />
+        </div>
+        <span ref={btnsRef} />
       </div>
       <div ref={canvas} />
     </div>
