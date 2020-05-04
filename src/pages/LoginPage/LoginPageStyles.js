@@ -11,8 +11,7 @@ const LoginWrapper = styled.div`
 
   @media (max-height: 500px) {
     height: 150vh;
-  }
-  
+  } 
 `;
 
 const move = keyframes`
@@ -77,7 +76,7 @@ const InputFormWrapper = styled.div`
   border: 0;
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #9b9b9b;
   padding: 7px 0;
   background: transparent;
@@ -147,6 +146,21 @@ const Text = styled.p`
   bottom:50px;
 `;
 
+const Error = styled.text`
+  color: #8B0000;
+  font-size:0.8rem;
+  font-family:sans-serife;
+  text-decoration:none;
+  position:absolute;
+  right:0px;
+  top:10px;
+  padding-right:67px;
+
+  @media (max-width: 500px) {
+    padding-right: 60px;
+}
+`;
+
 const Link = styled.a`
   color: #9b9b9b;
   text-decoration:none;
@@ -160,4 +174,4 @@ const Link = styled.a`
 }
 `;
 
-export { LoginWrapper, LoginFormWrapper, Button, BackImage, Logo, CloudWrapper, InputFormWrapper, Text, Link };
+export { LoginWrapper, LoginFormWrapper, Button, BackImage, Logo, CloudWrapper, InputFormWrapper, Text, Link, Error };
