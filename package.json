@@ -13,7 +13,11 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+<<<<<<< HEAD
     "d3": "^5.16.0",
+=======
+    "d3": "^5.15.0",
+>>>>>>> 07d4e36ca1135b6f77d97888616915d21c5d0502
     "js-cookie": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",

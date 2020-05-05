@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+=======
+import React, { useEffect } from "react";
+import * as d3 from "d3";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+>>>>>>> 07d4e36ca1135b6f77d97888616915d21c5d0502
 import rate from "../../data/exampleExchangeRate.json";
 import "./ExampleChart.css";
 import { clearArea, drawSVG } from "./ChartFunctions";
 import { height, height2, margin, margin2, width } from "./ChartConstants";
+<<<<<<< HEAD
 import {Btn, Canvas} from './ChartStyled'
 
 let dataBtn = ["day", "week", "month", "year", "all time"];
@@ -27,8 +35,8 @@ const ExampleChart = () => {
     };
   });
 
-
-  let doShow = false;
+  let doShow = true;
+  const showZoom = true;
 
   useEffect(() => {
     clearArea(canvas);
@@ -340,9 +348,6 @@ const ExampleChart = () => {
       percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
     }
   }, []);
-
-
-
 
   return (
     <div>
