@@ -1,5 +1,6 @@
 import axios from "axios";
 import { LOGIN_REQUEST } from "../constants/api";
+import Cookies from "js-cookie";
 
 export const LOGIN_LOADING = "login_loading";
 export const LOGIN_SUCCESS = "login_success";
@@ -15,6 +16,7 @@ export const loginUser = (login, password) => async dispatch => {
       login,
       password
     });
+    Cookies.set('token', '111');
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data

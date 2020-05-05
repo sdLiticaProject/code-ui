@@ -24,7 +24,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
         const response = await Axios.get(GET_USER_REQUEST, {
           headers: { Authorization: Cookies.get("token") }
         });
-            
+            console.log(response)
         setUser(response.data.user);
         dispatch(add(response.data.user));
 

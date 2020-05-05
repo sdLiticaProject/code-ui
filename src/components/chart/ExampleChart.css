@@ -1,0 +1,38 @@
+.line {
+    fill: #cce5df;
+    stroke: #69b3a2;
+    stroke-width: 1.5px;
+}
+
+
+.zoom {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+}
+
+.tooltip {
+    fill: grey;
+    opacity: 0.7;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: #F1F3F3;
+    stroke: #6F257F;
+    stroke-width: 5px;
+}
+
+.focusPoints text {
+    background: #F1F3F3;
+}
+
+.hover-line {
+    stroke: #6F257F;
+    stroke-width: 2px;
+    stroke-dasharray: 3,3;
+}
