@@ -1,29 +1,19 @@
-<<<<<<< HEAD
-import React, { useEffect, useRef } from "react";
-import * as d3 from "d3";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-
-=======
 import React, { useEffect } from "react";
 import * as d3 from "d3";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
->>>>>>> 07d4e36ca1135b6f77d97888616915d21c5d0502
 import rate from "../../data/exampleExchangeRate.json";
 import "./ExampleChart.css";
 import { clearArea, drawSVG } from "./ChartFunctions";
 import { height, height2, margin, margin2, width } from "./ChartConstants";
-<<<<<<< HEAD
-import {Btn, Canvas} from './ChartStyled'
+import { Btn, Canvas } from "./ChartStyled";
 
 let dataBtn = ["day", "week", "month", "year", "all time"];
 
 const ExampleChart = () => {
-
   const canvas = React.createRef();
   const quoteRef = React.createRef();
-  const btnsRef = dataBtn.map(()=>React.createRef());
+  const btnsRef = dataBtn.map(() => React.createRef());
   const currencyRef = React.createRef();
   const firstPercentRef = React.createRef();
   const percentRef = React.createRef();
@@ -31,7 +21,7 @@ const ExampleChart = () => {
   const data = rate.map(function(d) {
     return {
       x: new Date(d.DATE),
-      y: d.CLOSE
+      y: d.CLOSE,
     };
   });
 
@@ -65,7 +55,7 @@ const ExampleChart = () => {
       .brushX()
       .extent([
         [0, 0],
-        [width, height2]
+        [width, height2],
       ])
       .on("brush end", brushed);
 
@@ -124,7 +114,7 @@ const ExampleChart = () => {
       0,
       d3.max(data, function(d) {
         return d.y;
-      })
+      }),
     ]);
 
     x2.domain(x.domain());
@@ -266,12 +256,12 @@ const ExampleChart = () => {
     money.style("font-size", "150%").html(current);
 
     firstpercent
-        .style("color", styleFirst)
-        .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
+      .style("color", styleFirst)
+      .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
 
     percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
 
-    btnsRef.forEach((el)=>d3.select(el.current).on("click", drawBrush));
+    btnsRef.forEach((el) => d3.select(el.current).on("click", drawBrush));
 
     function drawBrush() {
       let dateStart = x.invert(0);
@@ -357,7 +347,7 @@ const ExampleChart = () => {
           type="checkbox"
           defaultChecked={doShow}
           onChange={() => {
-            doShow =!doShow;
+            doShow = !doShow;
           }}
         />
       </div>
@@ -367,10 +357,11 @@ const ExampleChart = () => {
           <br />
           <span ref={firstPercentRef} /> <span ref={percentRef} />
         </div>
-        {dataBtn.map((el, index)=>
-          <Btn ref={btnsRef[index]} key={index}>{el}</Btn>
-        )}
-        
+        {dataBtn.map((el, index) => (
+          <Btn ref={btnsRef[index]} key={index}>
+            {el}
+          </Btn>
+        ))}
       </div>
       <Canvas ref={canvas} />
     </div>
@@ -382,9 +373,9 @@ ExampleChart.propTypes = {
     PropTypes.exact({
       id: PropTypes.number,
       x: PropTypes.number,
-      y: PropTypes.number
+      y: PropTypes.number,
     })
-  ).isRequired
+  ).isRequired,
 };
 
 export default connect()(ExampleChart);
