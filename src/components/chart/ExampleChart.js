@@ -6,9 +6,17 @@ import rate from "../../data/exampleExchangeRate.json";
 import "./ExampleChart.css";
 import { clearArea, drawSVG } from "./ChartFunctions";
 import { height, height2, margin, margin2, width } from "./ChartConstants";
-import { Btn, Canvas } from "./ChartStyled";
+import {
+  Btn,
+  Canvas,
+  CurrencyInfo,
+  ChartContainer,
+  MoneyBalance,
+  InfoWrapper,
+  BtnWrapper
+} from "./ExampleChart.styles";
 
-let dataBtn = ["day", "week", "month", "year", "all time"];
+let dataBtn = ["1d", "1w", "1m", "1y", "All time"];
 
 const ExampleChart = () => {
   const canvas = React.createRef();
@@ -87,7 +95,27 @@ const ExampleChart = () => {
       .attr("width", width)
       .attr("height", height)
       .attr("x", 0)
-      .attr("y", 0);
+      .attr("y", 0)
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", `0 0 ${width} ${height}`);
+
+    var svgDefs = svg.append("defs");
+    var mainGradient = svgDefs
+      .append("linearGradient")
+      .attr("id", "mainGradient")
+      .attr("x1", "0%")
+      .attr("x2", "0%")
+      .attr("y1", "0%")
+      .attr("y2", "100%");
+    mainGradient
+      .append("stop")
+      .attr("class", "stop-left")
+      .attr("offset", "0");
+
+    mainGradient
+      .append("stop")
+      .attr("class", "stop-right")
+      .attr("offset", "1");
 
     const lineChart = svg
       .append("g")
@@ -248,11 +276,6 @@ const ExampleChart = () => {
         ? ((current - first) * 100) / first
         : ((prev - first) * 100) / first;
 
-    quote
-      .style("margin-left", "3%")
-      .style("display", "inline-block")
-      .style("width", "47%");
-
     money.style("font-size", "150%").html(current);
 
     firstpercent
@@ -267,20 +290,20 @@ const ExampleChart = () => {
       let dateStart = x.invert(0);
       let dateEnd = x.invert(0);
       switch (this.innerText) {
-        case "all time":
+        case "All time":
           dateStart = data[0].x;
           dateEnd = data[data.length - 1].x;
           break;
-        case "year":
+        case "1y":
           dateEnd.setFullYear(dateStart.getFullYear() + 1);
           break;
-        case "month":
+        case "1m":
           dateEnd.setMonth(dateStart.getMonth() + 1);
           break;
-        case "week":
+        case "1w":
           dateEnd.setDate(dateStart.getDate() + 7);
           break;
-        case "day":
+        case "1d":
           dateEnd.setDate(dateStart.getDate() + 1);
           break;
         default:
@@ -340,7 +363,23 @@ const ExampleChart = () => {
   }, []);
 
   return (
-    <div>
+    <ChartContainer>
+      <InfoWrapper>
+        <CurrencyInfo ref={quoteRef}>
+          <MoneyBalance ref={currencyRef} />
+          <br />
+          <span ref={firstPercentRef} />
+          <span ref={percentRef} />
+        </CurrencyInfo>
+        <BtnWrapper>
+          {dataBtn.map((el, index) => (
+            <Btn ref={btnsRef[index]} key={index}>
+              <span>{el}</span>
+            </Btn>
+          ))}
+        </BtnWrapper>
+      </InfoWrapper>
+      <Canvas ref={canvas} />
       <div>
         <span>Показывать доп. информацию от точке</span>
         <input
@@ -351,20 +390,7 @@ const ExampleChart = () => {
           }}
         />
       </div>
-      <div>
-        <div ref={quoteRef}>
-          <span ref={currencyRef} />
-          <br />
-          <span ref={firstPercentRef} /> <span ref={percentRef} />
-        </div>
-        {dataBtn.map((el, index) => (
-          <Btn ref={btnsRef[index]} key={index}>
-            {el}
-          </Btn>
-        ))}
-      </div>
-      <Canvas ref={canvas} />
-    </div>
+    </ChartContainer>
   );
 };
 
