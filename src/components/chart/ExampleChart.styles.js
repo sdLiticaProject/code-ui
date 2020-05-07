@@ -44,6 +44,7 @@ const Btn = styled.div`
     line-height: 16px;
     color: #757780;
   }
+
   margin-right: 2px;
 `;
 
@@ -51,6 +52,10 @@ const BtnWrapper = styled.div`
   > ${Btn}:last-child {
     width: 80px;
     margin-right: 0px;
+  }
+
+  .active {
+    background: #b8bbc2;
   }
 
   display: flex;
@@ -146,5 +151,5 @@ export {
   ChartContainer,
   Btn,
   BtnWrapper,
-  Canvas,
+  Canvas
 };

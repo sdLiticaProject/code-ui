@@ -16,7 +16,7 @@ import {
   BtnWrapper
 } from "./ExampleChart.styles";
 
-let dataBtn = ["1d", "1w", "1m", "1y", "All time"];
+const dataBtn = ["1d", "1w", "1m", "1y", "All time"];
 
 const ExampleChart = () => {
   const canvas = React.createRef();
@@ -29,7 +29,7 @@ const ExampleChart = () => {
   const data = rate.map(function(d) {
     return {
       x: new Date(d.DATE),
-      y: d.CLOSE,
+      y: d.CLOSE
     };
   });
 
@@ -63,7 +63,7 @@ const ExampleChart = () => {
       .brushX()
       .extent([
         [0, 0],
-        [width, height2],
+        [width, height2]
       ])
       .on("brush end", brushed);
 
@@ -99,8 +99,8 @@ const ExampleChart = () => {
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", `0 0 ${width} ${height}`);
 
-    var svgDefs = svg.append("defs");
-    var mainGradient = svgDefs
+    const svgDefs = svg.append("defs");
+    const mainGradient = svgDefs
       .append("linearGradient")
       .attr("id", "mainGradient")
       .attr("x1", "0%")
@@ -142,7 +142,7 @@ const ExampleChart = () => {
       0,
       d3.max(data, function(d) {
         return d.y;
-      }),
+      })
     ]);
 
     x2.domain(x.domain());
@@ -284,11 +284,19 @@ const ExampleChart = () => {
 
     percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
 
-    btnsRef.forEach((el) => d3.select(el.current).on("click", drawBrush));
+    btnsRef.forEach(el => d3.select(el.current).on("click", drawBrush));
+
+    // Выделяем кнопку 'All time'
+    btnsRef[btnsRef.length - 1].current.classList.add("active");
 
     function drawBrush() {
       let dateStart = x.invert(0);
       let dateEnd = x.invert(0);
+
+      // Выделяем только кнопку, на которую нажали
+      btnsRef.forEach(el => el.current.classList.remove("active"));
+      this.classList.add("active");
+
       switch (this.innerText) {
         case "All time":
           dateStart = data[0].x;
@@ -399,9 +407,9 @@ ExampleChart.propTypes = {
     PropTypes.exact({
       id: PropTypes.number,
       x: PropTypes.number,
-      y: PropTypes.number,
+      y: PropTypes.number
     })
-  ).isRequired,
+  ).isRequired
 };
 
 export default connect()(ExampleChart);
