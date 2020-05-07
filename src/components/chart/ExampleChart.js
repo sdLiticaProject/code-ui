@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import rate from "../../data/exampleExchangeRate.json";
 import "./ExampleChart.css";
 import { clearArea, drawSVG } from "./ChartFunctions";
-import { height, height2, margin, margin2, width } from "./ChartConstants";
+import { height, height2, margin, margin2 } from "./ChartConstants";
 import {
   Btn,
   Canvas,
@@ -13,18 +13,20 @@ import {
   ChartContainer,
   MoneyBalance,
   InfoWrapper,
-  BtnWrapper
+  BtnWrapper,
+  CanvasWrapper
 } from "./ExampleChart.styles";
 
 const dataBtn = ["1d", "1w", "1m", "1y", "All time"];
 
 const ExampleChart = () => {
   const canvas = React.createRef();
-  const quoteRef = React.createRef();
+  const currencyInfoRef = React.createRef();
   const btnsRef = dataBtn.map(() => React.createRef());
   const currencyRef = React.createRef();
-  const firstPercentRef = React.createRef();
-  const percentRef = React.createRef();
+  const entirePercentRef = React.createRef();
+  const lastPercentRef = React.createRef();
+  const canvasWrapperRef = React.createRef();
 
   const data = rate.map(function(d) {
     return {
@@ -34,12 +36,16 @@ const ExampleChart = () => {
   });
 
   let doShow = true;
-  const showZoom = true;
 
   useEffect(() => {
     clearArea(canvas);
 
     const svg = drawSVG(canvas);
+
+    const width =
+      parseInt(d3.select(canvasWrapperRef.current).style("width"), 10) -
+      margin.left -
+      margin.right;
 
     const x = d3.scaleTime().range([0, width]);
     const x2 = d3.scaleTime().range([0, width]);
@@ -54,10 +60,9 @@ const ExampleChart = () => {
       return d.x;
     }).left;
 
-    const money = d3.select(currencyRef.current);
-    const firstpercent = d3.select(firstPercentRef.current);
-    const percent = d3.select(percentRef.current);
-    const quote = d3.select(quoteRef.current);
+    const lastValue = d3.select(currencyRef.current);
+    const entirePercent = d3.select(entirePercentRef.current);
+    const lastPercent = d3.select(lastPercentRef.current);
 
     const brush = d3
       .brushX()
@@ -276,13 +281,13 @@ const ExampleChart = () => {
         ? ((current - first) * 100) / first
         : ((prev - first) * 100) / first;
 
-    money.style("font-size", "150%").html(current);
+    lastValue.style("font-size", "150%").html(current);
 
-    firstpercent
+    entirePercent
       .style("color", styleFirst)
       .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
 
-    percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+    lastPercent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
 
     btnsRef.forEach(el => d3.select(el.current).on("click", drawBrush));
 
@@ -347,37 +352,37 @@ const ExampleChart = () => {
 
       const current = data[i].y;
       const prev = data[i - 1].y;
-      const style = current > prev ? "green" : "red";
+      const style = current > prev ? "growup" : "growdown";
       const sign = current > prev ? "+" : "-";
       const diff =
         current > prev
           ? ((current - prev) * 100) / prev
           : ((prev - current) * 100) / prev;
 
-      const styleFirst = current > first ? "green" : "red";
+      const styleFirst = current > first ? "growup" : "growdown";
       const signFisrt = current > first ? "+" : "-";
       const diffFirst =
         current > first
           ? ((current - first) * 100) / first
           : ((first - current) * 100) / first;
 
-      money.html(current);
-      firstpercent
+      lastValue.html(current);
+      entirePercent
         .style("color", styleFirst)
         .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
 
-      percent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+      lastPercent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
     }
   }, []);
 
   return (
     <ChartContainer>
       <InfoWrapper>
-        <CurrencyInfo ref={quoteRef}>
+        <CurrencyInfo ref={currencyInfoRef}>
           <MoneyBalance ref={currencyRef} />
           <br />
-          <span ref={firstPercentRef} />
-          <span ref={percentRef} />
+          <span ref={entirePercentRef} />
+          <span ref={lastPercentRef} />
         </CurrencyInfo>
         <BtnWrapper>
           {dataBtn.map((el, index) => (
@@ -387,7 +392,9 @@ const ExampleChart = () => {
           ))}
         </BtnWrapper>
       </InfoWrapper>
-      <Canvas ref={canvas} />
+      <CanvasWrapper ref={canvasWrapperRef}>
+        <Canvas ref={canvas} />
+      </CanvasWrapper>
       <div>
         <span>Показывать доп. информацию от точке</span>
         <input

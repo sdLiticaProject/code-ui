@@ -14,3 +14,5 @@ export const drawSVG = canvasRef => {
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 };
+
+// export const updateCurrencyInfo =

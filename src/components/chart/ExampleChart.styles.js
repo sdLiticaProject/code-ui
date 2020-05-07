@@ -68,6 +68,11 @@ const BtnWrapper = styled.div`
   flex-direction: row;
 `;
 
+const CanvasWrapper = styled.div`
+  border-radius: 20px;
+  background-color: #2e2d3480;
+`;
+
 const Canvas = styled.span`
   display: inline-block;
   position: relative;
@@ -148,6 +153,10 @@ const Canvas = styled.span`
     stroke-width: 2px;
     stroke-dasharray: 3, 3;
   }
+
+  .selection {
+    stroke: Gray;
+  }
 `;
 
 export {
@@ -157,5 +166,6 @@ export {
   ChartContainer,
   Btn,
   BtnWrapper,
-  Canvas
+  Canvas,
+  CanvasWrapper
 };
