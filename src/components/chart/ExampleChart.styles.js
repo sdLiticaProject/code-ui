@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 const ChartContainer = styled.div`
-  background: #2b2b2b;
   border-radius: 5px;
   height: 620px;
   max-width: max-content;
+  background: linear-gradient(
+    0deg,
+    rgba(29, 28, 32, 1) 0%,
+    rgba(46, 45, 52, 1) 100%
+  );
 `;
 
 const CurrencyInfo = styled.div``;
@@ -55,7 +59,9 @@ const BtnWrapper = styled.div`
   }
 
   .active {
-    background: #b8bbc2;
+    border-color: #e35955;
+    border-style: solid;
+    color: red;
   }
 
   display: flex;

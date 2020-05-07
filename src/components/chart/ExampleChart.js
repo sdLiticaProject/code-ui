@@ -141,7 +141,7 @@ const ExampleChart = () => {
     y.domain([
       0,
       d3.max(data, function(d) {
-        return d.y;
+        return d.y + 10;
       })
     ]);
 

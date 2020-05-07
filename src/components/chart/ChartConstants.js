@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 
-export const margin = { top: 100, right: 120, bottom: 70, left: 40 };
-export const margin2 = { top: 10, right: 20, bottom: 440, left: 40 };
+export const margin = { top: 10, right: 120, bottom: 170, left: 40 };
+export const margin2 = { top: 380, right: 20, bottom: 70, left: 40 };
 export const width = 960 - margin.left - margin.right;
 export const height = 500 - margin.top - margin.bottom;
 export const height2 = 500 - margin2.top - margin2.bottom;
