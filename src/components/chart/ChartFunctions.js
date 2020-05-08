@@ -19,7 +19,7 @@ export const bisectDate = d3.bisector(function(d) {
   return d.x;
 }).left;
 
-export const getWidth = (currentRef) => {
+export const getWidth = currentRef => {
   return (
     parseInt(d3.select(currentRef).style("width"), 10) -
     margin.left -
