@@ -8,7 +8,8 @@ import {
   clearArea,
   drawSVG,
   bisectDate,
-  updateCurrencyInfo
+  updateCurrencyInfo,
+  getWidth
 } from "./ChartFunctions";
 import { height, height2, margin, margin2 } from "./ChartConstants";
 import {
@@ -47,10 +48,7 @@ const ExampleChart = () => {
 
     const svg = drawSVG(canvas);
 
-    const width =
-      parseInt(d3.select(canvasWrapperRef.current).style("width"), 10) -
-      margin.left -
-      margin.right;
+    const width = getWidth(canvasWrapperRef.current);
 
     const x = d3.scaleTime().range([0, width]);
     const x2 = d3.scaleTime().range([0, width]);
@@ -261,7 +259,7 @@ const ExampleChart = () => {
       }
     }
 
-    updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data);
+    updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data, width);
 
     btnsRef.forEach(el => d3.select(el.current).on("click", drawBrush));
 
@@ -319,7 +317,7 @@ const ExampleChart = () => {
       lineChart.select(".line").attr("d", line);
       focus.select(".axis--x").call(xAxis);
 
-      updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data);
+      updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data, width);
     }
   }, []);
 

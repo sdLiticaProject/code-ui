@@ -19,14 +19,23 @@ export const bisectDate = d3.bisector(function(d) {
   return d.x;
 }).left;
 
+export const getWidth = (currentRef) => {
+  return (
+    parseInt(d3.select(currentRef).style("width"), 10) -
+    margin.left -
+    margin.right
+  );
+};
+
 export const updateCurrencyInfo = (
   lastValue,
   entirePercent,
   lastPercent,
   x,
-  data
+  data,
+  currentWidth
 ) => {
-  const x0 = x.invert(width);
+  const x0 = x.invert(currentWidth);
   const i0 = bisectDate(data, x.invert(0), 1);
   const i = bisectDate(data, x0, 1);
   const first = data[i0].y;
