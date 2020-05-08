@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as d3 from "d3";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -41,9 +41,15 @@ const ExampleChart = () => {
     };
   });
 
+  const [state, setState] = useState();
+  function handleUpdate() {
+    setState(window.innerWidth);
+  }
+
   let doShow = true;
 
   useEffect(() => {
+    window.addEventListener("resize", handleUpdate);
     clearArea(canvas);
 
     const svg = drawSVG(canvas);
@@ -319,7 +325,7 @@ const ExampleChart = () => {
 
       updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data, width);
     }
-  }, []);
+  }, [state]);
 
   return (
     <ChartContainer>
