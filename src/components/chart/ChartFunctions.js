@@ -15,4 +15,42 @@ export const drawSVG = canvasRef => {
     .attr("height", height + margin.top + margin.bottom);
 };
 
-// export const updateCurrencyInfo =
+export const bisectDate = d3.bisector(function(d) {
+  return d.x;
+}).left;
+
+export const updateCurrencyInfo = (
+  lastValue,
+  entirePercent,
+  lastPercent,
+  x,
+  data
+) => {
+  const x0 = x.invert(width);
+  const i0 = bisectDate(data, x.invert(0), 1);
+  const i = bisectDate(data, x0, 1);
+  const first = data[i0].y;
+
+  const current = data[i].y;
+  const prev = data[i - 1].y;
+  const style = current > prev ? "green" : "red";
+  const sign = current > prev ? "+" : "-";
+  const diff =
+    current > prev
+      ? ((current - prev) * 100) / prev
+      : ((prev - current) * 100) / prev;
+
+  const styleFirst = current > first ? "green" : "red";
+  const signFisrt = current > first ? "+" : "-";
+  const diffFirst =
+    current > first
+      ? ((current - first) * 100) / first
+      : ((first - current) * 100) / first;
+
+  lastValue.html(current);
+  entirePercent
+    .style("color", styleFirst)
+    .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
+
+  lastPercent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+};

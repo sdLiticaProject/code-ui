@@ -4,7 +4,12 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import rate from "../../data/exampleExchangeRate.json";
 import "./ExampleChart.css";
-import { clearArea, drawSVG } from "./ChartFunctions";
+import {
+  clearArea,
+  drawSVG,
+  bisectDate,
+  updateCurrencyInfo
+} from "./ChartFunctions";
 import { height, height2, margin, margin2 } from "./ChartConstants";
 import {
   Btn,
@@ -55,10 +60,6 @@ const ExampleChart = () => {
     const xAxis = d3.axisBottom(x);
     const xAxis2 = d3.axisBottom(x2);
     const yAxis = d3.axisLeft(y);
-
-    const bisectDate = d3.bisector(function(d) {
-      return d.x;
-    }).left;
 
     const lastValue = d3.select(currencyRef.current);
     const entirePercent = d3.select(entirePercentRef.current);
@@ -260,34 +261,7 @@ const ExampleChart = () => {
       }
     }
 
-    const i0 = bisectDate(data, x2.invert(0), 1);
-    const i = bisectDate(data, x2.invert(width), 1);
-    const first = data[i0].y;
-
-    const current = data[i].y;
-    const prev = data[i - 1].y;
-
-    const style = current > prev ? "green" : "red";
-    const sign = current > prev ? "+" : "-";
-    const diff =
-      current > prev
-        ? ((current - prev) * 100) / prev
-        : ((prev - current) * 100) / prev;
-
-    const styleFirst = current > first ? "green" : "red";
-    const signFisrt = current > first ? "+" : "-";
-    const diffFirst =
-      current > first
-        ? ((current - first) * 100) / first
-        : ((prev - first) * 100) / first;
-
-    lastValue.style("font-size", "150%").html(current);
-
-    entirePercent
-      .style("color", styleFirst)
-      .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
-
-    lastPercent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+    updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data);
 
     btnsRef.forEach(el => d3.select(el.current).on("click", drawBrush));
 
@@ -325,7 +299,7 @@ const ExampleChart = () => {
       }
 
       const start = x2(dateStart);
-      const end = x2(dateEnd) > 800 ? 800 : x2(dateEnd);
+      const end = x2(dateEnd) > width ? width : x2(dateEnd);
 
       brush.move(
         d3
@@ -345,33 +319,7 @@ const ExampleChart = () => {
       lineChart.select(".line").attr("d", line);
       focus.select(".axis--x").call(xAxis);
 
-      const x0 = x.invert(width);
-      const i0 = bisectDate(data, x.invert(0), 1);
-      const i = bisectDate(data, x0, 1);
-      const first = data[i0].y;
-
-      const current = data[i].y;
-      const prev = data[i - 1].y;
-      const style = current > prev ? "growup" : "growdown";
-      const sign = current > prev ? "+" : "-";
-      const diff =
-        current > prev
-          ? ((current - prev) * 100) / prev
-          : ((prev - current) * 100) / prev;
-
-      const styleFirst = current > first ? "growup" : "growdown";
-      const signFisrt = current > first ? "+" : "-";
-      const diffFirst =
-        current > first
-          ? ((current - first) * 100) / first
-          : ((first - current) * 100) / first;
-
-      lastValue.html(current);
-      entirePercent
-        .style("color", styleFirst)
-        .html(`${signFisrt}${diffFirst.toFixed(2)}%`);
-
-      lastPercent.style("color", style).html(` ${sign}${diff.toFixed(2)}%`);
+      updateCurrencyInfo(lastValue, entirePercent, lastPercent, x, data);
     }
   }, []);
 
