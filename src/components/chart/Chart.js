@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import * as d3 from 'd3';
 import moment from 'moment';
-import {withTheme} from 'styled-components';
-import rate from '../../data/exampleExchangeRate.json';
+import rate from '../../data/currencyData.json';
 import {clearArea, drawSVG, getBisectDate, getWidth, updateCurrencyInfo} from './ChartFunctions';
 import {height, height2, margin, margin2} from './ChartConstants';
 import {
@@ -17,7 +16,7 @@ import {
 
 const dataBtn = ['1d', '1w', '1m', '1y', 'All time'];
 
-const ExampleChart = props => {
+const Chart = () => {
   const canvas = React.createRef();
   const currencyInfoRef = React.createRef();
   const btnsRef = dataBtn.map(() => React.createRef());
@@ -395,4 +394,4 @@ const ExampleChart = props => {
   );
 };
 
-export default withTheme(ExampleChart);
+export default Chart;

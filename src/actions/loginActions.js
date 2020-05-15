@@ -1,10 +1,10 @@
-import axios from "axios";
-import { LOGIN_REQUEST } from "../constants/api";
-import Cookies from "js-cookie";
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import {LOGIN_REQUEST} from '../constants/api';
 
-export const LOGIN_LOADING = "login_loading";
-export const LOGIN_SUCCESS = "login_success";
-export const LOGIN_FAIL = "login_fail";
+export const LOGIN_LOADING = 'login_loading';
+export const LOGIN_SUCCESS = 'login_success';
+export const LOGIN_FAIL = 'login_fail';
 
 export const loginUser = (login, password) => async dispatch => {
   dispatch({
@@ -28,4 +28,3 @@ export const loginUser = (login, password) => async dispatch => {
     });
   }
 };
-

@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import {useForm} from 'react-hook-form';
 import {NavLink} from 'react-router-dom';
-import {REGISTR, RECOVERY} from '../constants/routes';
+import {useForm} from 'react-hook-form';
+import {LOGIN} from '../constants/routes';
 import {loginUser} from '../actions/loginActions';
 import useActions from '../hooks/useAction';
-import {Button, InputFormWrapper, Link, Error, Transfer} from './FormsStyles';
+import {Button, InputFormWrapper, Error, Transfer} from './FormsStyles';
 
-function LoginForm() {
+function RegistrationForm() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const {handleSubmit, register, errors} = useForm();
 
-  //Alternative bindActionCreators
+  // Alternative bindActionCreators
   const [submitAction] = useActions([loginUser]);
 
   const submit = () => {
@@ -23,7 +23,7 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit(submit)}>
       <InputFormWrapper>
-        <label for="login">Email</label>
+        <label htmlFor="login">Enter your email</label>
         <input
           ref={register({
             required: 'required',
@@ -39,7 +39,7 @@ function LoginForm() {
       </InputFormWrapper>
       <br />
       <InputFormWrapper>
-        <label for="password">Password</label>
+        <label htmlFor="password">Create the password(6-15 symbols)</label>
         <input
           ref={register({
             required: 'required',
@@ -54,17 +54,13 @@ function LoginForm() {
         />
         <Error>{errors.password && errors.password.message}</Error>
       </InputFormWrapper>
-      <NavLink to={RECOVERY}>
-        <Link>Forgot password</Link>
-      </NavLink>
       <br />
-      <Button type="submit">Log in</Button>
-
-      <NavLink to={REGISTR}>
-        <Transfer>Need an account?</Transfer>
+      <Button type="submit">Sign up</Button>
+      <NavLink to={LOGIN}>
+        <Transfer>Have an account?</Transfer>
       </NavLink>
     </form>
   );
 }
 
-export default LoginForm;
+export default RegistrationForm;

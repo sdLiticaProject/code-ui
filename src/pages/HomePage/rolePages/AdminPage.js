@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function AdminPage(){
-  return(
-    <h1>
-      Page from Admin
-    </h1>
-  )
+function AdminPage() {
+  return <h1>Page from Admin</h1>;
 }
 
 export default AdminPage;
