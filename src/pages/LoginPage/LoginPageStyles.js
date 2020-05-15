@@ -2,11 +2,16 @@ import styled, {keyframes} from "styled-components";
 
 
 const LoginWrapper = styled.div`
+  position:relative;
   box-sizing: border-box;
   padding-top:10%;
   width:  100%;
   height: 100vh;
   background-color: #E3ECF4;
+
+  @media (max-height: 500px) {
+    height: 150vh;
+  } 
 `;
 
 const move = keyframes`
@@ -40,26 +45,34 @@ const Logo = styled.img `
   top:-65px;
 `;
 
-
-
-
-
 const LoginFormWrapper = styled.div`
   position: relative;
   z-index: 1;
   box-shadow: 0 10px 7px -10px rgba(0, 0, 0, 0.4);
   text-align:center;
-  margin: auto;
   background: white;
-  width:500px;
-  height: 550px;
+  width:450px;
+  height: 450px;
   border-radius: 10px;
+  margin: auto;
+  padding:auto;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    top:50px;
+    border-radius: 0px;
+  }
+
 `;
 
-const Input = styled.input``;
-
-const Button = styled.button`
-  background: gray;
+const Text = styled.p`
+  font-size: 1.5rem;
+  color: #3eacdc;
+  font-weight:bold;
+  font-family: sans-serif;
+  position:relative;
+  bottom:50px;
 `;
 
-export { LoginWrapper, LoginFormWrapper, Input, Button, BackImage, Logo, CloudWrapper };
+
+export { LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text};
