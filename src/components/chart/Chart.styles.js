@@ -1,17 +1,38 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ChartContainer = styled.div`
   border-radius: 5px;
-  height: 620px;
   max-width: max-content;
-  background: linear-gradient(
-    0deg,
-    rgba(29, 28, 32, 1) 0%,
-    rgba(46, 45, 52, 1) 100%
-  );
+  background: #2b2b2b;
 `;
 
-const CurrencyInfo = styled.div``;
+const CurrencyInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+CurrencyInfo.Percents = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+
+  span:first-child {
+    margin-right: 5px;
+  }
+`;
+
+CurrencyInfo.Balance = styled.span`
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 41px;
+  color: #f4f3f6;
+`;
 
 const InfoWrapper = styled.div`
   display: flex;
@@ -22,17 +43,9 @@ const InfoWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const MoneyBalance = styled.span`
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 41px;
-  color: #f4f3f6;
-`;
-
 const Btn = styled.div`
   width: 40px;
+  user-select: none;
   cursor: pointer;
   height: 30px;
   display: flex;
@@ -59,9 +72,10 @@ const BtnWrapper = styled.div`
   }
 
   .active {
-    border-color: #e35955;
-    border-style: solid;
-    color: red;
+    background: #3c3f41;
+  }
+  .active > span {
+    color: #f4f3f6;
   }
 
   display: flex;
@@ -70,7 +84,6 @@ const BtnWrapper = styled.div`
 
 const CanvasWrapper = styled.div`
   border-radius: 20px;
-  background-color: #2e2d3480;
 `;
 
 const Canvas = styled.span`
@@ -80,14 +93,42 @@ const Canvas = styled.span`
   vertical-align: top;
   overflow: hidden;
 
+  /* hide y-axis hover line */
+  .y-hover-line {
+    display: none;
+  }
+
   .line {
     fill: url(#mainGradient);
     stroke: #e35955;
-    stroke-width: 3px;
+    stroke-width: 1px;
   }
-  /* .context {
+
+  #infoPolygon {
+    fill: #313335;
+    stroke: #3c3f41;
+    transform: translate(-37px, -37px);
+  }
+
+  #infoPolygonLine {
+    stroke: #313335;
+  }
+
+  .infoAxisY {
+    fill: #f4f3f6;
+  }
+
+  .infoAxisX {
+    fill: #757780;
+  }
+
+  .context {
     display: none;
-  } */
+  }
+
+  .red-tes {
+    color: white;
+  }
 
   .tick {
     font-family: Nunito;
@@ -100,11 +141,11 @@ const Canvas = styled.span`
   }
 
   .stop-left {
-    stop-color: #e25955; /* Indigo */
+    stop-color: #e25955;
   }
 
   .stop-right {
-    stop-color: rgba(226, 89, 85, 0); /* Teal */
+    stop-color: rgba(226, 89, 85, 0);
   }
 
   .svg-content {
@@ -121,8 +162,9 @@ const Canvas = styled.span`
   }
 
   .tooltip {
-    fill: grey;
-    opacity: 0.7;
+    fill: #313335;
+    stroke-width: 1px;
+    stroke: #3c3f41;
   }
 
   .overlay {
@@ -131,27 +173,48 @@ const Canvas = styled.span`
   }
 
   .axis.axis--y > .domain {
-    stroke: #757780;
+    display: none;
+  }
+
+  .axis.axis--y > .tick line {
+    display: none;
+  }
+
+  .axis.axis--y > .tick text {
+    transform: translateX(-20px);
+  }
+
+  .axis.axis--x > .tick text {
+    transform: translateY(7px);
   }
 
   .axis.axis--x > .domain {
     stroke: #757780;
   }
 
+  .axis.axis--y > .tick:first {
+    display: none;
+  }
+
   .focus circle {
     fill: #f1f3f3;
-    stroke: #ca578e;
-    stroke-width: 5px;
+    stroke: #e35955;
+    stroke-width: 3px;
   }
 
   .focusPoints text {
     background: #f1f3f3;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .hover-line {
-    stroke: #ca578e;
+    stroke: #63646a;
     stroke-width: 2px;
-    stroke-dasharray: 3, 3;
+    stroke-dasharray: 8, 4;
   }
 
   .selection {
@@ -159,13 +222,4 @@ const Canvas = styled.span`
   }
 `;
 
-export {
-  MoneyBalance,
-  CurrencyInfo,
-  InfoWrapper,
-  ChartContainer,
-  Btn,
-  BtnWrapper,
-  Canvas,
-  CanvasWrapper
-};
+export {CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper};
