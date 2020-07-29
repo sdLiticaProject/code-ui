@@ -1,13 +1,13 @@
-import React from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import store from './store/createStore';
-import HomePage from './pages/HomePage';
-import CustomBrowserRouter from './helpers/CustomBrowserRouter';
-import Chart from './components/chart/Chart';
-import LoginPage from './pages/LoginPage';
-import {LOGIN, HOME, CHART, REGISTR, RECOVERY} from './constants/routes';
-import PrivateRoute from './helpers/PrivateRoute';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store/createStore";
+import HomePage from "./pages/HomePage";
+import CustomBrowserRouter from "./helpers/CustomBrowserRouter";
+import Chart from "./components/chart/Chart";
+import LoginPage from "./pages/LoginPage";
+import { LOGIN, HOME, CHART, REGISTR, RECOVERY } from "./constants/routes";
+import PrivateRoute from "./helpers/PrivateRoute";
 
 function App() {
   return (

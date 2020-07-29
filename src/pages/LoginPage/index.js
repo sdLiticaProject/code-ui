@@ -1,27 +1,30 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import {LOGIN, REGISTR, RECOVERY} from '../../constants/routes';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { LOGIN, REGISTR, RECOVERY } from "../../constants/routes";
 import {
   LoginWrapper,
   LoginFormWrapper,
   BackImage,
   Logo,
   CloudWrapper,
-  Text
-} from './LoginPageStyles';
-import LoginForm from '../../forms/LoginForm';
-import RegistrationForm from '../../forms/RegistrationForm';
-import PasswordRecoveryForm from '../../forms/PasswordRecoveryForm';
+  Text,
+} from "./LoginPageStyles";
+import LoginForm from "../../forms/LoginForm";
+import RegistrationForm from "../../forms/RegistrationForm";
+import PasswordRecoveryForm from "../../forms/PasswordRecoveryForm";
+import cloud2 from "../../image/cloud-2.png";
+import cloud from "../../image/cloud.png";
+import logo from "../../image/logo.png";
 
 function AuthenticationPage() {
   return (
     <LoginWrapper>
       <CloudWrapper>
-        <BackImage src={`${process.env.PUBLIC_URL}/image/cloud-2.png`} timeAnimation="100s" />
-        <BackImage src={`${process.env.PUBLIC_URL}/image/cloud.png`} timeAnimation="70s" />
+        <BackImage src={cloud2} timeAnimation="100s" />
+        <BackImage src={cloud} timeAnimation="70s" />
       </CloudWrapper>
       <LoginFormWrapper>
-        <Logo src={`${process.env.PUBLIC_URL}/image/logo.png`} />
+        <Logo src={logo} />
         <Text>Welcome to sdLitica</Text>
         <Switch>
           <Route path={LOGIN} component={LoginForm} />
