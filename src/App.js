@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import CustomBrowserRouter from "./helpers/CustomBrowserRouter";
 import Chart from "./components/chart/Chart";
 import LoginPage from "./pages/LoginPage";
-import { LOGIN, HOME, CHART, REGISTR, RECOVERY } from "./constants/routes";
+import { LOGIN, HOME, CHART, REGISTRATION, RECOVERY } from "./constants/routes";
 import PrivateRoute from "./helpers/PrivateRoute";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route path={CHART} component={Chart} />
           <Route path={LOGIN} component={LoginPage} />
-          <Route path={REGISTR} component={LoginPage} />
+          <Route path={REGISTRATION} component={LoginPage} />
           <Route path={RECOVERY} component={LoginPage} />
           <PrivateRoute path={HOME} component={HomePage} />
           <Redirect from="*" to={LOGIN} />

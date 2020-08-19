@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {Route, Redirect} from 'react-router-dom';
-import Axios from 'axios';
-import Cookies from 'js-cookie';
-import PropTypes from 'prop-types';
-import {useDispatch} from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { Route, Redirect } from "react-router-dom";
+import Axios from "axios";
+import Cookies from "js-cookie";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
-import {GET_USER_REQUEST} from '../constants/api';
-import {add, del} from '../actions/userActions';
+import { GET_USER_REQUEST } from "../constants/api";
+import { add, del } from "../actions/userActions";
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -20,7 +20,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
       setIsError(false);
       try {
         const response = await Axios.get(GET_USER_REQUEST, {
-          headers: {Authorization: Cookies.get('token')}
+          headers: { Authorization: Cookies.get("token") },
         });
         console.log(response);
         setUser(response.data.user);
@@ -29,7 +29,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
         setIsError(true);
         setUser();
         dispatch(del());
-        Cookies.remove('token');
+        Cookies.remove("token");
       }
       setIsLoading(false);
     };
@@ -42,16 +42,18 @@ const PrivateRoute = ({component: Component, ...rest}) => {
   return (
     <Route
       {...rest}
-      render={props => (user !== null ? <Component {...props} /> : <Redirect to="/" />)}
+      render={(props) =>
+        user !== null ? <Component {...props} /> : <Redirect to="/" />
+      }
     />
   );
 };
 
 PrivateRoute.propTypes = {
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
-  }).isRequired,
-  component: PropTypes.any.isRequired
+    pathname: PropTypes.string.isRequired,
+  }),
+  component: PropTypes.any.isRequired,
 };
 
 export default PrivateRoute;

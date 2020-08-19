@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
-import {useForm} from 'react-hook-form';
-import {NavLink} from 'react-router-dom';
-import {REGISTR, RECOVERY} from '../constants/routes';
-import {loginUser} from '../actions/loginActions';
-import useActions from '../hooks/useAction';
-import {Button, InputFormWrapper, Link, Error, Transfer} from './FormsStyles';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
+import { REGISTRATION, RECOVERY } from "../constants/routes";
+import { loginUser } from "../actions/loginActions";
+import useActions from "../hooks/useAction";
+import { Button, InputFormWrapper, Link, Error, Transfer } from "./FormsStyles";
 
 function LoginForm() {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-  const {handleSubmit, register, errors} = useForm();
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const { handleSubmit, register, errors } = useForm();
 
   //Alternative bindActionCreators
   const [submitAction] = useActions([loginUser]);
 
   const submit = () => {
-    if (login !== '' && password !== '') {
+    if (login !== "" && password !== "") {
       submitAction(login, password);
     }
   };
@@ -23,17 +23,17 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit(submit)}>
       <InputFormWrapper>
-        <label for="login">Email</label>
+        <label htmlFor="login">Email</label>
         <input
           ref={register({
-            required: 'required',
+            required: "required",
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address'
-            }
+              message: "invalid email address",
+            },
           })}
           name="login"
-          onChange={e => setLogin(e.target.value)}
+          onChange={(e) => setLogin(e.target.value)}
         />
         <Error>{errors.login && errors.login.message}</Error>
       </InputFormWrapper>
@@ -42,15 +42,15 @@ function LoginForm() {
         <label for="password">Password</label>
         <input
           ref={register({
-            required: 'required',
+            required: "required",
             pattern: {
               value: /^[A-Z0-9._]{6,15}$/i,
-              message: 'invalid password'
-            }
+              message: "invalid password",
+            },
           })}
           type="password"
           name="password"
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <Error>{errors.password && errors.password.message}</Error>
       </InputFormWrapper>
@@ -60,7 +60,7 @@ function LoginForm() {
       <br />
       <Button type="submit">Log in</Button>
 
-      <NavLink to={REGISTR}>
+      <NavLink to={REGISTRATION}>
         <Transfer>Need an account?</Transfer>
       </NavLink>
     </form>

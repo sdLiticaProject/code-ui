@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const InputFormWrapper = styled.div`
   position: relative;
@@ -68,12 +68,13 @@ const Button = styled.button`
   &:hover,
   &:focus {
     border-color: white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+      0 0 8px rgba(82, 168, 236, 0.3);
     outline: 0 none;
   }
 `;
 
-const Error = styled.text`
+const Error = styled.span`
   color: #8b0000;
   font-size: 0.8rem;
   font-family: sans-serife;
@@ -88,7 +89,7 @@ const Error = styled.text`
   }
 `;
 
-const Link = styled.a`
+const Link = styled.span`
   color: #9b9b9b;
   text-decoration: none;
   position: absolute;
@@ -113,4 +114,4 @@ const Transfer = styled.a`
   }
 `;
 
-export {Button, InputFormWrapper, Link, Error, Transfer};
+export { Button, InputFormWrapper, Link, Error, Transfer };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { LOGIN, REGISTR, RECOVERY } from "../../constants/routes";
+import { LOGIN, REGISTRATION, RECOVERY } from "../../constants/routes";
 import {
   LoginWrapper,
   LoginFormWrapper,
@@ -28,7 +28,7 @@ function AuthenticationPage() {
         <Text>Welcome to sdLitica</Text>
         <Switch>
           <Route path={LOGIN} component={LoginForm} />
-          <Route path={REGISTR} component={RegistrationForm} />
+          <Route path={REGISTRATION} component={RegistrationForm} />
           <Route path={RECOVERY} component={PasswordRecoveryForm} />
         </Switch>
       </LoginFormWrapper>
