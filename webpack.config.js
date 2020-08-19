@@ -7,6 +7,7 @@ module.exports = {
   output: {
     filename: "./main.js",
     path: path.resolve(__dirname, "build"),
+    publicPath: "/",
   },
   devServer: {
     contentBase: path.join(__dirname, "build"),
@@ -14,6 +15,7 @@ module.exports = {
     port: 9000,
     watchContentBase: true,
     progress: true,
+    historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
