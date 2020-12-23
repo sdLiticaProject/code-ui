@@ -1,3 +1,4 @@
-export const LOGIN_REQUEST =
-  "http://sdlitica.sdcloud.io:5000/api/v1/Profile/login";
-export const GET_USER_REQUEST = `${process.env.REACT_APP_APISERVER}/test`;
+export const loginUser = () => `${process.env.REACT_APP_APISERVER}/api/v1/Profile/login`;
+export const logoutUser = () => `${process.env.REACT_APP_APISERVER}/api/v1/Profile/logout`;
+export const getUser = () => `${process.env.REACT_APP_APISERVER}/api/v1/Profile/me`;
+export const registerUser = () => `${process.env.REACT_APP_APISERVER}/api/v1/Profile`;

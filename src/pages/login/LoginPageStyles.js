@@ -51,7 +51,6 @@ const LoginFormWrapper = styled.div`
   text-align: center;
   background: white;
   width: 450px;
-  height: 450px;
   border-radius: 10px;
   margin: auto;
   padding: auto;
@@ -72,4 +71,32 @@ const Text = styled.p`
   bottom: 50px;
 `;
 
-export {LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text};
+const Button = styled.button`
+  background-color: #87c6f8;
+  border: 1px solid #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  border-radius: 6px;
+  color: white;
+  display: block;
+  width: 230px;
+  margin: 5% auto;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: center;
+  height: 40px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    border-color: white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
+    outline: 0 none;
+  }
+`;
+
+export {LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text, Button};

@@ -1,4 +1,53 @@
-import styled from "styled-components";
+import styled, {keyframes} from 'styled-components';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NavLinkWrapper = styled.div`
+  margin-bottom: 30px;
+`;
+
+export const LoadIndicator = styled.div`
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px;
+  display: inline-block;
+  font-size: 10px;
+  text-indent: -9999em;
+  border-top: 3px solid #444;
+  border-right: 3px solid #444;
+  border-bottom: 3px solid #444;
+  border-left: 3px solid #00b7db;
+  animation: ${rotate} 0.8s infinite linear;
+  border-top-color: #e4e9eb;
+  border-right-color: #e4e9eb;
+  border-bottom-color: #e4e9eb;
+  border-left-color: #87c6f8;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0px;
+  z-index: 99;
+  margin-top: 20px;
+  margin-left: 20px;
+
+  ${({tab}) => (tab === '/news' || tab === 'unknown') && `border-left-color: green !important;`};
+`;
 
 const InputFormWrapper = styled.div`
   position: relative;
@@ -49,6 +98,8 @@ const InputFormWrapper = styled.div`
 
 const Button = styled.button`
   background-color: #87c6f8;
+  cursor: pointer;
+  user-select: none;
   border: 1px solid #ffffff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
   transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
@@ -68,13 +119,12 @@ const Button = styled.button`
   &:hover,
   &:focus {
     border-color: white;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
-      0 0 8px rgba(82, 168, 236, 0.3);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
     outline: 0 none;
   }
 `;
 
-const Error = styled.span`
+const Error = styled.text`
   color: #8b0000;
   font-size: 0.8rem;
   font-family: sans-serife;
@@ -89,7 +139,7 @@ const Error = styled.span`
   }
 `;
 
-const Link = styled.span`
+const Link = styled.a`
   color: #9b9b9b;
   text-decoration: none;
   position: absolute;
@@ -114,4 +164,4 @@ const Transfer = styled.a`
   }
 `;
 
-export { Button, InputFormWrapper, Link, Error, Transfer };
+export {Button, InputFormWrapper, Link, Error, Transfer};

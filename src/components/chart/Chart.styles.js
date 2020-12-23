@@ -86,6 +86,10 @@ const CanvasWrapper = styled.div`
   border-radius: 20px;
 `;
 
+const LineName = styled.span`
+  color: white;
+`;
+
 const Canvas = styled.span`
   display: inline-block;
   position: relative;
@@ -99,9 +103,13 @@ const Canvas = styled.span`
   }
 
   .line {
-    fill: url(#mainGradient);
     stroke: #e35955;
     stroke-width: 1px;
+    fill: none;
+  }
+
+  .area {
+    fill: url(#mainGradient);
   }
 
   #infoPolygon {
@@ -140,9 +148,9 @@ const Canvas = styled.span`
     color: #757780;
   }
 
-  .stop-left {
-    stop-color: #e25955;
-  }
+  // .stop-left {
+  //   stop-color: #f28e2c;
+  // }
 
   .stop-right {
     stop-color: rgba(226, 89, 85, 0);
@@ -167,7 +175,7 @@ const Canvas = styled.span`
     stroke: #3c3f41;
   }
 
-  .overlay {
+  .zoom {
     fill: none;
     pointer-events: all;
   }
@@ -222,4 +230,4 @@ const Canvas = styled.span`
   }
 `;
 
-export {CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper};
+export {CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper, LineName};

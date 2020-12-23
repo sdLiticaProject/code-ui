@@ -1,6 +1,10 @@
 import {USER_ADD, USER_DELETE} from '../actions/userActions';
 
-const userReduce = (state = {}, action) => {
+export const initialState = {
+  user: null
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case USER_ADD:
       return {
@@ -18,5 +22,3 @@ const userReduce = (state = {}, action) => {
       return state;
   }
 };
-
-export default userReduce;
