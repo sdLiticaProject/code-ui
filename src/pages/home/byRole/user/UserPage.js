@@ -30,7 +30,9 @@ function UserPage() {
     <>
       <Sc.HeaderWrapper>
         <Sc.LogoWrapper>
-          <Sc.Logo src={logoPng} />
+          <Sc.LogoGradient>
+            <Sc.LogoImg />
+          </Sc.LogoGradient>
         </Sc.LogoWrapper>
         <Sc.MenuWrapper onClick={() => logout()}>
           <Sc.MenuWrapperLogo viewBox="0 0 50 50">

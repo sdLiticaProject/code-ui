@@ -19,19 +19,29 @@ export const MainWrapper = styled.main`
 `;
 
 export const LogoWrapper = styled.div`
-  /* width: 500px;
-  display: flex;
-  height: 100%;
-  margin-left: -40px;
-  padding-left: 20px;
-  box-shadow: rgb(63 136 197) -256px 10px 70px -46px inset;
-  background: radial-gradient(at 29% 50%, #ffffff, #3f88c5);
-  align-items: center;
-  justify-content: flex-start; */
-  margin-top: -90px;
-  margin-bottom: -90px;
-  background: radial-gradient(closest-side at 50% 50%, #ffffff, #3f88c5);
+  width: 300px;
+  height: 100px;
+  display: table-cell;
+  overflow: hidden;
 `;
+
+export const LogoGradient = styled.div`
+  width: 300px;
+  height: 300px;
+  margin-top: -130px;
+  margin-bottom: -90px;
+  background: radial-gradient(circle closest-side at 45% 60%, #ffffff, #3f88c5);
+`;
+
+export const LogoImg = styled.div`
+  width: 240px;
+  height: 240px;
+  background-image: url(${logo});
+  background-size: 50%;
+  background-position: 60% 85%;
+  background-repeat: no-repeat;
+`;
+
 export const Logo = styled.div`
   background-size: 50%;
   background-position: 50% 49%;
