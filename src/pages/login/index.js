@@ -30,6 +30,7 @@ function AuthenticationPage(props) {
       </LoginWrapper>
     );
   }
+
   if (params === 'reg') {
     return (
       <LoginWrapper>
@@ -45,6 +46,7 @@ function AuthenticationPage(props) {
       </LoginWrapper>
     );
   }
+
   return <Redirect to={LOGIN} />;
 }
 

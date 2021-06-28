@@ -34,6 +34,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
     fetchUser();
   }, []);
 
+  // TODO: redirect to login page if error found
   if (isError) return <Redirect to="/" />;
 
   if (isLoading) return <Loader />;
