@@ -9,7 +9,7 @@ import {
   Logo,
   CloudWrapper,
   Text
-} from './LoginPageStyles';
+} from './AuthFormSwitcher.styles';
 import {LOGIN} from '../../constants/routes';
 
 function AuthenticationPage(props) {

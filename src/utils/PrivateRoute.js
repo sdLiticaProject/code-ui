@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import {add, del} from '../actions/userActions';
 import * as api from '../constants/api';
-import Loader from '../pages/login/components/Loader';
+import Loader from '../components/loader/Loader';
 
 const PrivateRoute = ({component: Component, ...rest}) => {
   const [user, setUser] = useState();

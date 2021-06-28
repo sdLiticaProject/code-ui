@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logo from '../resources/logo2.png';
+import logo from './resources/logo2.png';
 
 const HEADER_HEIGHT = '100px';
 const FOOTER_HEIGHT = '100px';

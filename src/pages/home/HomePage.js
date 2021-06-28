@@ -2,13 +2,15 @@ import React from 'react';
 import {Switch, useHistory, Route, useLocation} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import Cookies from 'js-cookie';
-import {LOGIN} from '../../../../constants/routes';
-import {logoutUser, LOGOUT_SUCCESS} from '../../../../actions/loginActions';
-import {del} from '../../../../actions/userActions';
-import * as Sc from './UserPage.styles';
-import TimeSeriesCollection from '../../../../components/tsCollection/TimeSeriesCollection';
+import {LOGIN} from '../../constants/routes';
+import {logoutUser, LOGOUT_SUCCESS} from '../../actions/loginActions';
+import {del} from '../../actions/userActions';
+import * as Sc from './HomePage.styles';
+import Dashboard from './dashboard/Dashboard';
+import History from './history/History';
+import Data from './data/Data';
 
-function UserPage() {
+function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
@@ -24,17 +26,6 @@ function UserPage() {
       }
     });
   };
-
-  // let selectedPageId;
-  // if (location.search) {
-  //   let parsedQs = queryString.parse(location.search);
-  //   if (parsedQs[PAGE_PARAM_NAME]) {
-  //     selectedPageId = parsedQs[PAGE_PARAM_NAME];
-  //   }
-  // }
-  // if (!selectedPageId) {
-  //   selectedPageId = PAGE_DASHBOARD;
-  // }
 
   return (
     <>
@@ -69,44 +60,13 @@ function UserPage() {
         </Sc.TabsWrapper>
         <Switch>
           <Route exact path="/home">
-            <Sc.ContentWrapper>
-              <Sc.UserInfo>
-                Hello, {user.firstName} {user.lastName}
-              </Sc.UserInfo>
-              <Sc.InfoBlocksWrapper>
-                <Sc.InfoBlock>
-                  <h2>Uploaded data</h2>
-                  <h3>Types of uploaded data</h3>
-                </Sc.InfoBlock>
-                <Sc.InfoBlock>
-                  <h2>Storage usage</h2>
-                  <h3>Disk space usage statistics</h3>
-                </Sc.InfoBlock>
-              </Sc.InfoBlocksWrapper>
-            </Sc.ContentWrapper>
+            <Dashboard />
           </Route>
           <Route path="/home/data">
-            <Sc.ContentWrapper>
-              <Sc.UserInfo>Data</Sc.UserInfo>
-              <Sc.InfoBlocksWrapper>
-                <TimeSeriesCollection />
-              </Sc.InfoBlocksWrapper>
-            </Sc.ContentWrapper>
+            <Data />
           </Route>
           <Route path="/home/history">
-            <Sc.ContentWrapper>
-              <Sc.UserInfo>History</Sc.UserInfo>
-              <Sc.InfoBlocksWrapper>
-                <Sc.InfoBlock>
-                  <h2>Uploaded data</h2>
-                  <h3>Types of uploaded data</h3>
-                </Sc.InfoBlock>
-                <Sc.InfoBlock>
-                  <h2>Storage usage</h2>
-                  <h3>Disk space usage statistics</h3>
-                </Sc.InfoBlock>
-              </Sc.InfoBlocksWrapper>
-            </Sc.ContentWrapper>
+            <History />
           </Route>
         </Switch>
       </Sc.MainWrapper>
@@ -121,4 +81,4 @@ function UserPage() {
   );
 }
 
-export default UserPage;
+export default HomePage;
