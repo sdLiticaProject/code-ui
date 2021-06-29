@@ -4,9 +4,9 @@ import {Provider} from 'react-redux';
 import store from './store/createStore';
 import LoginPage from './pages/login/AuthFormSwitcher';
 import HomePage from './pages/home/HomePage';
-import CustomBrowserRouter from './utils/CustomBrowserRouter';
+import CustomBrowserRouter from './helpers/CustomBrowserRouter';
 import {LOGIN, HOME} from './constants/routes';
-import PrivateRoute from './utils/PrivateRoute';
+import PrivateRoute from './helpers/PrivateRoute';
 import {GlobalStyle} from './App.styles';
 
 function App() {
