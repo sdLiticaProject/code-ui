@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import {height, margin, transformTime, units, width} from './ChartConstants';
+import { height, margin, units, width } from './ChartConstants';
 
 export const clearArea = canvasRef => {
   d3.select(canvasRef.current)
@@ -45,15 +45,7 @@ export const drawLine = (multiData, z, linePath, lineChart, area) => {
 
 export const getBisectDate = d3.bisector(d => d.date).left;
 
-export const updateCurrencyInfo = (
-  balanceRef,
-  entirePercentRef,
-  lastPercentRef,
-  x,
-  multiData,
-  data,
-  currentWidth
-) => {
+export const updateCurrencyInfo = (balanceRef, entirePercentRef, lastPercentRef, x, multiData, data, currentWidth) => {
   const x0 = x.invert(currentWidth);
   const i0 = getBisectDate(data, x.invert(0), 1);
   const i = getBisectDate(data, x0, 1);
@@ -64,15 +56,11 @@ export const updateCurrencyInfo = (
 
     const styleLastPercent = balance > prevBalance ? '#43B99C' : '#E25955';
     const signLastPercent = balance > prevBalance ? '+' : '-';
-    const diffLastPercent =
-      balance > prevBalance
-        ? ((balance - prevBalance) * 100) / prevBalance
-        : ((prevBalance - balance) * 100) / prevBalance;
+    const diffLastPercent = balance > prevBalance ? ((balance - prevBalance) * 100) / prevBalance : ((prevBalance - balance) * 100) / prevBalance;
 
     const styleEntirePercent = balance > first ? '#43B99C' : '#E25955';
     const signEntirePercent = balance > first ? '+' : '-';
-    const diffEntirePercent =
-      balance > first ? ((balance - first) * 100) / first : ((first - balance) * 100) / first;
+    const diffEntirePercent = balance > first ? ((balance - first) * 100) / first : ((first - balance) * 100) / first;
 
     d3.select(balanceRef[j].current).html(`${units}${balance.toFixed(2)}`);
     d3.select(entirePercentRef[j].current)

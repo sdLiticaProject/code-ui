@@ -230,4 +230,4 @@ const Canvas = styled.span`
   }
 `;
 
-export {CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper, LineName};
+export { CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper, LineName };

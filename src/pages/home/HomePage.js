@@ -1,19 +1,19 @@
 import React from 'react';
-import {Switch, useHistory, Route, useLocation} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import { Switch, useHistory, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'js-cookie';
-import {LOGIN} from '../../constants/routes';
-import {logoutUser, LOGOUT_SUCCESS} from '../../actions/loginActions';
-import {del} from '../../actions/userActions';
+import { LOGIN } from '../../constants/routes';
+import { logoutUser, LOGOUT_SUCCESS } from '../../actions/loginActions';
+import { del } from '../../actions/userActions';
 import * as Sc from './HomePage.styles';
 import Dashboard from './dashboard/Dashboard';
 import History from './history/History';
 import Data from './data/Data';
+import Tabs from './components/tabs/Tabs';
 
 function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const location = useLocation();
 
   const user = useSelector(state => state.user.user);
 
@@ -43,21 +43,7 @@ function HomePage() {
         </Sc.MenuWrapper>
       </Sc.HeaderWrapper>
       <Sc.MainWrapper>
-        <Sc.TabsWrapper>
-          <Sc.Tab isActive={location.pathname === '/home'} onClick={() => history.push('/home')}>
-            Dashboard
-          </Sc.Tab>
-          <Sc.Tab
-            isActive={location.pathname === '/home/data'}
-            onClick={() => history.push('/home/data')}>
-            My data
-          </Sc.Tab>
-          <Sc.Tab
-            isActive={location.pathname === '/home/history'}
-            onClick={() => history.replace('/home/history')}>
-            Analysis history
-          </Sc.Tab>
-        </Sc.TabsWrapper>
+        <Tabs />
         <Switch>
           <Route exact path="/home">
             <Dashboard />

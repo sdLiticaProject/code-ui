@@ -22,50 +22,50 @@ export const loginUser = (email, password) => async dispatch => {
   try {
     const res = await axios.post(api.loginUser(), {
       email,
-      password
+      password,
     });
 
-    Cookies.set('token', res.data.entity.token, {expires: 5});
+    Cookies.set('token', res.data.entity.token, { expires: 5 });
     return dispatch({
-      type: LOGIN_SUCCESS
+      type: LOGIN_SUCCESS,
     });
   } catch (error) {
     return dispatch({
       type: LOGIN_FAIL,
-      message: 'login failed'
+      message: 'login failed',
     });
   }
 };
 
 export const logoutUser = () => async dispatch => {
   dispatch({
-    type: LOGOUT_LOADING
+    type: LOGOUT_LOADING,
   });
   try {
     const res = await axios.post(
       api.logoutUser(),
       {},
       {
-        headers: {Authorization: `cloudToken ${Cookies.get('token')}`}
-      }
+        headers: { Authorization: `cloudToken ${Cookies.get('token')}` },
+      },
     );
     if (res.status !== 204) {
       throw Error(res.data.message);
     }
     return dispatch({
-      type: LOGOUT_SUCCESS
+      type: LOGOUT_SUCCESS,
     });
   } catch (error) {
     return dispatch({
       type: LOGOUT_FAIL,
-      error
+      error,
     });
   }
 };
 
 export const registerUser = (email, password, firstName, lastName) => async dispatch => {
   dispatch({
-    type: REGISTER_LOADING
+    type: REGISTER_LOADING,
   });
 
   try {
@@ -73,18 +73,18 @@ export const registerUser = (email, password, firstName, lastName) => async disp
       email,
       password,
       firstName,
-      lastName
+      lastName,
     });
     if (res.status !== 201) {
       throw Error(res.data.message);
     }
     dispatch({
-      type: REGISTER_SUCCESS
+      type: REGISTER_SUCCESS,
     });
   } catch (error) {
     dispatch({
       type: REGISTER_FAIL,
-      error
+      error,
     });
   }
 };

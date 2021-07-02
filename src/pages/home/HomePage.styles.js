@@ -72,6 +72,7 @@ export const MenuWrapper = styled.div`
 `;
 
 export const InfoBlocksWrapper = styled.div`
+  border: red;
   display: flex;
   margin-top: 30px;
   > div {
@@ -191,7 +192,7 @@ export const Tab = styled.div`
   font-size: 36px;
   line-height: 42px;
   color: #000000;
-  ${({isActive}) =>
+  ${({ isActive }) =>
     isActive &&
     `padding-bottom: 5px; border-bottom: 3px solid #3F88C5;
 `};

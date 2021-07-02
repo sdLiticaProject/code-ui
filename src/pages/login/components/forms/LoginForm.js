@@ -1,30 +1,17 @@
 import React from 'react';
-import {useForm} from 'react-hook-form';
-import {NavLink, useHistory} from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { NavLink, useHistory } from 'react-router-dom';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import useActions from '../../../../hooks/useAction';
-import {HOME, LOGIN} from '../../../../constants/routes';
-import {
-  loginUser,
-  LOGIN_FAIL,
-  LOGIN_LOADING,
-  LOGIN_SUCCESS
-} from '../../../../actions/loginActions';
-import {
-  Button,
-  InputFormWrapper,
-  LoadIndicator,
-  NavLinkWrapper,
-  Error,
-  Transfer,
-  FormWrapper
-} from './FormsStyles';
+import { HOME, LOGIN } from '../../../../constants/routes';
+import { loginUser, LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS } from '../../../../actions/loginActions';
+import { Button, InputFormWrapper, LoadIndicator, NavLinkWrapper, Error, Transfer, FormWrapper } from './FormsStyles';
 
 function LoginForm() {
-  const {handleSubmit, register, errors} = useForm();
+  const { handleSubmit, register, errors } = useForm();
   const [submitAction] = useActions([loginUser]);
   const history = useHistory();
   const [isSnackbarOpen, setSnackbarOpen] = React.useState(false);
@@ -62,8 +49,8 @@ function LoginForm() {
             required: 'required',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address'
-            }
+              message: 'invalid email address',
+            },
           })}
           name="email"
         />
@@ -77,8 +64,8 @@ function LoginForm() {
             required: 'required',
             pattern: {
               value: /^[A-Z0-9._]{3,15}$/i,
-              message: 'invalid password'
-            }
+              message: 'invalid password',
+            },
           })}
           type="password"
           name="password"
@@ -100,7 +87,7 @@ function LoginForm() {
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'center'
+          horizontal: 'center',
         }}
         open={isSnackbarOpen}
         autoHideDuration={6000}
@@ -108,11 +95,7 @@ function LoginForm() {
         message={snackMessage}
         action={
           <React.Fragment>
-            <IconButton
-              size="small"
-              aria-label="close"
-              color="inherit"
-              onClick={handleSnackbarClose}>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleSnackbarClose}>
               <CloseIcon fontSize="small" />
             </IconButton>
           </React.Fragment>

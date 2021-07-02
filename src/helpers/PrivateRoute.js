@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import PropTypes from 'prop-types';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import {add, del} from '../actions/userActions';
+import { add, del } from '../actions/userActions';
 import * as api from '../constants/api';
 import Loader from '../components/loader/Loader';
 
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -18,9 +18,9 @@ const PrivateRoute = ({component: Component, ...rest}) => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(api.getUser(), {
-          headers: {Authorization: `cloudToken ${Cookies.get('token')}`}
+          headers: { Authorization: `cloudToken ${Cookies.get('token')}` },
         });
-        const user = {...res.data, roleId: 2};
+        const user = { ...res.data, roleId: 2 };
         setUser(user);
         dispatch(add(user));
       } catch (error) {
@@ -39,16 +39,11 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 
   if (isLoading) return <Loader />;
 
-  return (
-    <Route
-      {...rest}
-      render={props => (user !== null ? <Component {...props} /> : <Redirect to="/" />)}
-    />
-  );
+  return <Route {...rest} render={props => (user !== null ? <Component {...props} /> : <Redirect to="/" />)} />;
 };
 
 PrivateRoute.propTypes = {
-  component: PropTypes.any.isRequired
+  component: PropTypes.any.isRequired,
 };
 
 export default PrivateRoute;

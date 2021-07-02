@@ -1,51 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import moment from 'moment';
-import {withTheme} from 'styled-components';
-import {connect} from 'react-redux';
+import { withTheme } from 'styled-components';
+import { connect } from 'react-redux';
 import data from '../../data/exampleDegrees.json';
-import {
-  clearArea,
-  drawLine,
-  drawSVG,
-  getBisectDate,
-  getWidth,
-  updateCurrencyInfo
-} from './ChartFunctions';
-import {
-  colorScheme,
-  height,
-  height2,
-  margin,
-  margin2,
-  timeFormat,
-  transformTime
-} from './ChartConstants';
-import {
-  Btn,
-  Canvas,
-  CurrencyInfo,
-  ChartContainer,
-  InfoWrapper,
-  BtnWrapper,
-  CanvasWrapper,
-  LineName
-} from './Chart.styles';
-import {getDoShow, getLines} from '../../reducers/controlReducer';
+import { clearArea, drawLine, drawSVG, getBisectDate, getWidth, updateCurrencyInfo } from './ChartFunctions';
+import { colorScheme, height, height2, margin, margin2, timeFormat, transformTime } from './ChartConstants';
+import { Btn, Canvas, CurrencyInfo, ChartContainer, InfoWrapper, BtnWrapper, CanvasWrapper, LineName } from './Chart.styles';
+import { getDoShow, getLines } from '../../reducers/controlReducer';
 
 const dataBtn = ['1d', '1w', '1m', '1y', 'All time'];
-const linesForExtent = [
-  'New York_1',
-  'San Francisco_1',
-  'Austin_1',
-  'New York_2',
-  'San Francisco_2',
-  'Austin_2'
-];
+const linesForExtent = ['New York_1', 'San Francisco_1', 'Austin_1', 'New York_2', 'San Francisco_2', 'Austin_2'];
 
 const mapStateToProps = state => ({
   doShow: getDoShow(state),
-  lines: getLines(state)
+  lines: getLines(state),
 });
 
 const colorMap = new Map();
@@ -59,7 +28,7 @@ data.forEach(d => {
 });
 
 const ExampleChart = props => {
-  const {lines} = props;
+  const { lines } = props;
   lines.forEach(l => {
     if (!colorMap.has(l)) {
       colorMap.set(l, colorScheme[colorCounter]);
@@ -93,8 +62,8 @@ const ExampleChart = props => {
       return {
         id,
         values: data.map(d => {
-          return {x: d.date, y: +d[id]};
-        })
+          return { x: d.date, y: +d[id] };
+        }),
       };
     });
 
@@ -102,8 +71,8 @@ const ExampleChart = props => {
       return {
         id,
         values: data.map(d => {
-          return {x: d.date, y: +d[id]};
-        })
+          return { x: d.date, y: +d[id] };
+        }),
       };
     });
 
@@ -131,11 +100,11 @@ const ExampleChart = props => {
       .scaleExtent([1, Infinity])
       .translateExtent([
         [0, 0],
-        [width, height]
+        [width, height],
       ])
       .extent([
         [0, 0],
-        [width, height]
+        [width, height],
       ])
       .on('zoom', zoomed);
 
@@ -143,7 +112,7 @@ const ExampleChart = props => {
       .brushX()
       .extent([
         [0, 0],
-        [width, height2]
+        [width, height2],
       ])
       .on('brush end', brushed);
 
@@ -207,10 +176,7 @@ const ExampleChart = props => {
       .attr('transform', `translate(${margin2.left},${margin2.top})`);
 
     x.domain(d3.extent(data, d => d.date));
-    y.domain([
-      d3.min(multiDataForExtent, d => d3.min(d.values, c => c.y - 10)),
-      d3.max(multiDataForExtent, d => d3.max(d.values, c => c.y + 10))
-    ]);
+    y.domain([d3.min(multiDataForExtent, d => d3.min(d.values, c => c.y - 10)), d3.max(multiDataForExtent, d => d3.max(d.values, c => c.y + 10))]);
 
     x2.domain(x.domain());
     y2.domain(y.domain());
@@ -371,10 +337,7 @@ const ExampleChart = props => {
           // Положение прямоугольника подсказски
           .attr('height', computedTooltipHeight)
           .attr('width', computedTooltipWidth)
-          .attr(
-            'transform',
-            `translate(${x(d.date) + 10 - computedTooltipWidth - 20},${height / 3 - 20})`
-          );
+          .attr('transform', `translate(${x(d.date) + 10 - computedTooltipWidth - 20},${height / 3 - 20})`);
         focusPoints
           .select('.infoAxisX')
           .text(() => {
@@ -383,7 +346,7 @@ const ExampleChart = props => {
           .attr(
             'transform',
             // Положение текста с доп информацией о точке
-            `translate(${x(d.date) - 100},${height / 3 - 10})`
+            `translate(${x(d.date) - 100},${height / 3 - 10})`,
           );
       } else {
         focusPoints
@@ -404,7 +367,7 @@ const ExampleChart = props => {
           .attr(
             'transform',
             // Положение текста с доп информацией о точке
-            `translate(${x(d.date) + 5},${height / 3 - 10})`
+            `translate(${x(d.date) + 5},${height / 3 - 10})`,
           );
       }
     }
@@ -458,7 +421,7 @@ const ExampleChart = props => {
           .select('.brush')
           .transition()
           .duration(transformTime),
-        [start, end]
+        [start, end],
       );
     }
 
@@ -488,9 +451,7 @@ const ExampleChart = props => {
     }
 
     function doBrush(s) {
-      svg
-        .select('.zoom')
-        .call(zoom.transform, d3.zoomIdentity.scale(width / (s[1] - s[0])).translate(-s[0], 0));
+      svg.select('.zoom').call(zoom.transform, d3.zoomIdentity.scale(width / (s[1] - s[0])).translate(-s[0], 0));
     }
 
     // Конец блока содержащего вспомогательные функции

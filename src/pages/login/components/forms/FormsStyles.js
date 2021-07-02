@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
   from {
@@ -46,7 +46,7 @@ export const LoadIndicator = styled.div`
   margin-top: 20px;
   margin-left: 20px;
 
-  ${({tab}) => (tab === '/news' || tab === 'unknown') && `border-left-color: green !important;`};
+  ${({ tab }) => (tab === '/news' || tab === 'unknown') && `border-left-color: green !important;`};
 `;
 
 const InputFormWrapper = styled.div`
@@ -164,4 +164,4 @@ const Transfer = styled.a`
   }
 `;
 
-export {Button, InputFormWrapper, Link, Error, Transfer};
+export { Button, InputFormWrapper, Link, Error, Transfer };

@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom';
-import {useForm} from 'react-hook-form';
-import {LOGIN} from '../constants/routes';
-import {loginUser} from '../actions/loginActions';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { LOGIN } from '../constants/routes';
+import { loginUser } from '../actions/loginActions';
 import useActions from '../hooks/useAction';
-import {Button, InputFormWrapper, Error, Link} from './FormsStyles';
+import { Button, InputFormWrapper, Error, Link } from './FormsStyles';
 
 function RestoreForm() {
   const [email, setEmail] = useState('');
-  const {handleSubmit, register, errors} = useForm();
+  const { handleSubmit, register, errors } = useForm();
 
   // Alternative bindActionCreators
   const [submitAction] = useActions([loginUser]);
@@ -28,8 +28,8 @@ function RestoreForm() {
             required: 'required',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address'
-            }
+              message: 'invalid email address',
+            },
           })}
           name="email"
           onChange={e => setEmail(e.target.value)}

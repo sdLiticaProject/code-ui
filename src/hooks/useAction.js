@@ -1,6 +1,6 @@
-import {bindActionCreators} from 'redux';
-import {useDispatch} from 'react-redux';
-import {useMemo} from 'react';
+import { bindActionCreators } from 'redux';
+import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 
 export default function useActions(actions, deps) {
   const dispatch = useDispatch();
@@ -11,6 +11,6 @@ export default function useActions(actions, deps) {
       }
       return bindActionCreators(actions, dispatch);
     },
-    deps ? [dispatch, ...deps] : [dispatch]
+    deps ? [dispatch, ...deps] : [dispatch],
   );
 }

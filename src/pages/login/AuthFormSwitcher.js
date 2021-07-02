@@ -1,16 +1,9 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import LoginForm from './components/forms/LoginForm';
 import RegistrationForm from './components/forms/RegistrationForm';
-import {
-  LoginWrapper,
-  LoginFormWrapper,
-  BackImage,
-  Logo,
-  CloudWrapper,
-  Text
-} from './AuthFormSwitcher.styles';
-import {LOGIN} from '../../constants/routes';
+import { LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text } from './AuthFormSwitcher.styles';
+import { LOGIN } from '../../constants/routes';
 
 function AuthenticationPage(props) {
   const params = new URLSearchParams(props.location.search).get('tab');

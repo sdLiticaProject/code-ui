@@ -44,4 +44,4 @@ const ShowInfoWrapper = styled.div`
   }
 `;
 
-export {ControlContainer, ShowInfoWrapper};
+export { ControlContainer, ShowInfoWrapper };

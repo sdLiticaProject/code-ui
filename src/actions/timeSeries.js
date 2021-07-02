@@ -12,34 +12,33 @@ export const TIME_SERIES_CREATION_FAIL = 'time_series_creation_fail';
 
 export const getTimeSeriesList = () => async dispatch => {
   dispatch({
-    type: TIME_SERIES_LOADING
+    type: TIME_SERIES_LOADING,
   });
 
   try {
     const token = Cookies.get('token');
     const res = await axios.get(api.timeSeriesList(), {
       headers: {
-        Authorization: `cloudToken ${token}`
-      }
+        Authorization: `cloudToken ${token}`,
+      },
     });
     console.log(res);
-    //console.log(...state);
 
     return dispatch({
       type: TIME_SERIES_LOADING_SUCCESS,
-      data: res.data
+      data: res.data,
     });
   } catch (error) {
     return dispatch({
       type: TIME_SERIES_LOADING_FAIL,
-      message: 'Failed to load time series list'
+      message: 'Failed to load time series list',
     });
   }
 };
 
 export const createTimeSeries = (name, description) => async dispatch => {
   dispatch({
-    type: TIME_SERIES_CREATION
+    type: TIME_SERIES_CREATION,
   });
 
   try {
@@ -48,25 +47,25 @@ export const createTimeSeries = (name, description) => async dispatch => {
       api.timeSeriesList(),
       {
         name: name,
-        description: description
+        description: description,
       },
       {
         headers: {
-          Authorization: 'cloudToken ' + token
-        }
-      }
+          Authorization: 'cloudToken ' + token,
+        },
+      },
     );
     console.log(res);
     //console.log(...state);
 
     return dispatch({
       type: TIME_SERIES_CREATION_SUCCESS,
-      data: res.data
+      data: res.data,
     });
   } catch (error) {
     return dispatch({
       type: TIME_SERIES_CREATION_FAIL,
-      message: 'Failed to load time series list'
+      message: 'Failed to load time series list',
     });
   }
 };

@@ -1,17 +1,10 @@
-import {
-  LOGIN_SUCCESS,
-  LOGIN_LOADING,
-  LOGIN_FAIL,
-  REGISTER_FAIL,
-  REGISTER_LOADING,
-  REGISTER_SUCCESS
-} from '../actions/loginActions';
+import { LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAIL, REGISTER_FAIL, REGISTER_LOADING, REGISTER_SUCCESS } from '../actions/loginActions';
 
 export const initialState = {
   user: null,
   type: null,
   isLoading: false,
-  error: null
+  error: null,
 };
 
 export default (state = initialState, action) => {
@@ -21,7 +14,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         type: action.type,
-        isLoading: true
+        isLoading: true,
       };
 
     case LOGIN_FAIL:
@@ -30,7 +23,7 @@ export default (state = initialState, action) => {
         ...state,
         type: action.type,
         isLoading: false,
-        error: action.error
+        error: action.error,
       };
 
     case LOGIN_SUCCESS:
@@ -38,7 +31,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         type: action.type,
-        isLoading: false
+        isLoading: false,
       };
 
     default:

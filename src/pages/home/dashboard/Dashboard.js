@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Sc from '../HomePage.styles';
 
-function Dashboard({firstName, lastName}) {
+function Dashboard({ firstName, lastName }) {
   return (
     <Sc.ContentWrapper>
       <Sc.UserInfo>

@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const LoginWrapper = styled.div`
   position: relative;
@@ -99,4 +99,4 @@ const Button = styled.button`
   }
 `;
 
-export {LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text, Button};
+export { LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text, Button };

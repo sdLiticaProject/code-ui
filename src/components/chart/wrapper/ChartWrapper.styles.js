@@ -19,4 +19,4 @@ const Tittle = styled.span`
   color: white;
 `;
 
-export {ChartWrapperContainer, WrapperContainer, Tittle};
+export { ChartWrapperContainer, WrapperContainer, Tittle };

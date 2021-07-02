@@ -1,28 +1,14 @@
-import React, {useEffect} from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
-import {useForm} from 'react-hook-form';
-import {useSelector, useDispatch} from 'react-redux';
-import {LOGIN, HOME} from '../../../../constants/routes';
-import {
-  registerUser,
-  loginUser,
-  REGISTER_SUCCESS,
-  LOGIN_SUCCESS,
-  REGISTER_LOADING
-} from '../../../../actions/loginActions';
+import React, { useEffect } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
+import { LOGIN, HOME } from '../../../../constants/routes';
+import { registerUser, loginUser, REGISTER_SUCCESS, LOGIN_SUCCESS, REGISTER_LOADING } from '../../../../actions/loginActions';
 import useActions from '../../../../hooks/useAction';
-import {
-  Button,
-  InputFormWrapper,
-  Error,
-  Transfer,
-  NavLinkWrapper,
-  FormWrapper,
-  LoadIndicator
-} from './FormsStyles';
+import { Button, InputFormWrapper, Error, Transfer, NavLinkWrapper, FormWrapper, LoadIndicator } from './FormsStyles';
 
 function RegistrationForm() {
-  const {handleSubmit, register, errors, getValues} = useForm();
+  const { handleSubmit, register, errors, getValues } = useForm();
   const history = useHistory();
   const dispatch = useDispatch();
   // Alternative bindActionCreators
@@ -53,7 +39,7 @@ function RegistrationForm() {
         <label htmlFor="firstName">Enter your first name</label>
         <input
           ref={register({
-            required: 'required'
+            required: 'required',
           })}
           name="firstName"
         />
@@ -64,7 +50,7 @@ function RegistrationForm() {
         <label htmlFor="lastName">Enter your last name</label>
         <input
           ref={register({
-            required: 'required'
+            required: 'required',
           })}
           name="lastName"
         />
@@ -78,8 +64,8 @@ function RegistrationForm() {
             required: 'required',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address'
-            }
+              message: 'invalid email address',
+            },
           })}
           name="login"
         />
@@ -93,8 +79,8 @@ function RegistrationForm() {
             required: 'required',
             pattern: {
               value: /^[A-Z0-9._]{6,15}$/i,
-              message: 'invalid password'
-            }
+              message: 'invalid password',
+            },
           })}
           type="password"
           name="password"

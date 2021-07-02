@@ -1,2468 +1,2468 @@
 [
- {
-   "date": "20120101",
-   "New York_1": 46,
-   "San Francisco_1": 53,
-   "Austin_1": 55,
-   "New York_2": 8,
-   "San Francisco_2": 12,
-   "Austin_2": 13
- },
- {
-   "date": "20120102",
-   "New York_1": 43,
-   "San Francisco_1": 53,
-   "Austin_1": 48,
-   "New York_2": 6,
-   "San Francisco_2": 12,
-   "Austin_2": 9
- },
- {
-   "date": "20120103",
-   "New York_1": 30,
-   "San Francisco_1": 49,
-   "Austin_1": 41,
-   "New York_2": -1,
-   "San Francisco_2": 9,
-   "Austin_2": 5
- },
- {
-   "date": "20120104",
-   "New York_1": 19,
-   "San Francisco_1": 52,
-   "Austin_1": 48,
-   "New York_2": -7,
-   "San Francisco_2": 11,
-   "Austin_2": 9
- },
- {
-   "date": "20120105",
-   "New York_1": 32,
-   "San Francisco_1": 52,
-   "Austin_1": 54,
-   "New York_2": 0,
-   "San Francisco_2": 11,
-   "Austin_2": 12
- },
- {
-   "date": "20120106",
-   "New York_1": 41,
-   "San Francisco_1": 49,
-   "Austin_1": 61,
-   "New York_2": 5,
-   "San Francisco_2": 9,
-   "Austin_2": 16
- },
- {
-   "date": "20120107",
-   "New York_1": 47,
-   "San Francisco_1": 51,
-   "Austin_1": 59,
-   "New York_2": 8,
-   "San Francisco_2": 11,
-   "Austin_2": 15
- },
- {
-   "date": "20120108",
-   "New York_1": 46,
-   "San Francisco_1": 56,
-   "Austin_1": 52,
-   "New York_2": 8,
-   "San Francisco_2": 13,
-   "Austin_2": 11
- },
- {
-   "date": "20120109",
-   "New York_1": 34,
-   "San Francisco_1": 52,
-   "Austin_1": 54,
-   "New York_2": 1,
-   "San Francisco_2": 11,
-   "Austin_2": 12
- },
- {
-   "date": "20120110",
-   "New York_1": 39,
-   "San Francisco_1": 51,
-   "Austin_1": 47,
-   "New York_2": 4,
-   "San Francisco_2": 11,
-   "Austin_2": 8
- },
- {
-   "date": "20120111",
-   "New York_1": 40,
-   "San Francisco_1": 49,
-   "Austin_1": 49,
-   "New York_2": 4,
-   "San Francisco_2": 9,
-   "Austin_2": 9
- },
- {
-   "date": "20120112",
-   "New York_1": 45,
-   "San Francisco_1": 51,
-   "Austin_1": 48,
-   "New York_2": 7,
-   "San Francisco_2": 11,
-   "Austin_2": 9
- },
- {
-   "date": "20120113",
-   "New York_1": 40,
-   "San Francisco_1": 53,
-   "Austin_1": 40,
-   "New York_2": 4,
-   "San Francisco_2": 12,
-   "Austin_2": 4
- },
- {
-   "date": "20120114",
-   "New York_1": 30,
-   "San Francisco_1": 52,
-   "Austin_1": 43,
-   "New York_2": -1,
-   "San Francisco_2": 11,
-   "Austin_2": 6
- },
- {
-   "date": "20120115",
-   "New York_1": 23,
-   "San Francisco_1": 49,
-   "Austin_1": 45,
-   "New York_2": -5,
-   "San Francisco_2": 9,
-   "Austin_2": 7
- },
- {
-   "date": "20120116",
-   "New York_1": 22,
-   "San Francisco_1": 45,
-   "Austin_1": 65,
-   "New York_2": -6,
-   "San Francisco_2": 7,
-   "Austin_2": 18
- },
- {
-   "date": "20120117",
-   "New York_1": 39,
-   "San Francisco_1": 43,
-   "Austin_1": 68,
-   "New York_2": 4,
-   "San Francisco_2": 6,
-   "Austin_2": 20
- },
- {
-   "date": "20120118",
-   "New York_1": 43,
-   "San Francisco_1": 45,
-   "Austin_1": 47,
-   "New York_2": 6,
-   "San Francisco_2": 7,
-   "Austin_2": 8
- },
- {
-   "date": "20120119",
-   "New York_1": 26,
-   "San Francisco_1": 47,
-   "Austin_1": 57,
-   "New York_2": -3,
-   "San Francisco_2": 8,
-   "Austin_2": 14
- },
- {
-   "date": "20120120",
-   "New York_1": 32,
-   "San Francisco_1": 51,
-   "Austin_1": 61,
-   "New York_2": 0,
-   "San Francisco_2": 11,
-   "Austin_2": 16
- },
- {
-   "date": "20120121",
-   "New York_1": 27,
-   "San Francisco_1": 53,
-   "Austin_1": 54,
-   "New York_2": -3,
-   "San Francisco_2": 12,
-   "Austin_2": 12
- },
- {
-   "date": "20120122",
-   "New York_1": 25,
-   "San Francisco_1": 48,
-   "Austin_1": 56,
-   "New York_2": -4,
-   "San Francisco_2": 9,
-   "Austin_2": 13
- },
- {
-   "date": "20120123",
-   "New York_1": 39,
-   "San Francisco_1": 52,
-   "Austin_1": 54,
-   "New York_2": 4,
-   "San Francisco_2": 11,
-   "Austin_2": 12
- },
- {
-   "date": "20120124",
-   "New York_1": 48,
-   "San Francisco_1": 49,
-   "Austin_1": 52,
-   "New York_2": 9,
-   "San Francisco_2": 9,
-   "Austin_2": 11
- },
- {
-   "date": "20120125",
-   "New York_1": 43,
-   "San Francisco_1": 52,
-   "Austin_1": 61,
-   "New York_2": 6,
-   "San Francisco_2": 11,
-   "Austin_2": 16
- },
- {
-   "date": "20120126",
-   "New York_1": 37,
-   "San Francisco_1": 53,
-   "Austin_1": 55,
-   "New York_2": 3,
-   "San Francisco_2": 12,
-   "Austin_2": 13
- },
- {
-   "date": "20120127",
-   "New York_1": 48,
-   "San Francisco_1": 50,
-   "Austin_1": 50,
-   "New York_2": 9,
-   "San Francisco_2": 10,
-   "Austin_2": 10
- },
- {
-   "date": "20120128",
-   "New York_1": 43,
-   "San Francisco_1": 50,
-   "Austin_1": 52,
-   "New York_2": 6,
-   "San Francisco_2": 10,
-   "Austin_2": 11
- },
- {
-   "date": "20120129",
-   "New York_1": 40,
-   "San Francisco_1": 53,
-   "Austin_1": 44,
-   "New York_2": 4,
-   "San Francisco_2": 12,
-   "Austin_2": 7
- },
- {
-   "date": "20120130",
-   "New York_1": 38,
-   "San Francisco_1": 51,
-   "Austin_1": 49,
-   "New York_2": 3,
-   "San Francisco_2": 11,
-   "Austin_2": 9
- },
- {
-   "date": "20120131",
-   "New York_1": 43,
-   "San Francisco_1": 50,
-   "Austin_1": 62,
-   "New York_2": 6,
-   "San Francisco_2": 10,
-   "Austin_2": 17
- },
- {
-   "date": "20120201",
-   "New York_1": 50,
-   "San Francisco_1": 50,
-   "Austin_1": 64,
-   "New York_2": 10,
-   "San Francisco_2": 10,
-   "Austin_2": 18
- },
- {
-   "date": "20120202",
-   "New York_1": 45,
-   "San Francisco_1": 51,
-   "Austin_1": 61,
-   "New York_2": 7,
-   "San Francisco_2": 11,
-   "Austin_2": 16
- },
- {
-   "date": "20120203",
-   "New York_1": 37,
-   "San Francisco_1": 51,
-   "Austin_1": 70,
-   "New York_2": 3,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120204",
-   "New York_1": 40,
-   "San Francisco_1": 52,
-   "Austin_1": 61,
-   "New York_2": 4,
-   "San Francisco_2": 11,
-   "Austin_2": 16
- },
- {
-   "date": "20120205",
-   "New York_1": 36,
-   "San Francisco_1": 53,
-   "Austin_1": 48,
-   "New York_2": 2,
-   "San Francisco_2": 12,
-   "Austin_2": 9
- },
- {
-   "date": "20120206",
-   "New York_1": 39,
-   "San Francisco_1": 54,
-   "Austin_1": 44,
-   "New York_2": 4,
-   "San Francisco_2": 12,
-   "Austin_2": 7
- },
- {
-   "date": "20120207",
-   "New York_1": 43,
-   "San Francisco_1": 54,
-   "Austin_1": 51,
-   "New York_2": 6,
-   "San Francisco_2": 12,
-   "Austin_2": 11
- },
- {
-   "date": "20120208",
-   "New York_1": 36,
-   "San Francisco_1": 51,
-   "Austin_1": 49,
-   "New York_2": 2,
-   "San Francisco_2": 11,
-   "Austin_2": 9
- },
- {
-   "date": "20120209",
-   "New York_1": 36,
-   "San Francisco_1": 53,
-   "Austin_1": 45,
-   "New York_2": 2,
-   "San Francisco_2": 12,
-   "Austin_2": 7
- },
- {
-   "date": "20120210",
-   "New York_1": 38,
-   "San Francisco_1": 53,
-   "Austin_1": 54,
-   "New York_2": 3,
-   "San Francisco_2": 12,
-   "Austin_2": 12
- },
- {
-   "date": "20120211",
-   "New York_1": 36,
-   "San Francisco_1": 52,
-   "Austin_1": 44,
-   "New York_2": 2,
-   "San Francisco_2": 11,
-   "Austin_2": 7
- },
- {
-   "date": "20120212",
-   "New York_1": 29,
-   "San Francisco_1": 50,
-   "Austin_1": 36,
-   "New York_2": -2,
-   "San Francisco_2": 10,
-   "Austin_2": 2
- },
- {
-   "date": "20120213",
-   "New York_1": 33,
-   "San Francisco_1": 49,
-   "Austin_1": 44,
-   "New York_2": 1,
-   "San Francisco_2": 9,
-   "Austin_2": 7
- },
- {
-   "date": "20120214",
-   "New York_1": 39,
-   "San Francisco_1": 48,
-   "Austin_1": 52,
-   "New York_2": 4,
-   "San Francisco_2": 9,
-   "Austin_2": 11
- },
- {
-   "date": "20120215",
-   "New York_1": 42,
-   "San Francisco_1": 49,
-   "Austin_1": 68,
-   "New York_2": 6,
-   "San Francisco_2": 9,
-   "Austin_2": 20
- },
- {
-   "date": "20120216",
-   "New York_1": 39,
-   "San Francisco_1": 52,
-   "Austin_1": 54,
-   "New York_2": 4,
-   "San Francisco_2": 11,
-   "Austin_2": 12
- },
- {
-   "date": "20120217",
-   "New York_1": 46,
-   "San Francisco_1": 49,
-   "Austin_1": 53,
-   "New York_2": 8,
-   "San Francisco_2": 9,
-   "Austin_2": 12
- },
- {
-   "date": "20120218",
-   "New York_1": 41,
-   "San Francisco_1": 51,
-   "Austin_1": 56,
-   "New York_2": 5,
-   "San Francisco_2": 11,
-   "Austin_2": 13
- },
- {
-   "date": "20120219",
-   "New York_1": 39,
-   "San Francisco_1": 47,
-   "Austin_1": 50,
-   "New York_2": 4,
-   "San Francisco_2": 8,
-   "Austin_2": 10
- },
- {
-   "date": "20120220",
-   "New York_1": 38,
-   "San Francisco_1": 48,
-   "Austin_1": 53,
-   "New York_2": 3,
-   "San Francisco_2": 9,
-   "Austin_2": 12
- },
- {
-   "date": "20120221",
-   "New York_1": 37,
-   "San Francisco_1": 49,
-   "Austin_1": 61,
-   "New York_2": 3,
-   "San Francisco_2": 9,
-   "Austin_2": 16
- },
- {
-   "date": "20120222",
-   "New York_1": 45,
-   "San Francisco_1": 53,
-   "Austin_1": 68,
-   "New York_2": 7,
-   "San Francisco_2": 12,
-   "Austin_2": 20
- },
- {
-   "date": "20120223",
-   "New York_1": 50,
-   "San Francisco_1": 54,
-   "Austin_1": 69,
-   "New York_2": 10,
-   "San Francisco_2": 12,
-   "Austin_2": 21
- },
- {
-   "date": "20120224",
-   "New York_1": 42,
-   "San Francisco_1": 55,
-   "Austin_1": 59,
-   "New York_2": 6,
-   "San Francisco_2": 13,
-   "Austin_2": 15
- },
- {
-   "date": "20120225",
-   "New York_1": 42,
-   "San Francisco_1": 51,
-   "Austin_1": 47,
-   "New York_2": 6,
-   "San Francisco_2": 11,
-   "Austin_2": 8
- },
- {
-   "date": "20120226",
-   "New York_1": 36,
-   "San Francisco_1": 47,
-   "Austin_1": 47,
-   "New York_2": 2,
-   "San Francisco_2": 8,
-   "Austin_2": 8
- },
- {
-   "date": "20120227",
-   "New York_1": 40,
-   "San Francisco_1": 45,
-   "Austin_1": 61,
-   "New York_2": 4,
-   "San Francisco_2": 7,
-   "Austin_2": 16
- },
- {
-   "date": "20120228",
-   "New York_1": 45,
-   "San Francisco_1": 47,
-   "Austin_1": 67,
-   "New York_2": 7,
-   "San Francisco_2": 8,
-   "Austin_2": 19
- },
- {
-   "date": "20120229",
-   "New York_1": 40,
-   "San Francisco_1": 49,
-   "Austin_1": 70,
-   "New York_2": 4,
-   "San Francisco_2": 9,
-   "Austin_2": 21
- },
- {
-   "date": "20120301",
-   "New York_1": 41,
-   "San Francisco_1": 48,
-   "Austin_1": 62,
-   "New York_2": 5,
-   "San Francisco_2": 9,
-   "Austin_2": 17
- },
- {
-   "date": "20120302",
-   "New York_1": 36,
-   "San Francisco_1": 48,
-   "Austin_1": 72,
-   "New York_2": 2,
-   "San Francisco_2": 9,
-   "Austin_2": 22
- },
- {
-   "date": "20120303",
-   "New York_1": 47,
-   "San Francisco_1": 50,
-   "Austin_1": 59,
-   "New York_2": 8,
-   "San Francisco_2": 10,
-   "Austin_2": 15
- },
- {
-   "date": "20120304",
-   "New York_1": 44,
-   "San Francisco_1": 55,
-   "Austin_1": 51,
-   "New York_2": 7,
-   "San Francisco_2": 13,
-   "Austin_2": 11
- },
- {
-   "date": "20120305",
-   "New York_1": 38,
-   "San Francisco_1": 48,
-   "Austin_1": 55,
-   "New York_2": 3,
-   "San Francisco_2": 9,
-   "Austin_2": 13
- },
- {
-   "date": "20120306",
-   "New York_1": 32,
-   "San Francisco_1": 48,
-   "Austin_1": 61,
-   "New York_2": 0,
-   "San Francisco_2": 9,
-   "Austin_2": 16
- },
- {
-   "date": "20120307",
-   "New York_1": 43,
-   "San Francisco_1": 49,
-   "Austin_1": 67,
-   "New York_2": 6,
-   "San Francisco_2": 9,
-   "Austin_2": 19
- },
- {
-   "date": "20120308",
-   "New York_1": 51,
-   "San Francisco_1": 49,
-   "Austin_1": 72,
-   "New York_2": 11,
-   "San Francisco_2": 9,
-   "Austin_2": 22
- },
- {
-   "date": "20120309",
-   "New York_1": 47,
-   "San Francisco_1": 51,
-   "Austin_1": 46,
-   "New York_2": 8,
-   "San Francisco_2": 11,
-   "Austin_2": 8
- },
- {
-   "date": "20120310",
-   "New York_1": 37,
-   "San Francisco_1": 49,
-   "Austin_1": 46,
-   "New York_2": 3,
-   "San Francisco_2": 9,
-   "Austin_2": 8
- },
- {
-   "date": "20120311",
-   "New York_1": 42,
-   "San Francisco_1": 50,
-   "Austin_1": 56,
-   "New York_2": 6,
-   "San Francisco_2": 10,
-   "Austin_2": 13
- },
- {
-   "date": "20120312",
-   "New York_1": 48,
-   "San Francisco_1": 48,
-   "Austin_1": 61,
-   "New York_2": 9,
-   "San Francisco_2": 9,
-   "Austin_2": 16
- },
- {
-   "date": "20120313",
-   "New York_1": 52,
-   "San Francisco_1": 53,
-   "Austin_1": 68,
-   "New York_2": 11,
-   "San Francisco_2": 12,
-   "Austin_2": 20
- },
- {
-   "date": "20120314",
-   "New York_1": 60,
-   "San Francisco_1": 55,
-   "Austin_1": 71,
-   "New York_2": 16,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120315",
-   "New York_1": 47,
-   "San Francisco_1": 55,
-   "Austin_1": 72,
-   "New York_2": 8,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120316",
-   "New York_1": 44,
-   "San Francisco_1": 54,
-   "Austin_1": 72,
-   "New York_2": 7,
-   "San Francisco_2": 12,
-   "Austin_2": 22
- },
- {
-   "date": "20120317",
-   "New York_1": 48,
-   "San Francisco_1": 48,
-   "Austin_1": 71,
-   "New York_2": 9,
-   "San Francisco_2": 9,
-   "Austin_2": 22
- },
- {
-   "date": "20120318",
-   "New York_1": 48,
-   "San Francisco_1": 47,
-   "Austin_1": 71,
-   "New York_2": 9,
-   "San Francisco_2": 8,
-   "Austin_2": 22
- },
- {
-   "date": "20120319",
-   "New York_1": 53,
-   "San Francisco_1": 45,
-   "Austin_1": 73,
-   "New York_2": 12,
-   "San Francisco_2": 7,
-   "Austin_2": 23
- },
- {
-   "date": "20120320",
-   "New York_1": 57,
-   "San Francisco_1": 49,
-   "Austin_1": 63,
-   "New York_2": 14,
-   "San Francisco_2": 9,
-   "Austin_2": 17
- },
- {
-   "date": "20120321",
-   "New York_1": 57,
-   "San Francisco_1": 51,
-   "Austin_1": 60,
-   "New York_2": 14,
-   "San Francisco_2": 11,
-   "Austin_2": 16
- },
- {
-   "date": "20120322",
-   "New York_1": 57,
-   "San Francisco_1": 51,
-   "Austin_1": 62,
-   "New York_2": 14,
-   "San Francisco_2": 11,
-   "Austin_2": 17
- },
- {
-   "date": "20120323",
-   "New York_1": 61,
-   "San Francisco_1": 48,
-   "Austin_1": 61,
-   "New York_2": 16,
-   "San Francisco_2": 9,
-   "Austin_2": 16
- },
- {
-   "date": "20120324",
-   "New York_1": 55,
-   "San Francisco_1": 49,
-   "Austin_1": 62,
-   "New York_2": 13,
-   "San Francisco_2": 9,
-   "Austin_2": 17
- },
- {
-   "date": "20120325",
-   "New York_1": 48,
-   "San Francisco_1": 46,
-   "Austin_1": 64,
-   "New York_2": 9,
-   "San Francisco_2": 8,
-   "Austin_2": 18
- },
- {
-   "date": "20120326",
-   "New York_1": 49,
-   "San Francisco_1": 49,
-   "Austin_1": 66,
-   "New York_2": 9,
-   "San Francisco_2": 9,
-   "Austin_2": 19
- },
- {
-   "date": "20120327",
-   "New York_1": 39,
-   "San Francisco_1": 54,
-   "Austin_1": 65,
-   "New York_2": 4,
-   "San Francisco_2": 12,
-   "Austin_2": 18
- },
- {
-   "date": "20120328",
-   "New York_1": 49,
-   "San Francisco_1": 54,
-   "Austin_1": 69,
-   "New York_2": 9,
-   "San Francisco_2": 12,
-   "Austin_2": 21
- },
- {
-   "date": "20120329",
-   "New York_1": 56,
-   "San Francisco_1": 52,
-   "Austin_1": 69,
-   "New York_2": 13,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120330",
-   "New York_1": 46,
-   "San Francisco_1": 54,
-   "Austin_1": 73,
-   "New York_2": 8,
-   "San Francisco_2": 12,
-   "Austin_2": 23
- },
- {
-   "date": "20120331",
-   "New York_1": 42,
-   "San Francisco_1": 56,
-   "Austin_1": 73,
-   "New York_2": 6,
-   "San Francisco_2": 13,
-   "Austin_2": 23
- },
- {
-   "date": "20120401",
-   "New York_1": 45,
-   "San Francisco_1": 51,
-   "Austin_1": 75,
-   "New York_2": 7,
-   "San Francisco_2": 11,
-   "Austin_2": 24
- },
- {
-   "date": "20120402",
-   "New York_1": 48,
-   "San Francisco_1": 50,
-   "Austin_1": 75,
-   "New York_2": 9,
-   "San Francisco_2": 10,
-   "Austin_2": 24
- },
- {
-   "date": "20120403",
-   "New York_1": 51,
-   "San Francisco_1": 52,
-   "Austin_1": 77,
-   "New York_2": 11,
-   "San Francisco_2": 11,
-   "Austin_2": 25
- },
- {
-   "date": "20120404",
-   "New York_1": 61,
-   "San Francisco_1": 50,
-   "Austin_1": 67,
-   "New York_2": 16,
-   "San Francisco_2": 10,
-   "Austin_2": 19
- },
- {
-   "date": "20120405",
-   "New York_1": 50,
-   "San Francisco_1": 47,
-   "Austin_1": 71,
-   "New York_2": 10,
-   "San Francisco_2": 8,
-   "Austin_2": 22
- },
- {
-   "date": "20120406",
-   "New York_1": 48,
-   "San Francisco_1": 47,
-   "Austin_1": 70,
-   "New York_2": 9,
-   "San Francisco_2": 8,
-   "Austin_2": 21
- },
- {
-   "date": "20120407",
-   "New York_1": 51,
-   "San Francisco_1": 49,
-   "Austin_1": 73,
-   "New York_2": 11,
-   "San Francisco_2": 9,
-   "Austin_2": 23
- },
- {
-   "date": "20120408",
-   "New York_1": 55,
-   "San Francisco_1": 50,
-   "Austin_1": 71,
-   "New York_2": 13,
-   "San Francisco_2": 10,
-   "Austin_2": 22
- },
- {
-   "date": "20120409",
-   "New York_1": 58,
-   "San Francisco_1": 51,
-   "Austin_1": 70,
-   "New York_2": 14,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120410",
-   "New York_1": 55,
-   "San Francisco_1": 53,
-   "Austin_1": 69,
-   "New York_2": 13,
-   "San Francisco_2": 12,
-   "Austin_2": 21
- },
- {
-   "date": "20120411",
-   "New York_1": 49,
-   "San Francisco_1": 52,
-   "Austin_1": 69,
-   "New York_2": 9,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120412",
-   "New York_1": 51,
-   "San Francisco_1": 53,
-   "Austin_1": 74,
-   "New York_2": 11,
-   "San Francisco_2": 12,
-   "Austin_2": 23
- },
- {
-   "date": "20120413",
-   "New York_1": 53,
-   "San Francisco_1": 50,
-   "Austin_1": 73,
-   "New York_2": 12,
-   "San Francisco_2": 10,
-   "Austin_2": 23
- },
- {
-   "date": "20120414",
-   "New York_1": 55,
-   "San Francisco_1": 50,
-   "Austin_1": 76,
-   "New York_2": 13,
-   "San Francisco_2": 10,
-   "Austin_2": 24
- },
- {
-   "date": "20120415",
-   "New York_1": 62,
-   "San Francisco_1": 51,
-   "Austin_1": 74,
-   "New York_2": 17,
-   "San Francisco_2": 11,
-   "Austin_2": 23
- },
- {
-   "date": "20120416",
-   "New York_1": 62,
-   "San Francisco_1": 51,
-   "Austin_1": 63,
-   "New York_2": 17,
-   "San Francisco_2": 11,
-   "Austin_2": 17
- },
- {
-   "date": "20120417",
-   "New York_1": 69,
-   "San Francisco_1": 53,
-   "Austin_1": 67,
-   "New York_2": 21,
-   "San Francisco_2": 12,
-   "Austin_2": 19
- },
- {
-   "date": "20120418",
-   "New York_1": 59,
-   "San Francisco_1": 53,
-   "Austin_1": 65,
-   "New York_2": 15,
-   "San Francisco_2": 12,
-   "Austin_2": 18
- },
- {
-   "date": "20120419",
-   "New York_1": 54,
-   "San Francisco_1": 55,
-   "Austin_1": 67,
-   "New York_2": 12,
-   "San Francisco_2": 13,
-   "Austin_2": 19
- },
- {
-   "date": "20120420",
-   "New York_1": 56,
-   "San Francisco_1": 55,
-   "Austin_1": 68,
-   "New York_2": 13,
-   "San Francisco_2": 13,
-   "Austin_2": 20
- },
- {
-   "date": "20120421",
-   "New York_1": 58,
-   "San Francisco_1": 58,
-   "Austin_1": 65,
-   "New York_2": 14,
-   "San Francisco_2": 14,
-   "Austin_2": 18
- },
- {
-   "date": "20120422",
-   "New York_1": 52,
-   "San Francisco_1": 52,
-   "Austin_1": 65,
-   "New York_2": 11,
-   "San Francisco_2": 11,
-   "Austin_2": 18
- },
- {
-   "date": "20120423",
-   "New York_1": 51,
-   "San Francisco_1": 55,
-   "Austin_1": 70,
-   "New York_2": 11,
-   "San Francisco_2": 13,
-   "Austin_2": 21
- },
- {
-   "date": "20120424",
-   "New York_1": 49,
-   "San Francisco_1": 57,
-   "Austin_1": 67,
-   "New York_2": 9,
-   "San Francisco_2": 14,
-   "Austin_2": 19
- },
- {
-   "date": "20120425",
-   "New York_1": 52,
-   "San Francisco_1": 57,
-   "Austin_1": 75,
-   "New York_2": 11,
-   "San Francisco_2": 14,
-   "Austin_2": 24
- },
- {
-   "date": "20120426",
-   "New York_1": 50,
-   "San Francisco_1": 55,
-   "Austin_1": 77,
-   "New York_2": 10,
-   "San Francisco_2": 13,
-   "Austin_2": 25
- },
- {
-   "date": "20120427",
-   "New York_1": 51,
-   "San Francisco_1": 53,
-   "Austin_1": 77,
-   "New York_2": 11,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120428",
-   "New York_1": 47,
-   "San Francisco_1": 54,
-   "Austin_1": 77,
-   "New York_2": 8,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120429",
-   "New York_1": 54,
-   "San Francisco_1": 54,
-   "Austin_1": 77,
-   "New York_2": 12,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120430",
-   "New York_1": 51,
-   "San Francisco_1": 53,
-   "Austin_1": 77,
-   "New York_2": 11,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120501",
-   "New York_1": 57,
-   "San Francisco_1": 52,
-   "Austin_1": 77,
-   "New York_2": 14,
-   "San Francisco_2": 11,
-   "Austin_2": 25
- },
- {
-   "date": "20120502",
-   "New York_1": 53,
-   "San Francisco_1": 50,
-   "Austin_1": 77,
-   "New York_2": 12,
-   "San Francisco_2": 10,
-   "Austin_2": 25
- },
- {
-   "date": "20120503",
-   "New York_1": 53,
-   "San Francisco_1": 52,
-   "Austin_1": 79,
-   "New York_2": 12,
-   "San Francisco_2": 11,
-   "Austin_2": 26
- },
- {
-   "date": "20120504",
-   "New York_1": 57,
-   "San Francisco_1": 53,
-   "Austin_1": 80,
-   "New York_2": 14,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120505",
-   "New York_1": 57,
-   "San Francisco_1": 53,
-   "Austin_1": 82,
-   "New York_2": 14,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120506",
-   "New York_1": 56,
-   "San Francisco_1": 56,
-   "Austin_1": 79,
-   "New York_2": 13,
-   "San Francisco_2": 13,
-   "Austin_2": 26
- },
- {
-   "date": "20120507",
-   "New York_1": 54,
-   "San Francisco_1": 55,
-   "Austin_1": 79,
-   "New York_2": 12,
-   "San Francisco_2": 13,
-   "Austin_2": 26
- },
- {
-   "date": "20120508",
-   "New York_1": 57,
-   "San Francisco_1": 52,
-   "Austin_1": 70,
-   "New York_2": 14,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120509",
-   "New York_1": 59,
-   "San Francisco_1": 52,
-   "Austin_1": 69,
-   "New York_2": 15,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120510",
-   "New York_1": 61,
-   "San Francisco_1": 53,
-   "Austin_1": 71,
-   "New York_2": 16,
-   "San Francisco_2": 12,
-   "Austin_2": 22
- },
- {
-   "date": "20120511",
-   "New York_1": 59,
-   "San Francisco_1": 53,
-   "Austin_1": 69,
-   "New York_2": 15,
-   "San Francisco_2": 12,
-   "Austin_2": 21
- },
- {
-   "date": "20120512",
-   "New York_1": 64,
-   "San Francisco_1": 49,
-   "Austin_1": 72,
-   "New York_2": 18,
-   "San Francisco_2": 9,
-   "Austin_2": 22
- },
- {
-   "date": "20120513",
-   "New York_1": 65,
-   "San Francisco_1": 52,
-   "Austin_1": 72,
-   "New York_2": 18,
-   "San Francisco_2": 11,
-   "Austin_2": 22
- },
- {
-   "date": "20120514",
-   "New York_1": 64,
-   "San Francisco_1": 56,
-   "Austin_1": 72,
-   "New York_2": 18,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120515",
-   "New York_1": 62,
-   "San Francisco_1": 53,
-   "Austin_1": 67,
-   "New York_2": 17,
-   "San Francisco_2": 12,
-   "Austin_2": 19
- },
- {
-   "date": "20120516",
-   "New York_1": 63,
-   "San Francisco_1": 51,
-   "Austin_1": 69,
-   "New York_2": 17,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120517",
-   "New York_1": 64,
-   "San Francisco_1": 51,
-   "Austin_1": 72,
-   "New York_2": 18,
-   "San Francisco_2": 11,
-   "Austin_2": 22
- },
- {
-   "date": "20120518",
-   "New York_1": 61,
-   "San Francisco_1": 52,
-   "Austin_1": 73,
-   "New York_2": 16,
-   "San Francisco_2": 11,
-   "Austin_2": 23
- },
- {
-   "date": "20120519",
-   "New York_1": 62,
-   "San Francisco_1": 52,
-   "Austin_1": 77,
-   "New York_2": 17,
-   "San Francisco_2": 11,
-   "Austin_2": 25
- },
- {
-   "date": "20120520",
-   "New York_1": 66,
-   "San Francisco_1": 54,
-   "Austin_1": 75,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 24
- },
- {
-   "date": "20120521",
-   "New York_1": 62,
-   "San Francisco_1": 52,
-   "Austin_1": 76,
-   "New York_2": 17,
-   "San Francisco_2": 11,
-   "Austin_2": 24
- },
- {
-   "date": "20120522",
-   "New York_1": 63,
-   "San Francisco_1": 53,
-   "Austin_1": 78,
-   "New York_2": 17,
-   "San Francisco_2": 12,
-   "Austin_2": 26
- },
- {
-   "date": "20120523",
-   "New York_1": 66,
-   "San Francisco_1": 56,
-   "Austin_1": 77,
-   "New York_2": 19,
-   "San Francisco_2": 13,
-   "Austin_2": 25
- },
- {
-   "date": "20120524",
-   "New York_1": 64,
-   "San Francisco_1": 54,
-   "Austin_1": 80,
-   "New York_2": 18,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120525",
-   "New York_1": 65,
-   "San Francisco_1": 52,
-   "Austin_1": 81,
-   "New York_2": 18,
-   "San Francisco_2": 11,
-   "Austin_2": 27
- },
- {
-   "date": "20120526",
-   "New York_1": 69,
-   "San Francisco_1": 52,
-   "Austin_1": 82,
-   "New York_2": 21,
-   "San Francisco_2": 11,
-   "Austin_2": 28
- },
- {
-   "date": "20120527",
-   "New York_1": 71,
-   "San Francisco_1": 52,
-   "Austin_1": 80,
-   "New York_2": 22,
-   "San Francisco_2": 11,
-   "Austin_2": 27
- },
- {
-   "date": "20120528",
-   "New York_1": 74,
-   "San Francisco_1": 52,
-   "Austin_1": 80,
-   "New York_2": 23,
-   "San Francisco_2": 11,
-   "Austin_2": 27
- },
- {
-   "date": "20120529",
-   "New York_1": 75,
-   "San Francisco_1": 52,
-   "Austin_1": 82,
-   "New York_2": 24,
-   "San Francisco_2": 11,
-   "Austin_2": 28
- },
- {
-   "date": "20120530",
-   "New York_1": 72,
-   "San Francisco_1": 52,
-   "Austin_1": 81,
-   "New York_2": 22,
-   "San Francisco_2": 11,
-   "Austin_2": 27
- },
- {
-   "date": "20120531",
-   "New York_1": 72,
-   "San Francisco_1": 53,
-   "Austin_1": 82,
-   "New York_2": 22,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120601",
-   "New York_1": 67,
-   "San Francisco_1": 54,
-   "Austin_1": 77,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120602",
-   "New York_1": 68,
-   "San Francisco_1": 54,
-   "Austin_1": 81,
-   "New York_2": 20,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120603",
-   "New York_1": 67,
-   "San Francisco_1": 52,
-   "Austin_1": 82,
-   "New York_2": 19,
-   "San Francisco_2": 11,
-   "Austin_2": 28
- },
- {
-   "date": "20120604",
-   "New York_1": 61,
-   "San Francisco_1": 55,
-   "Austin_1": 81,
-   "New York_2": 16,
-   "San Francisco_2": 13,
-   "Austin_2": 27
- },
- {
-   "date": "20120605",
-   "New York_1": 58,
-   "San Francisco_1": 53,
-   "Austin_1": 83,
-   "New York_2": 14,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120606",
-   "New York_1": 61,
-   "San Francisco_1": 54,
-   "Austin_1": 83,
-   "New York_2": 16,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120607",
-   "New York_1": 66,
-   "San Francisco_1": 53,
-   "Austin_1": 82,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120608",
-   "New York_1": 68,
-   "San Francisco_1": 54,
-   "Austin_1": 77,
-   "New York_2": 20,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120609",
-   "New York_1": 72,
-   "San Francisco_1": 55,
-   "Austin_1": 77,
-   "New York_2": 22,
-   "San Francisco_2": 13,
-   "Austin_2": 25
- },
- {
-   "date": "20120610",
-   "New York_1": 72,
-   "San Francisco_1": 60,
-   "Austin_1": 82,
-   "New York_2": 22,
-   "San Francisco_2": 16,
-   "Austin_2": 28
- },
- {
-   "date": "20120611",
-   "New York_1": 69,
-   "San Francisco_1": 57,
-   "Austin_1": 86,
-   "New York_2": 21,
-   "San Francisco_2": 14,
-   "Austin_2": 30
- },
- {
-   "date": "20120612",
-   "New York_1": 66,
-   "San Francisco_1": 55,
-   "Austin_1": 85,
-   "New York_2": 19,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120613",
-   "New York_1": 66,
-   "San Francisco_1": 53,
-   "Austin_1": 76,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 24
- },
- {
-   "date": "20120614",
-   "New York_1": 67,
-   "San Francisco_1": 53,
-   "Austin_1": 84,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120615",
-   "New York_1": 68,
-   "San Francisco_1": 54,
-   "Austin_1": 84,
-   "New York_2": 20,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120616",
-   "New York_1": 67,
-   "San Francisco_1": 57,
-   "Austin_1": 83,
-   "New York_2": 19,
-   "San Francisco_2": 14,
-   "Austin_2": 28
- },
- {
-   "date": "20120617",
-   "New York_1": 64,
-   "San Francisco_1": 55,
-   "Austin_1": 82,
-   "New York_2": 18,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120618",
-   "New York_1": 61,
-   "San Francisco_1": 52,
-   "Austin_1": 82,
-   "New York_2": 16,
-   "San Francisco_2": 11,
-   "Austin_2": 28
- },
- {
-   "date": "20120619",
-   "New York_1": 66,
-   "San Francisco_1": 53,
-   "Austin_1": 82,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120620",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 81,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 27
- },
- {
-   "date": "20120621",
-   "New York_1": 88,
-   "San Francisco_1": 53,
-   "Austin_1": 80,
-   "New York_2": 31,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120622",
-   "New York_1": 82,
-   "San Francisco_1": 54,
-   "Austin_1": 81,
-   "New York_2": 28,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120623",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 83,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120624",
-   "New York_1": 75,
-   "San Francisco_1": 55,
-   "Austin_1": 85,
-   "New York_2": 24,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120625",
-   "New York_1": 70,
-   "San Francisco_1": 56,
-   "Austin_1": 87,
-   "New York_2": 21,
-   "San Francisco_2": 13,
-   "Austin_2": 31
- },
- {
-   "date": "20120626",
-   "New York_1": 65,
-   "San Francisco_1": 57,
-   "Austin_1": 88,
-   "New York_2": 18,
-   "San Francisco_2": 14,
-   "Austin_2": 31
- },
- {
-   "date": "20120627",
-   "New York_1": 73,
-   "San Francisco_1": 57,
-   "Austin_1": 89,
-   "New York_2": 23,
-   "San Francisco_2": 14,
-   "Austin_2": 32
- },
- {
-   "date": "20120628",
-   "New York_1": 77,
-   "San Francisco_1": 56,
-   "Austin_1": 86,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 30
- },
- {
-   "date": "20120629",
-   "New York_1": 79,
-   "San Francisco_1": 56,
-   "Austin_1": 85,
-   "New York_2": 26,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120630",
-   "New York_1": 84,
-   "San Francisco_1": 58,
-   "Austin_1": 81,
-   "New York_2": 29,
-   "San Francisco_2": 14,
-   "Austin_2": 27
- },
- {
-   "date": "20120701",
-   "New York_1": 81,
-   "San Francisco_1": 58,
-   "Austin_1": 78,
-   "New York_2": 27,
-   "San Francisco_2": 14,
-   "Austin_2": 26
- },
- {
-   "date": "20120702",
-   "New York_1": 82,
-   "San Francisco_1": 56,
-   "Austin_1": 83,
-   "New York_2": 28,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120703",
-   "New York_1": 80,
-   "San Francisco_1": 56,
-   "Austin_1": 83,
-   "New York_2": 27,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120704",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 84,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120705",
-   "New York_1": 86,
-   "San Francisco_1": 54,
-   "Austin_1": 84,
-   "New York_2": 30,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120706",
-   "New York_1": 79,
-   "San Francisco_1": 54,
-   "Austin_1": 84,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120707",
-   "New York_1": 83,
-   "San Francisco_1": 54,
-   "Austin_1": 86,
-   "New York_2": 28,
-   "San Francisco_2": 12,
-   "Austin_2": 30
- },
- {
-   "date": "20120708",
-   "New York_1": 81,
-   "San Francisco_1": 52,
-   "Austin_1": 84,
-   "New York_2": 27,
-   "San Francisco_2": 11,
-   "Austin_2": 29
- },
- {
-   "date": "20120709",
-   "New York_1": 77,
-   "San Francisco_1": 53,
-   "Austin_1": 83,
-   "New York_2": 25,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120710",
-   "New York_1": 76,
-   "San Francisco_1": 53,
-   "Austin_1": 77,
-   "New York_2": 24,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120711",
-   "New York_1": 76,
-   "San Francisco_1": 52,
-   "Austin_1": 77,
-   "New York_2": 24,
-   "San Francisco_2": 11,
-   "Austin_2": 25
- },
- {
-   "date": "20120712",
-   "New York_1": 75,
-   "San Francisco_1": 52,
-   "Austin_1": 80,
-   "New York_2": 24,
-   "San Francisco_2": 11,
-   "Austin_2": 27
- },
- {
-   "date": "20120713",
-   "New York_1": 77,
-   "San Francisco_1": 53,
-   "Austin_1": 81,
-   "New York_2": 25,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120714",
-   "New York_1": 79,
-   "San Francisco_1": 54,
-   "Austin_1": 80,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120715",
-   "New York_1": 78,
-   "San Francisco_1": 54,
-   "Austin_1": 81,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120716",
-   "New York_1": 79,
-   "San Francisco_1": 54,
-   "Austin_1": 77,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 25
- },
- {
-   "date": "20120717",
-   "New York_1": 83,
-   "San Francisco_1": 56,
-   "Austin_1": 80,
-   "New York_2": 28,
-   "San Francisco_2": 13,
-   "Austin_2": 27
- },
- {
-   "date": "20120718",
-   "New York_1": 84,
-   "San Francisco_1": 57,
-   "Austin_1": 81,
-   "New York_2": 29,
-   "San Francisco_2": 14,
-   "Austin_2": 27
- },
- {
-   "date": "20120719",
-   "New York_1": 75,
-   "San Francisco_1": 57,
-   "Austin_1": 80,
-   "New York_2": 24,
-   "San Francisco_2": 14,
-   "Austin_2": 27
- },
- {
-   "date": "20120720",
-   "New York_1": 68,
-   "San Francisco_1": 58,
-   "Austin_1": 83,
-   "New York_2": 20,
-   "San Francisco_2": 14,
-   "Austin_2": 28
- },
- {
-   "date": "20120721",
-   "New York_1": 68,
-   "San Francisco_1": 57,
-   "Austin_1": 85,
-   "New York_2": 20,
-   "San Francisco_2": 14,
-   "Austin_2": 29
- },
- {
-   "date": "20120722",
-   "New York_1": 72,
-   "San Francisco_1": 56,
-   "Austin_1": 83,
-   "New York_2": 22,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120723",
-   "New York_1": 75,
-   "San Francisco_1": 56,
-   "Austin_1": 84,
-   "New York_2": 24,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120724",
-   "New York_1": 82,
-   "San Francisco_1": 57,
-   "Austin_1": 83,
-   "New York_2": 28,
-   "San Francisco_2": 14,
-   "Austin_2": 28
- },
- {
-   "date": "20120725",
-   "New York_1": 78,
-   "San Francisco_1": 57,
-   "Austin_1": 84,
-   "New York_2": 26,
-   "San Francisco_2": 14,
-   "Austin_2": 29
- },
- {
-   "date": "20120726",
-   "New York_1": 77,
-   "San Francisco_1": 56,
-   "Austin_1": 84,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120727",
-   "New York_1": 79,
-   "San Francisco_1": 55,
-   "Austin_1": 84,
-   "New York_2": 26,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120728",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 83,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120729",
-   "New York_1": 72,
-   "San Francisco_1": 55,
-   "Austin_1": 85,
-   "New York_2": 22,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120730",
-   "New York_1": 72,
-   "San Francisco_1": 55,
-   "Austin_1": 84,
-   "New York_2": 22,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120731",
-   "New York_1": 73,
-   "San Francisco_1": 55,
-   "Austin_1": 86,
-   "New York_2": 23,
-   "San Francisco_2": 13,
-   "Austin_2": 30
- },
- {
-   "date": "20120801",
-   "New York_1": 75,
-   "San Francisco_1": 55,
-   "Austin_1": 86,
-   "New York_2": 24,
-   "San Francisco_2": 13,
-   "Austin_2": 30
- },
- {
-   "date": "20120802",
-   "New York_1": 77,
-   "San Francisco_1": 54,
-   "Austin_1": 85,
-   "New York_2": 25,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120803",
-   "New York_1": 79,
-   "San Francisco_1": 53,
-   "Austin_1": 85,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120804",
-   "New York_1": 79,
-   "San Francisco_1": 54,
-   "Austin_1": 86,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 30
- },
- {
-   "date": "20120805",
-   "New York_1": 81,
-   "San Francisco_1": 57,
-   "Austin_1": 84,
-   "New York_2": 27,
-   "San Francisco_2": 14,
-   "Austin_2": 29
- },
- {
-   "date": "20120806",
-   "New York_1": 80,
-   "San Francisco_1": 58,
-   "Austin_1": 81,
-   "New York_2": 27,
-   "San Francisco_2": 14,
-   "Austin_2": 27
- },
- {
-   "date": "20120807",
-   "New York_1": 75,
-   "San Francisco_1": 58,
-   "Austin_1": 86,
-   "New York_2": 24,
-   "San Francisco_2": 14,
-   "Austin_2": 30
- },
- {
-   "date": "20120808",
-   "New York_1": 77,
-   "San Francisco_1": 57,
-   "Austin_1": 86,
-   "New York_2": 25,
-   "San Francisco_2": 14,
-   "Austin_2": 30
- },
- {
-   "date": "20120809",
-   "New York_1": 78,
-   "San Francisco_1": 55,
-   "Austin_1": 86,
-   "New York_2": 26,
-   "San Francisco_2": 13,
-   "Austin_2": 30
- },
- {
-   "date": "20120810",
-   "New York_1": 77,
-   "San Francisco_1": 54,
-   "Austin_1": 88,
-   "New York_2": 25,
-   "San Francisco_2": 12,
-   "Austin_2": 31
- },
- {
-   "date": "20120811",
-   "New York_1": 78,
-   "San Francisco_1": 53,
-   "Austin_1": 85,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120812",
-   "New York_1": 78,
-   "San Francisco_1": 52,
-   "Austin_1": 87,
-   "New York_2": 26,
-   "San Francisco_2": 11,
-   "Austin_2": 31
- },
- {
-   "date": "20120813",
-   "New York_1": 78,
-   "San Francisco_1": 53,
-   "Austin_1": 88,
-   "New York_2": 26,
-   "San Francisco_2": 12,
-   "Austin_2": 31
- },
- {
-   "date": "20120814",
-   "New York_1": 76,
-   "San Francisco_1": 53,
-   "Austin_1": 88,
-   "New York_2": 24,
-   "San Francisco_2": 12,
-   "Austin_2": 31
- },
- {
-   "date": "20120815",
-   "New York_1": 76,
-   "San Francisco_1": 56,
-   "Austin_1": 87,
-   "New York_2": 24,
-   "San Francisco_2": 13,
-   "Austin_2": 31
- },
- {
-   "date": "20120816",
-   "New York_1": 75,
-   "San Francisco_1": 57,
-   "Austin_1": 86,
-   "New York_2": 24,
-   "San Francisco_2": 14,
-   "Austin_2": 30
- },
- {
-   "date": "20120817",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 86,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 30
- },
- {
-   "date": "20120818",
-   "New York_1": 72,
-   "San Francisco_1": 56,
-   "Austin_1": 84,
-   "New York_2": 22,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120819",
-   "New York_1": 70,
-   "San Francisco_1": 54,
-   "Austin_1": 76,
-   "New York_2": 21,
-   "San Francisco_2": 12,
-   "Austin_2": 24
- },
- {
-   "date": "20120820",
-   "New York_1": 71,
-   "San Francisco_1": 53,
-   "Austin_1": 80,
-   "New York_2": 22,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120821",
-   "New York_1": 73,
-   "San Francisco_1": 53,
-   "Austin_1": 80,
-   "New York_2": 23,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120822",
-   "New York_1": 74,
-   "San Francisco_1": 54,
-   "Austin_1": 78,
-   "New York_2": 23,
-   "San Francisco_2": 12,
-   "Austin_2": 26
- },
- {
-   "date": "20120823",
-   "New York_1": 74,
-   "San Francisco_1": 55,
-   "Austin_1": 79,
-   "New York_2": 23,
-   "San Francisco_2": 13,
-   "Austin_2": 26
- },
- {
-   "date": "20120824",
-   "New York_1": 76,
-   "San Francisco_1": 54,
-   "Austin_1": 81,
-   "New York_2": 24,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120825",
-   "New York_1": 76,
-   "San Francisco_1": 53,
-   "Austin_1": 84,
-   "New York_2": 24,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120826",
-   "New York_1": 73,
-   "San Francisco_1": 56,
-   "Austin_1": 83,
-   "New York_2": 23,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120827",
-   "New York_1": 74,
-   "San Francisco_1": 58,
-   "Austin_1": 82,
-   "New York_2": 23,
-   "San Francisco_2": 14,
-   "Austin_2": 28
- },
- {
-   "date": "20120828",
-   "New York_1": 79,
-   "San Francisco_1": 58,
-   "Austin_1": 84,
-   "New York_2": 26,
-   "San Francisco_2": 14,
-   "Austin_2": 29
- },
- {
-   "date": "20120829",
-   "New York_1": 74,
-   "San Francisco_1": 57,
-   "Austin_1": 85,
-   "New York_2": 23,
-   "San Francisco_2": 14,
-   "Austin_2": 29
- },
- {
-   "date": "20120830",
-   "New York_1": 73,
-   "San Francisco_1": 55,
-   "Austin_1": 87,
-   "New York_2": 23,
-   "San Francisco_2": 13,
-   "Austin_2": 31
- },
- {
-   "date": "20120831",
-   "New York_1": 77,
-   "San Francisco_1": 55,
-   "Austin_1": 82,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120901",
-   "New York_1": 80,
-   "San Francisco_1": 55,
-   "Austin_1": 84,
-   "New York_2": 27,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120902",
-   "New York_1": 75,
-   "San Francisco_1": 53,
-   "Austin_1": 83,
-   "New York_2": 24,
-   "San Francisco_2": 12,
-   "Austin_2": 28
- },
- {
-   "date": "20120903",
-   "New York_1": 73,
-   "San Francisco_1": 53,
-   "Austin_1": 85,
-   "New York_2": 23,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120904",
-   "New York_1": 73,
-   "San Francisco_1": 52,
-   "Austin_1": 86,
-   "New York_2": 23,
-   "San Francisco_2": 11,
-   "Austin_2": 30
- },
- {
-   "date": "20120905",
-   "New York_1": 77,
-   "San Francisco_1": 54,
-   "Austin_1": 85,
-   "New York_2": 25,
-   "San Francisco_2": 12,
-   "Austin_2": 29
- },
- {
-   "date": "20120906",
-   "New York_1": 74,
-   "San Francisco_1": 56,
-   "Austin_1": 85,
-   "New York_2": 23,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120907",
-   "New York_1": 76,
-   "San Francisco_1": 56,
-   "Austin_1": 85,
-   "New York_2": 24,
-   "San Francisco_2": 13,
-   "Austin_2": 29
- },
- {
-   "date": "20120908",
-   "New York_1": 77,
-   "San Francisco_1": 56,
-   "Austin_1": 81,
-   "New York_2": 25,
-   "San Francisco_2": 13,
-   "Austin_2": 27
- },
- {
-   "date": "20120909",
-   "New York_1": 69,
-   "San Francisco_1": 56,
-   "Austin_1": 74,
-   "New York_2": 21,
-   "San Francisco_2": 13,
-   "Austin_2": 23
- },
- {
-   "date": "20120910",
-   "New York_1": 67,
-   "San Francisco_1": 55,
-   "Austin_1": 71,
-   "New York_2": 19,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120911",
-   "New York_1": 64,
-   "San Francisco_1": 56,
-   "Austin_1": 75,
-   "New York_2": 18,
-   "San Francisco_2": 13,
-   "Austin_2": 24
- },
- {
-   "date": "20120912",
-   "New York_1": 68,
-   "San Francisco_1": 55,
-   "Austin_1": 82,
-   "New York_2": 20,
-   "San Francisco_2": 13,
-   "Austin_2": 28
- },
- {
-   "date": "20120913",
-   "New York_1": 69,
-   "San Francisco_1": 54,
-   "Austin_1": 80,
-   "New York_2": 21,
-   "San Francisco_2": 12,
-   "Austin_2": 27
- },
- {
-   "date": "20120914",
-   "New York_1": 70,
-   "San Francisco_1": 55,
-   "Austin_1": 70,
-   "New York_2": 21,
-   "San Francisco_2": 13,
-   "Austin_2": 21
- },
- {
-   "date": "20120915",
-   "New York_1": 69,
-   "San Francisco_1": 54,
-   "Austin_1": 71,
-   "New York_2": 21,
-   "San Francisco_2": 12,
-   "Austin_2": 22
- },
- {
-   "date": "20120916",
-   "New York_1": 66,
-   "San Francisco_1": 52,
-   "Austin_1": 70,
-   "New York_2": 19,
-   "San Francisco_2": 11,
-   "Austin_2": 21
- },
- {
-   "date": "20120917",
-   "New York_1": 67,
-   "San Francisco_1": 54,
-   "Austin_1": 72,
-   "New York_2": 19,
-   "San Francisco_2": 12,
-   "Austin_2": 22
- },
- {
-   "date": "20120918",
-   "New York_1": 72,
-   "San Francisco_1": 54,
-   "Austin_1": 73,
-   "New York_2": 22,
-   "San Francisco_2": 12,
-   "Austin_2": 23
- },
- {
-   "date": "20120919",
-   "New York_1": 67,
-   "San Francisco_1": 56,
-   "Austin_1": 72,
-   "New York_2": 19,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120920",
-   "New York_1": 62,
-   "San Francisco_1": 55,
-   "Austin_1": 71,
-   "New York_2": 17,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120921",
-   "New York_1": 64,
-   "San Francisco_1": 55,
-   "Austin_1": 72,
-   "New York_2": 18,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- },
- {
-   "date": "20120922",
-   "New York_1": 65,
-   "San Francisco_1": 55,
-   "Austin_1": 73,
-   "New York_2": 18,
-   "San Francisco_2": 13,
-   "Austin_2": 23
- },
- {
-   "date": "20120923",
-   "New York_1": 65,
-   "San Francisco_1": 52,
-   "Austin_1": 75,
-   "New York_2": 18,
-   "San Francisco_2": 11,
-   "Austin_2": 24
- },
- {
-   "date": "20120924",
-   "New York_1": 60,
-   "San Francisco_1": 54,
-   "Austin_1": 78,
-   "New York_2": 16,
-   "San Francisco_2": 12,
-   "Austin_2": 26
- },
- {
-   "date": "20120925",
-   "New York_1": 63,
-   "San Francisco_1": 53,
-   "Austin_1": 78,
-   "New York_2": 17,
-   "San Francisco_2": 12,
-   "Austin_2": 26
- },
- {
-   "date": "20120926",
-   "New York_1": 68,
-   "San Francisco_1": 53,
-   "Austin_1": 79,
-   "New York_2": 20,
-   "San Francisco_2": 12,
-   "Austin_2": 26
- },
- {
-   "date": "20120927",
-   "New York_1": 69,
-   "San Francisco_1": 52,
-   "Austin_1": 76,
-   "New York_2": 21,
-   "San Francisco_2": 11,
-   "Austin_2": 24
- },
- {
-   "date": "20120928",
-   "New York_1": 68,
-   "San Francisco_1": 52,
-   "Austin_1": 77,
-   "New York_2": 20,
-   "San Francisco_2": 11,
-   "Austin_2": 25
- },
- {
-   "date": "20120929",
-   "New York_1": 62,
-   "San Francisco_1": 53,
-   "Austin_1": 75,
-   "New York_2": 17,
-   "San Francisco_2": 12,
-   "Austin_2": 24
- },
- {
-   "date": "20120930",
-   "New York_1": 62,
-   "San Francisco_1": 55,
-   "Austin_1": 71,
-   "New York_2": 17,
-   "San Francisco_2": 13,
-   "Austin_2": 22
- }
+  {
+    "date": "20120101",
+    "New York_1": 46,
+    "San Francisco_1": 53,
+    "Austin_1": 55,
+    "New York_2": 8,
+    "San Francisco_2": 12,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120102",
+    "New York_1": 43,
+    "San Francisco_1": 53,
+    "Austin_1": 48,
+    "New York_2": 6,
+    "San Francisco_2": 12,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120103",
+    "New York_1": 30,
+    "San Francisco_1": 49,
+    "Austin_1": 41,
+    "New York_2": -1,
+    "San Francisco_2": 9,
+    "Austin_2": 5
+  },
+  {
+    "date": "20120104",
+    "New York_1": 19,
+    "San Francisco_1": 52,
+    "Austin_1": 48,
+    "New York_2": -7,
+    "San Francisco_2": 11,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120105",
+    "New York_1": 32,
+    "San Francisco_1": 52,
+    "Austin_1": 54,
+    "New York_2": 0,
+    "San Francisco_2": 11,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120106",
+    "New York_1": 41,
+    "San Francisco_1": 49,
+    "Austin_1": 61,
+    "New York_2": 5,
+    "San Francisco_2": 9,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120107",
+    "New York_1": 47,
+    "San Francisco_1": 51,
+    "Austin_1": 59,
+    "New York_2": 8,
+    "San Francisco_2": 11,
+    "Austin_2": 15
+  },
+  {
+    "date": "20120108",
+    "New York_1": 46,
+    "San Francisco_1": 56,
+    "Austin_1": 52,
+    "New York_2": 8,
+    "San Francisco_2": 13,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120109",
+    "New York_1": 34,
+    "San Francisco_1": 52,
+    "Austin_1": 54,
+    "New York_2": 1,
+    "San Francisco_2": 11,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120110",
+    "New York_1": 39,
+    "San Francisco_1": 51,
+    "Austin_1": 47,
+    "New York_2": 4,
+    "San Francisco_2": 11,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120111",
+    "New York_1": 40,
+    "San Francisco_1": 49,
+    "Austin_1": 49,
+    "New York_2": 4,
+    "San Francisco_2": 9,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120112",
+    "New York_1": 45,
+    "San Francisco_1": 51,
+    "Austin_1": 48,
+    "New York_2": 7,
+    "San Francisco_2": 11,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120113",
+    "New York_1": 40,
+    "San Francisco_1": 53,
+    "Austin_1": 40,
+    "New York_2": 4,
+    "San Francisco_2": 12,
+    "Austin_2": 4
+  },
+  {
+    "date": "20120114",
+    "New York_1": 30,
+    "San Francisco_1": 52,
+    "Austin_1": 43,
+    "New York_2": -1,
+    "San Francisco_2": 11,
+    "Austin_2": 6
+  },
+  {
+    "date": "20120115",
+    "New York_1": 23,
+    "San Francisco_1": 49,
+    "Austin_1": 45,
+    "New York_2": -5,
+    "San Francisco_2": 9,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120116",
+    "New York_1": 22,
+    "San Francisco_1": 45,
+    "Austin_1": 65,
+    "New York_2": -6,
+    "San Francisco_2": 7,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120117",
+    "New York_1": 39,
+    "San Francisco_1": 43,
+    "Austin_1": 68,
+    "New York_2": 4,
+    "San Francisco_2": 6,
+    "Austin_2": 20
+  },
+  {
+    "date": "20120118",
+    "New York_1": 43,
+    "San Francisco_1": 45,
+    "Austin_1": 47,
+    "New York_2": 6,
+    "San Francisco_2": 7,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120119",
+    "New York_1": 26,
+    "San Francisco_1": 47,
+    "Austin_1": 57,
+    "New York_2": -3,
+    "San Francisco_2": 8,
+    "Austin_2": 14
+  },
+  {
+    "date": "20120120",
+    "New York_1": 32,
+    "San Francisco_1": 51,
+    "Austin_1": 61,
+    "New York_2": 0,
+    "San Francisco_2": 11,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120121",
+    "New York_1": 27,
+    "San Francisco_1": 53,
+    "Austin_1": 54,
+    "New York_2": -3,
+    "San Francisco_2": 12,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120122",
+    "New York_1": 25,
+    "San Francisco_1": 48,
+    "Austin_1": 56,
+    "New York_2": -4,
+    "San Francisco_2": 9,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120123",
+    "New York_1": 39,
+    "San Francisco_1": 52,
+    "Austin_1": 54,
+    "New York_2": 4,
+    "San Francisco_2": 11,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120124",
+    "New York_1": 48,
+    "San Francisco_1": 49,
+    "Austin_1": 52,
+    "New York_2": 9,
+    "San Francisco_2": 9,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120125",
+    "New York_1": 43,
+    "San Francisco_1": 52,
+    "Austin_1": 61,
+    "New York_2": 6,
+    "San Francisco_2": 11,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120126",
+    "New York_1": 37,
+    "San Francisco_1": 53,
+    "Austin_1": 55,
+    "New York_2": 3,
+    "San Francisco_2": 12,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120127",
+    "New York_1": 48,
+    "San Francisco_1": 50,
+    "Austin_1": 50,
+    "New York_2": 9,
+    "San Francisco_2": 10,
+    "Austin_2": 10
+  },
+  {
+    "date": "20120128",
+    "New York_1": 43,
+    "San Francisco_1": 50,
+    "Austin_1": 52,
+    "New York_2": 6,
+    "San Francisco_2": 10,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120129",
+    "New York_1": 40,
+    "San Francisco_1": 53,
+    "Austin_1": 44,
+    "New York_2": 4,
+    "San Francisco_2": 12,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120130",
+    "New York_1": 38,
+    "San Francisco_1": 51,
+    "Austin_1": 49,
+    "New York_2": 3,
+    "San Francisco_2": 11,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120131",
+    "New York_1": 43,
+    "San Francisco_1": 50,
+    "Austin_1": 62,
+    "New York_2": 6,
+    "San Francisco_2": 10,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120201",
+    "New York_1": 50,
+    "San Francisco_1": 50,
+    "Austin_1": 64,
+    "New York_2": 10,
+    "San Francisco_2": 10,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120202",
+    "New York_1": 45,
+    "San Francisco_1": 51,
+    "Austin_1": 61,
+    "New York_2": 7,
+    "San Francisco_2": 11,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120203",
+    "New York_1": 37,
+    "San Francisco_1": 51,
+    "Austin_1": 70,
+    "New York_2": 3,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120204",
+    "New York_1": 40,
+    "San Francisco_1": 52,
+    "Austin_1": 61,
+    "New York_2": 4,
+    "San Francisco_2": 11,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120205",
+    "New York_1": 36,
+    "San Francisco_1": 53,
+    "Austin_1": 48,
+    "New York_2": 2,
+    "San Francisco_2": 12,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120206",
+    "New York_1": 39,
+    "San Francisco_1": 54,
+    "Austin_1": 44,
+    "New York_2": 4,
+    "San Francisco_2": 12,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120207",
+    "New York_1": 43,
+    "San Francisco_1": 54,
+    "Austin_1": 51,
+    "New York_2": 6,
+    "San Francisco_2": 12,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120208",
+    "New York_1": 36,
+    "San Francisco_1": 51,
+    "Austin_1": 49,
+    "New York_2": 2,
+    "San Francisco_2": 11,
+    "Austin_2": 9
+  },
+  {
+    "date": "20120209",
+    "New York_1": 36,
+    "San Francisco_1": 53,
+    "Austin_1": 45,
+    "New York_2": 2,
+    "San Francisco_2": 12,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120210",
+    "New York_1": 38,
+    "San Francisco_1": 53,
+    "Austin_1": 54,
+    "New York_2": 3,
+    "San Francisco_2": 12,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120211",
+    "New York_1": 36,
+    "San Francisco_1": 52,
+    "Austin_1": 44,
+    "New York_2": 2,
+    "San Francisco_2": 11,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120212",
+    "New York_1": 29,
+    "San Francisco_1": 50,
+    "Austin_1": 36,
+    "New York_2": -2,
+    "San Francisco_2": 10,
+    "Austin_2": 2
+  },
+  {
+    "date": "20120213",
+    "New York_1": 33,
+    "San Francisco_1": 49,
+    "Austin_1": 44,
+    "New York_2": 1,
+    "San Francisco_2": 9,
+    "Austin_2": 7
+  },
+  {
+    "date": "20120214",
+    "New York_1": 39,
+    "San Francisco_1": 48,
+    "Austin_1": 52,
+    "New York_2": 4,
+    "San Francisco_2": 9,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120215",
+    "New York_1": 42,
+    "San Francisco_1": 49,
+    "Austin_1": 68,
+    "New York_2": 6,
+    "San Francisco_2": 9,
+    "Austin_2": 20
+  },
+  {
+    "date": "20120216",
+    "New York_1": 39,
+    "San Francisco_1": 52,
+    "Austin_1": 54,
+    "New York_2": 4,
+    "San Francisco_2": 11,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120217",
+    "New York_1": 46,
+    "San Francisco_1": 49,
+    "Austin_1": 53,
+    "New York_2": 8,
+    "San Francisco_2": 9,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120218",
+    "New York_1": 41,
+    "San Francisco_1": 51,
+    "Austin_1": 56,
+    "New York_2": 5,
+    "San Francisco_2": 11,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120219",
+    "New York_1": 39,
+    "San Francisco_1": 47,
+    "Austin_1": 50,
+    "New York_2": 4,
+    "San Francisco_2": 8,
+    "Austin_2": 10
+  },
+  {
+    "date": "20120220",
+    "New York_1": 38,
+    "San Francisco_1": 48,
+    "Austin_1": 53,
+    "New York_2": 3,
+    "San Francisco_2": 9,
+    "Austin_2": 12
+  },
+  {
+    "date": "20120221",
+    "New York_1": 37,
+    "San Francisco_1": 49,
+    "Austin_1": 61,
+    "New York_2": 3,
+    "San Francisco_2": 9,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120222",
+    "New York_1": 45,
+    "San Francisco_1": 53,
+    "Austin_1": 68,
+    "New York_2": 7,
+    "San Francisco_2": 12,
+    "Austin_2": 20
+  },
+  {
+    "date": "20120223",
+    "New York_1": 50,
+    "San Francisco_1": 54,
+    "Austin_1": 69,
+    "New York_2": 10,
+    "San Francisco_2": 12,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120224",
+    "New York_1": 42,
+    "San Francisco_1": 55,
+    "Austin_1": 59,
+    "New York_2": 6,
+    "San Francisco_2": 13,
+    "Austin_2": 15
+  },
+  {
+    "date": "20120225",
+    "New York_1": 42,
+    "San Francisco_1": 51,
+    "Austin_1": 47,
+    "New York_2": 6,
+    "San Francisco_2": 11,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120226",
+    "New York_1": 36,
+    "San Francisco_1": 47,
+    "Austin_1": 47,
+    "New York_2": 2,
+    "San Francisco_2": 8,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120227",
+    "New York_1": 40,
+    "San Francisco_1": 45,
+    "Austin_1": 61,
+    "New York_2": 4,
+    "San Francisco_2": 7,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120228",
+    "New York_1": 45,
+    "San Francisco_1": 47,
+    "Austin_1": 67,
+    "New York_2": 7,
+    "San Francisco_2": 8,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120229",
+    "New York_1": 40,
+    "San Francisco_1": 49,
+    "Austin_1": 70,
+    "New York_2": 4,
+    "San Francisco_2": 9,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120301",
+    "New York_1": 41,
+    "San Francisco_1": 48,
+    "Austin_1": 62,
+    "New York_2": 5,
+    "San Francisco_2": 9,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120302",
+    "New York_1": 36,
+    "San Francisco_1": 48,
+    "Austin_1": 72,
+    "New York_2": 2,
+    "San Francisco_2": 9,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120303",
+    "New York_1": 47,
+    "San Francisco_1": 50,
+    "Austin_1": 59,
+    "New York_2": 8,
+    "San Francisco_2": 10,
+    "Austin_2": 15
+  },
+  {
+    "date": "20120304",
+    "New York_1": 44,
+    "San Francisco_1": 55,
+    "Austin_1": 51,
+    "New York_2": 7,
+    "San Francisco_2": 13,
+    "Austin_2": 11
+  },
+  {
+    "date": "20120305",
+    "New York_1": 38,
+    "San Francisco_1": 48,
+    "Austin_1": 55,
+    "New York_2": 3,
+    "San Francisco_2": 9,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120306",
+    "New York_1": 32,
+    "San Francisco_1": 48,
+    "Austin_1": 61,
+    "New York_2": 0,
+    "San Francisco_2": 9,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120307",
+    "New York_1": 43,
+    "San Francisco_1": 49,
+    "Austin_1": 67,
+    "New York_2": 6,
+    "San Francisco_2": 9,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120308",
+    "New York_1": 51,
+    "San Francisco_1": 49,
+    "Austin_1": 72,
+    "New York_2": 11,
+    "San Francisco_2": 9,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120309",
+    "New York_1": 47,
+    "San Francisco_1": 51,
+    "Austin_1": 46,
+    "New York_2": 8,
+    "San Francisco_2": 11,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120310",
+    "New York_1": 37,
+    "San Francisco_1": 49,
+    "Austin_1": 46,
+    "New York_2": 3,
+    "San Francisco_2": 9,
+    "Austin_2": 8
+  },
+  {
+    "date": "20120311",
+    "New York_1": 42,
+    "San Francisco_1": 50,
+    "Austin_1": 56,
+    "New York_2": 6,
+    "San Francisco_2": 10,
+    "Austin_2": 13
+  },
+  {
+    "date": "20120312",
+    "New York_1": 48,
+    "San Francisco_1": 48,
+    "Austin_1": 61,
+    "New York_2": 9,
+    "San Francisco_2": 9,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120313",
+    "New York_1": 52,
+    "San Francisco_1": 53,
+    "Austin_1": 68,
+    "New York_2": 11,
+    "San Francisco_2": 12,
+    "Austin_2": 20
+  },
+  {
+    "date": "20120314",
+    "New York_1": 60,
+    "San Francisco_1": 55,
+    "Austin_1": 71,
+    "New York_2": 16,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120315",
+    "New York_1": 47,
+    "San Francisco_1": 55,
+    "Austin_1": 72,
+    "New York_2": 8,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120316",
+    "New York_1": 44,
+    "San Francisco_1": 54,
+    "Austin_1": 72,
+    "New York_2": 7,
+    "San Francisco_2": 12,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120317",
+    "New York_1": 48,
+    "San Francisco_1": 48,
+    "Austin_1": 71,
+    "New York_2": 9,
+    "San Francisco_2": 9,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120318",
+    "New York_1": 48,
+    "San Francisco_1": 47,
+    "Austin_1": 71,
+    "New York_2": 9,
+    "San Francisco_2": 8,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120319",
+    "New York_1": 53,
+    "San Francisco_1": 45,
+    "Austin_1": 73,
+    "New York_2": 12,
+    "San Francisco_2": 7,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120320",
+    "New York_1": 57,
+    "San Francisco_1": 49,
+    "Austin_1": 63,
+    "New York_2": 14,
+    "San Francisco_2": 9,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120321",
+    "New York_1": 57,
+    "San Francisco_1": 51,
+    "Austin_1": 60,
+    "New York_2": 14,
+    "San Francisco_2": 11,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120322",
+    "New York_1": 57,
+    "San Francisco_1": 51,
+    "Austin_1": 62,
+    "New York_2": 14,
+    "San Francisco_2": 11,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120323",
+    "New York_1": 61,
+    "San Francisco_1": 48,
+    "Austin_1": 61,
+    "New York_2": 16,
+    "San Francisco_2": 9,
+    "Austin_2": 16
+  },
+  {
+    "date": "20120324",
+    "New York_1": 55,
+    "San Francisco_1": 49,
+    "Austin_1": 62,
+    "New York_2": 13,
+    "San Francisco_2": 9,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120325",
+    "New York_1": 48,
+    "San Francisco_1": 46,
+    "Austin_1": 64,
+    "New York_2": 9,
+    "San Francisco_2": 8,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120326",
+    "New York_1": 49,
+    "San Francisco_1": 49,
+    "Austin_1": 66,
+    "New York_2": 9,
+    "San Francisco_2": 9,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120327",
+    "New York_1": 39,
+    "San Francisco_1": 54,
+    "Austin_1": 65,
+    "New York_2": 4,
+    "San Francisco_2": 12,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120328",
+    "New York_1": 49,
+    "San Francisco_1": 54,
+    "Austin_1": 69,
+    "New York_2": 9,
+    "San Francisco_2": 12,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120329",
+    "New York_1": 56,
+    "San Francisco_1": 52,
+    "Austin_1": 69,
+    "New York_2": 13,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120330",
+    "New York_1": 46,
+    "San Francisco_1": 54,
+    "Austin_1": 73,
+    "New York_2": 8,
+    "San Francisco_2": 12,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120331",
+    "New York_1": 42,
+    "San Francisco_1": 56,
+    "Austin_1": 73,
+    "New York_2": 6,
+    "San Francisco_2": 13,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120401",
+    "New York_1": 45,
+    "San Francisco_1": 51,
+    "Austin_1": 75,
+    "New York_2": 7,
+    "San Francisco_2": 11,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120402",
+    "New York_1": 48,
+    "San Francisco_1": 50,
+    "Austin_1": 75,
+    "New York_2": 9,
+    "San Francisco_2": 10,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120403",
+    "New York_1": 51,
+    "San Francisco_1": 52,
+    "Austin_1": 77,
+    "New York_2": 11,
+    "San Francisco_2": 11,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120404",
+    "New York_1": 61,
+    "San Francisco_1": 50,
+    "Austin_1": 67,
+    "New York_2": 16,
+    "San Francisco_2": 10,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120405",
+    "New York_1": 50,
+    "San Francisco_1": 47,
+    "Austin_1": 71,
+    "New York_2": 10,
+    "San Francisco_2": 8,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120406",
+    "New York_1": 48,
+    "San Francisco_1": 47,
+    "Austin_1": 70,
+    "New York_2": 9,
+    "San Francisco_2": 8,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120407",
+    "New York_1": 51,
+    "San Francisco_1": 49,
+    "Austin_1": 73,
+    "New York_2": 11,
+    "San Francisco_2": 9,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120408",
+    "New York_1": 55,
+    "San Francisco_1": 50,
+    "Austin_1": 71,
+    "New York_2": 13,
+    "San Francisco_2": 10,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120409",
+    "New York_1": 58,
+    "San Francisco_1": 51,
+    "Austin_1": 70,
+    "New York_2": 14,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120410",
+    "New York_1": 55,
+    "San Francisco_1": 53,
+    "Austin_1": 69,
+    "New York_2": 13,
+    "San Francisco_2": 12,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120411",
+    "New York_1": 49,
+    "San Francisco_1": 52,
+    "Austin_1": 69,
+    "New York_2": 9,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120412",
+    "New York_1": 51,
+    "San Francisco_1": 53,
+    "Austin_1": 74,
+    "New York_2": 11,
+    "San Francisco_2": 12,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120413",
+    "New York_1": 53,
+    "San Francisco_1": 50,
+    "Austin_1": 73,
+    "New York_2": 12,
+    "San Francisco_2": 10,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120414",
+    "New York_1": 55,
+    "San Francisco_1": 50,
+    "Austin_1": 76,
+    "New York_2": 13,
+    "San Francisco_2": 10,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120415",
+    "New York_1": 62,
+    "San Francisco_1": 51,
+    "Austin_1": 74,
+    "New York_2": 17,
+    "San Francisco_2": 11,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120416",
+    "New York_1": 62,
+    "San Francisco_1": 51,
+    "Austin_1": 63,
+    "New York_2": 17,
+    "San Francisco_2": 11,
+    "Austin_2": 17
+  },
+  {
+    "date": "20120417",
+    "New York_1": 69,
+    "San Francisco_1": 53,
+    "Austin_1": 67,
+    "New York_2": 21,
+    "San Francisco_2": 12,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120418",
+    "New York_1": 59,
+    "San Francisco_1": 53,
+    "Austin_1": 65,
+    "New York_2": 15,
+    "San Francisco_2": 12,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120419",
+    "New York_1": 54,
+    "San Francisco_1": 55,
+    "Austin_1": 67,
+    "New York_2": 12,
+    "San Francisco_2": 13,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120420",
+    "New York_1": 56,
+    "San Francisco_1": 55,
+    "Austin_1": 68,
+    "New York_2": 13,
+    "San Francisco_2": 13,
+    "Austin_2": 20
+  },
+  {
+    "date": "20120421",
+    "New York_1": 58,
+    "San Francisco_1": 58,
+    "Austin_1": 65,
+    "New York_2": 14,
+    "San Francisco_2": 14,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120422",
+    "New York_1": 52,
+    "San Francisco_1": 52,
+    "Austin_1": 65,
+    "New York_2": 11,
+    "San Francisco_2": 11,
+    "Austin_2": 18
+  },
+  {
+    "date": "20120423",
+    "New York_1": 51,
+    "San Francisco_1": 55,
+    "Austin_1": 70,
+    "New York_2": 11,
+    "San Francisco_2": 13,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120424",
+    "New York_1": 49,
+    "San Francisco_1": 57,
+    "Austin_1": 67,
+    "New York_2": 9,
+    "San Francisco_2": 14,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120425",
+    "New York_1": 52,
+    "San Francisco_1": 57,
+    "Austin_1": 75,
+    "New York_2": 11,
+    "San Francisco_2": 14,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120426",
+    "New York_1": 50,
+    "San Francisco_1": 55,
+    "Austin_1": 77,
+    "New York_2": 10,
+    "San Francisco_2": 13,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120427",
+    "New York_1": 51,
+    "San Francisco_1": 53,
+    "Austin_1": 77,
+    "New York_2": 11,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120428",
+    "New York_1": 47,
+    "San Francisco_1": 54,
+    "Austin_1": 77,
+    "New York_2": 8,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120429",
+    "New York_1": 54,
+    "San Francisco_1": 54,
+    "Austin_1": 77,
+    "New York_2": 12,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120430",
+    "New York_1": 51,
+    "San Francisco_1": 53,
+    "Austin_1": 77,
+    "New York_2": 11,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120501",
+    "New York_1": 57,
+    "San Francisco_1": 52,
+    "Austin_1": 77,
+    "New York_2": 14,
+    "San Francisco_2": 11,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120502",
+    "New York_1": 53,
+    "San Francisco_1": 50,
+    "Austin_1": 77,
+    "New York_2": 12,
+    "San Francisco_2": 10,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120503",
+    "New York_1": 53,
+    "San Francisco_1": 52,
+    "Austin_1": 79,
+    "New York_2": 12,
+    "San Francisco_2": 11,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120504",
+    "New York_1": 57,
+    "San Francisco_1": 53,
+    "Austin_1": 80,
+    "New York_2": 14,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120505",
+    "New York_1": 57,
+    "San Francisco_1": 53,
+    "Austin_1": 82,
+    "New York_2": 14,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120506",
+    "New York_1": 56,
+    "San Francisco_1": 56,
+    "Austin_1": 79,
+    "New York_2": 13,
+    "San Francisco_2": 13,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120507",
+    "New York_1": 54,
+    "San Francisco_1": 55,
+    "Austin_1": 79,
+    "New York_2": 12,
+    "San Francisco_2": 13,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120508",
+    "New York_1": 57,
+    "San Francisco_1": 52,
+    "Austin_1": 70,
+    "New York_2": 14,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120509",
+    "New York_1": 59,
+    "San Francisco_1": 52,
+    "Austin_1": 69,
+    "New York_2": 15,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120510",
+    "New York_1": 61,
+    "San Francisco_1": 53,
+    "Austin_1": 71,
+    "New York_2": 16,
+    "San Francisco_2": 12,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120511",
+    "New York_1": 59,
+    "San Francisco_1": 53,
+    "Austin_1": 69,
+    "New York_2": 15,
+    "San Francisco_2": 12,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120512",
+    "New York_1": 64,
+    "San Francisco_1": 49,
+    "Austin_1": 72,
+    "New York_2": 18,
+    "San Francisco_2": 9,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120513",
+    "New York_1": 65,
+    "San Francisco_1": 52,
+    "Austin_1": 72,
+    "New York_2": 18,
+    "San Francisco_2": 11,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120514",
+    "New York_1": 64,
+    "San Francisco_1": 56,
+    "Austin_1": 72,
+    "New York_2": 18,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120515",
+    "New York_1": 62,
+    "San Francisco_1": 53,
+    "Austin_1": 67,
+    "New York_2": 17,
+    "San Francisco_2": 12,
+    "Austin_2": 19
+  },
+  {
+    "date": "20120516",
+    "New York_1": 63,
+    "San Francisco_1": 51,
+    "Austin_1": 69,
+    "New York_2": 17,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120517",
+    "New York_1": 64,
+    "San Francisco_1": 51,
+    "Austin_1": 72,
+    "New York_2": 18,
+    "San Francisco_2": 11,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120518",
+    "New York_1": 61,
+    "San Francisco_1": 52,
+    "Austin_1": 73,
+    "New York_2": 16,
+    "San Francisco_2": 11,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120519",
+    "New York_1": 62,
+    "San Francisco_1": 52,
+    "Austin_1": 77,
+    "New York_2": 17,
+    "San Francisco_2": 11,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120520",
+    "New York_1": 66,
+    "San Francisco_1": 54,
+    "Austin_1": 75,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120521",
+    "New York_1": 62,
+    "San Francisco_1": 52,
+    "Austin_1": 76,
+    "New York_2": 17,
+    "San Francisco_2": 11,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120522",
+    "New York_1": 63,
+    "San Francisco_1": 53,
+    "Austin_1": 78,
+    "New York_2": 17,
+    "San Francisco_2": 12,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120523",
+    "New York_1": 66,
+    "San Francisco_1": 56,
+    "Austin_1": 77,
+    "New York_2": 19,
+    "San Francisco_2": 13,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120524",
+    "New York_1": 64,
+    "San Francisco_1": 54,
+    "Austin_1": 80,
+    "New York_2": 18,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120525",
+    "New York_1": 65,
+    "San Francisco_1": 52,
+    "Austin_1": 81,
+    "New York_2": 18,
+    "San Francisco_2": 11,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120526",
+    "New York_1": 69,
+    "San Francisco_1": 52,
+    "Austin_1": 82,
+    "New York_2": 21,
+    "San Francisco_2": 11,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120527",
+    "New York_1": 71,
+    "San Francisco_1": 52,
+    "Austin_1": 80,
+    "New York_2": 22,
+    "San Francisco_2": 11,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120528",
+    "New York_1": 74,
+    "San Francisco_1": 52,
+    "Austin_1": 80,
+    "New York_2": 23,
+    "San Francisco_2": 11,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120529",
+    "New York_1": 75,
+    "San Francisco_1": 52,
+    "Austin_1": 82,
+    "New York_2": 24,
+    "San Francisco_2": 11,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120530",
+    "New York_1": 72,
+    "San Francisco_1": 52,
+    "Austin_1": 81,
+    "New York_2": 22,
+    "San Francisco_2": 11,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120531",
+    "New York_1": 72,
+    "San Francisco_1": 53,
+    "Austin_1": 82,
+    "New York_2": 22,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120601",
+    "New York_1": 67,
+    "San Francisco_1": 54,
+    "Austin_1": 77,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120602",
+    "New York_1": 68,
+    "San Francisco_1": 54,
+    "Austin_1": 81,
+    "New York_2": 20,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120603",
+    "New York_1": 67,
+    "San Francisco_1": 52,
+    "Austin_1": 82,
+    "New York_2": 19,
+    "San Francisco_2": 11,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120604",
+    "New York_1": 61,
+    "San Francisco_1": 55,
+    "Austin_1": 81,
+    "New York_2": 16,
+    "San Francisco_2": 13,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120605",
+    "New York_1": 58,
+    "San Francisco_1": 53,
+    "Austin_1": 83,
+    "New York_2": 14,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120606",
+    "New York_1": 61,
+    "San Francisco_1": 54,
+    "Austin_1": 83,
+    "New York_2": 16,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120607",
+    "New York_1": 66,
+    "San Francisco_1": 53,
+    "Austin_1": 82,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120608",
+    "New York_1": 68,
+    "San Francisco_1": 54,
+    "Austin_1": 77,
+    "New York_2": 20,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120609",
+    "New York_1": 72,
+    "San Francisco_1": 55,
+    "Austin_1": 77,
+    "New York_2": 22,
+    "San Francisco_2": 13,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120610",
+    "New York_1": 72,
+    "San Francisco_1": 60,
+    "Austin_1": 82,
+    "New York_2": 22,
+    "San Francisco_2": 16,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120611",
+    "New York_1": 69,
+    "San Francisco_1": 57,
+    "Austin_1": 86,
+    "New York_2": 21,
+    "San Francisco_2": 14,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120612",
+    "New York_1": 66,
+    "San Francisco_1": 55,
+    "Austin_1": 85,
+    "New York_2": 19,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120613",
+    "New York_1": 66,
+    "San Francisco_1": 53,
+    "Austin_1": 76,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120614",
+    "New York_1": 67,
+    "San Francisco_1": 53,
+    "Austin_1": 84,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120615",
+    "New York_1": 68,
+    "San Francisco_1": 54,
+    "Austin_1": 84,
+    "New York_2": 20,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120616",
+    "New York_1": 67,
+    "San Francisco_1": 57,
+    "Austin_1": 83,
+    "New York_2": 19,
+    "San Francisco_2": 14,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120617",
+    "New York_1": 64,
+    "San Francisco_1": 55,
+    "Austin_1": 82,
+    "New York_2": 18,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120618",
+    "New York_1": 61,
+    "San Francisco_1": 52,
+    "Austin_1": 82,
+    "New York_2": 16,
+    "San Francisco_2": 11,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120619",
+    "New York_1": 66,
+    "San Francisco_1": 53,
+    "Austin_1": 82,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120620",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 81,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120621",
+    "New York_1": 88,
+    "San Francisco_1": 53,
+    "Austin_1": 80,
+    "New York_2": 31,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120622",
+    "New York_1": 82,
+    "San Francisco_1": 54,
+    "Austin_1": 81,
+    "New York_2": 28,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120623",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 83,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120624",
+    "New York_1": 75,
+    "San Francisco_1": 55,
+    "Austin_1": 85,
+    "New York_2": 24,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120625",
+    "New York_1": 70,
+    "San Francisco_1": 56,
+    "Austin_1": 87,
+    "New York_2": 21,
+    "San Francisco_2": 13,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120626",
+    "New York_1": 65,
+    "San Francisco_1": 57,
+    "Austin_1": 88,
+    "New York_2": 18,
+    "San Francisco_2": 14,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120627",
+    "New York_1": 73,
+    "San Francisco_1": 57,
+    "Austin_1": 89,
+    "New York_2": 23,
+    "San Francisco_2": 14,
+    "Austin_2": 32
+  },
+  {
+    "date": "20120628",
+    "New York_1": 77,
+    "San Francisco_1": 56,
+    "Austin_1": 86,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120629",
+    "New York_1": 79,
+    "San Francisco_1": 56,
+    "Austin_1": 85,
+    "New York_2": 26,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120630",
+    "New York_1": 84,
+    "San Francisco_1": 58,
+    "Austin_1": 81,
+    "New York_2": 29,
+    "San Francisco_2": 14,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120701",
+    "New York_1": 81,
+    "San Francisco_1": 58,
+    "Austin_1": 78,
+    "New York_2": 27,
+    "San Francisco_2": 14,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120702",
+    "New York_1": 82,
+    "San Francisco_1": 56,
+    "Austin_1": 83,
+    "New York_2": 28,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120703",
+    "New York_1": 80,
+    "San Francisco_1": 56,
+    "Austin_1": 83,
+    "New York_2": 27,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120704",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 84,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120705",
+    "New York_1": 86,
+    "San Francisco_1": 54,
+    "Austin_1": 84,
+    "New York_2": 30,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120706",
+    "New York_1": 79,
+    "San Francisco_1": 54,
+    "Austin_1": 84,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120707",
+    "New York_1": 83,
+    "San Francisco_1": 54,
+    "Austin_1": 86,
+    "New York_2": 28,
+    "San Francisco_2": 12,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120708",
+    "New York_1": 81,
+    "San Francisco_1": 52,
+    "Austin_1": 84,
+    "New York_2": 27,
+    "San Francisco_2": 11,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120709",
+    "New York_1": 77,
+    "San Francisco_1": 53,
+    "Austin_1": 83,
+    "New York_2": 25,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120710",
+    "New York_1": 76,
+    "San Francisco_1": 53,
+    "Austin_1": 77,
+    "New York_2": 24,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120711",
+    "New York_1": 76,
+    "San Francisco_1": 52,
+    "Austin_1": 77,
+    "New York_2": 24,
+    "San Francisco_2": 11,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120712",
+    "New York_1": 75,
+    "San Francisco_1": 52,
+    "Austin_1": 80,
+    "New York_2": 24,
+    "San Francisco_2": 11,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120713",
+    "New York_1": 77,
+    "San Francisco_1": 53,
+    "Austin_1": 81,
+    "New York_2": 25,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120714",
+    "New York_1": 79,
+    "San Francisco_1": 54,
+    "Austin_1": 80,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120715",
+    "New York_1": 78,
+    "San Francisco_1": 54,
+    "Austin_1": 81,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120716",
+    "New York_1": 79,
+    "San Francisco_1": 54,
+    "Austin_1": 77,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120717",
+    "New York_1": 83,
+    "San Francisco_1": 56,
+    "Austin_1": 80,
+    "New York_2": 28,
+    "San Francisco_2": 13,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120718",
+    "New York_1": 84,
+    "San Francisco_1": 57,
+    "Austin_1": 81,
+    "New York_2": 29,
+    "San Francisco_2": 14,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120719",
+    "New York_1": 75,
+    "San Francisco_1": 57,
+    "Austin_1": 80,
+    "New York_2": 24,
+    "San Francisco_2": 14,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120720",
+    "New York_1": 68,
+    "San Francisco_1": 58,
+    "Austin_1": 83,
+    "New York_2": 20,
+    "San Francisco_2": 14,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120721",
+    "New York_1": 68,
+    "San Francisco_1": 57,
+    "Austin_1": 85,
+    "New York_2": 20,
+    "San Francisco_2": 14,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120722",
+    "New York_1": 72,
+    "San Francisco_1": 56,
+    "Austin_1": 83,
+    "New York_2": 22,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120723",
+    "New York_1": 75,
+    "San Francisco_1": 56,
+    "Austin_1": 84,
+    "New York_2": 24,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120724",
+    "New York_1": 82,
+    "San Francisco_1": 57,
+    "Austin_1": 83,
+    "New York_2": 28,
+    "San Francisco_2": 14,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120725",
+    "New York_1": 78,
+    "San Francisco_1": 57,
+    "Austin_1": 84,
+    "New York_2": 26,
+    "San Francisco_2": 14,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120726",
+    "New York_1": 77,
+    "San Francisco_1": 56,
+    "Austin_1": 84,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120727",
+    "New York_1": 79,
+    "San Francisco_1": 55,
+    "Austin_1": 84,
+    "New York_2": 26,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120728",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 83,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120729",
+    "New York_1": 72,
+    "San Francisco_1": 55,
+    "Austin_1": 85,
+    "New York_2": 22,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120730",
+    "New York_1": 72,
+    "San Francisco_1": 55,
+    "Austin_1": 84,
+    "New York_2": 22,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120731",
+    "New York_1": 73,
+    "San Francisco_1": 55,
+    "Austin_1": 86,
+    "New York_2": 23,
+    "San Francisco_2": 13,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120801",
+    "New York_1": 75,
+    "San Francisco_1": 55,
+    "Austin_1": 86,
+    "New York_2": 24,
+    "San Francisco_2": 13,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120802",
+    "New York_1": 77,
+    "San Francisco_1": 54,
+    "Austin_1": 85,
+    "New York_2": 25,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120803",
+    "New York_1": 79,
+    "San Francisco_1": 53,
+    "Austin_1": 85,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120804",
+    "New York_1": 79,
+    "San Francisco_1": 54,
+    "Austin_1": 86,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120805",
+    "New York_1": 81,
+    "San Francisco_1": 57,
+    "Austin_1": 84,
+    "New York_2": 27,
+    "San Francisco_2": 14,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120806",
+    "New York_1": 80,
+    "San Francisco_1": 58,
+    "Austin_1": 81,
+    "New York_2": 27,
+    "San Francisco_2": 14,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120807",
+    "New York_1": 75,
+    "San Francisco_1": 58,
+    "Austin_1": 86,
+    "New York_2": 24,
+    "San Francisco_2": 14,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120808",
+    "New York_1": 77,
+    "San Francisco_1": 57,
+    "Austin_1": 86,
+    "New York_2": 25,
+    "San Francisco_2": 14,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120809",
+    "New York_1": 78,
+    "San Francisco_1": 55,
+    "Austin_1": 86,
+    "New York_2": 26,
+    "San Francisco_2": 13,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120810",
+    "New York_1": 77,
+    "San Francisco_1": 54,
+    "Austin_1": 88,
+    "New York_2": 25,
+    "San Francisco_2": 12,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120811",
+    "New York_1": 78,
+    "San Francisco_1": 53,
+    "Austin_1": 85,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120812",
+    "New York_1": 78,
+    "San Francisco_1": 52,
+    "Austin_1": 87,
+    "New York_2": 26,
+    "San Francisco_2": 11,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120813",
+    "New York_1": 78,
+    "San Francisco_1": 53,
+    "Austin_1": 88,
+    "New York_2": 26,
+    "San Francisco_2": 12,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120814",
+    "New York_1": 76,
+    "San Francisco_1": 53,
+    "Austin_1": 88,
+    "New York_2": 24,
+    "San Francisco_2": 12,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120815",
+    "New York_1": 76,
+    "San Francisco_1": 56,
+    "Austin_1": 87,
+    "New York_2": 24,
+    "San Francisco_2": 13,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120816",
+    "New York_1": 75,
+    "San Francisco_1": 57,
+    "Austin_1": 86,
+    "New York_2": 24,
+    "San Francisco_2": 14,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120817",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 86,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120818",
+    "New York_1": 72,
+    "San Francisco_1": 56,
+    "Austin_1": 84,
+    "New York_2": 22,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120819",
+    "New York_1": 70,
+    "San Francisco_1": 54,
+    "Austin_1": 76,
+    "New York_2": 21,
+    "San Francisco_2": 12,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120820",
+    "New York_1": 71,
+    "San Francisco_1": 53,
+    "Austin_1": 80,
+    "New York_2": 22,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120821",
+    "New York_1": 73,
+    "San Francisco_1": 53,
+    "Austin_1": 80,
+    "New York_2": 23,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120822",
+    "New York_1": 74,
+    "San Francisco_1": 54,
+    "Austin_1": 78,
+    "New York_2": 23,
+    "San Francisco_2": 12,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120823",
+    "New York_1": 74,
+    "San Francisco_1": 55,
+    "Austin_1": 79,
+    "New York_2": 23,
+    "San Francisco_2": 13,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120824",
+    "New York_1": 76,
+    "San Francisco_1": 54,
+    "Austin_1": 81,
+    "New York_2": 24,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120825",
+    "New York_1": 76,
+    "San Francisco_1": 53,
+    "Austin_1": 84,
+    "New York_2": 24,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120826",
+    "New York_1": 73,
+    "San Francisco_1": 56,
+    "Austin_1": 83,
+    "New York_2": 23,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120827",
+    "New York_1": 74,
+    "San Francisco_1": 58,
+    "Austin_1": 82,
+    "New York_2": 23,
+    "San Francisco_2": 14,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120828",
+    "New York_1": 79,
+    "San Francisco_1": 58,
+    "Austin_1": 84,
+    "New York_2": 26,
+    "San Francisco_2": 14,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120829",
+    "New York_1": 74,
+    "San Francisco_1": 57,
+    "Austin_1": 85,
+    "New York_2": 23,
+    "San Francisco_2": 14,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120830",
+    "New York_1": 73,
+    "San Francisco_1": 55,
+    "Austin_1": 87,
+    "New York_2": 23,
+    "San Francisco_2": 13,
+    "Austin_2": 31
+  },
+  {
+    "date": "20120831",
+    "New York_1": 77,
+    "San Francisco_1": 55,
+    "Austin_1": 82,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120901",
+    "New York_1": 80,
+    "San Francisco_1": 55,
+    "Austin_1": 84,
+    "New York_2": 27,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120902",
+    "New York_1": 75,
+    "San Francisco_1": 53,
+    "Austin_1": 83,
+    "New York_2": 24,
+    "San Francisco_2": 12,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120903",
+    "New York_1": 73,
+    "San Francisco_1": 53,
+    "Austin_1": 85,
+    "New York_2": 23,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120904",
+    "New York_1": 73,
+    "San Francisco_1": 52,
+    "Austin_1": 86,
+    "New York_2": 23,
+    "San Francisco_2": 11,
+    "Austin_2": 30
+  },
+  {
+    "date": "20120905",
+    "New York_1": 77,
+    "San Francisco_1": 54,
+    "Austin_1": 85,
+    "New York_2": 25,
+    "San Francisco_2": 12,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120906",
+    "New York_1": 74,
+    "San Francisco_1": 56,
+    "Austin_1": 85,
+    "New York_2": 23,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120907",
+    "New York_1": 76,
+    "San Francisco_1": 56,
+    "Austin_1": 85,
+    "New York_2": 24,
+    "San Francisco_2": 13,
+    "Austin_2": 29
+  },
+  {
+    "date": "20120908",
+    "New York_1": 77,
+    "San Francisco_1": 56,
+    "Austin_1": 81,
+    "New York_2": 25,
+    "San Francisco_2": 13,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120909",
+    "New York_1": 69,
+    "San Francisco_1": 56,
+    "Austin_1": 74,
+    "New York_2": 21,
+    "San Francisco_2": 13,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120910",
+    "New York_1": 67,
+    "San Francisco_1": 55,
+    "Austin_1": 71,
+    "New York_2": 19,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120911",
+    "New York_1": 64,
+    "San Francisco_1": 56,
+    "Austin_1": 75,
+    "New York_2": 18,
+    "San Francisco_2": 13,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120912",
+    "New York_1": 68,
+    "San Francisco_1": 55,
+    "Austin_1": 82,
+    "New York_2": 20,
+    "San Francisco_2": 13,
+    "Austin_2": 28
+  },
+  {
+    "date": "20120913",
+    "New York_1": 69,
+    "San Francisco_1": 54,
+    "Austin_1": 80,
+    "New York_2": 21,
+    "San Francisco_2": 12,
+    "Austin_2": 27
+  },
+  {
+    "date": "20120914",
+    "New York_1": 70,
+    "San Francisco_1": 55,
+    "Austin_1": 70,
+    "New York_2": 21,
+    "San Francisco_2": 13,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120915",
+    "New York_1": 69,
+    "San Francisco_1": 54,
+    "Austin_1": 71,
+    "New York_2": 21,
+    "San Francisco_2": 12,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120916",
+    "New York_1": 66,
+    "San Francisco_1": 52,
+    "Austin_1": 70,
+    "New York_2": 19,
+    "San Francisco_2": 11,
+    "Austin_2": 21
+  },
+  {
+    "date": "20120917",
+    "New York_1": 67,
+    "San Francisco_1": 54,
+    "Austin_1": 72,
+    "New York_2": 19,
+    "San Francisco_2": 12,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120918",
+    "New York_1": 72,
+    "San Francisco_1": 54,
+    "Austin_1": 73,
+    "New York_2": 22,
+    "San Francisco_2": 12,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120919",
+    "New York_1": 67,
+    "San Francisco_1": 56,
+    "Austin_1": 72,
+    "New York_2": 19,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120920",
+    "New York_1": 62,
+    "San Francisco_1": 55,
+    "Austin_1": 71,
+    "New York_2": 17,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120921",
+    "New York_1": 64,
+    "San Francisco_1": 55,
+    "Austin_1": 72,
+    "New York_2": 18,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  },
+  {
+    "date": "20120922",
+    "New York_1": 65,
+    "San Francisco_1": 55,
+    "Austin_1": 73,
+    "New York_2": 18,
+    "San Francisco_2": 13,
+    "Austin_2": 23
+  },
+  {
+    "date": "20120923",
+    "New York_1": 65,
+    "San Francisco_1": 52,
+    "Austin_1": 75,
+    "New York_2": 18,
+    "San Francisco_2": 11,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120924",
+    "New York_1": 60,
+    "San Francisco_1": 54,
+    "Austin_1": 78,
+    "New York_2": 16,
+    "San Francisco_2": 12,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120925",
+    "New York_1": 63,
+    "San Francisco_1": 53,
+    "Austin_1": 78,
+    "New York_2": 17,
+    "San Francisco_2": 12,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120926",
+    "New York_1": 68,
+    "San Francisco_1": 53,
+    "Austin_1": 79,
+    "New York_2": 20,
+    "San Francisco_2": 12,
+    "Austin_2": 26
+  },
+  {
+    "date": "20120927",
+    "New York_1": 69,
+    "San Francisco_1": 52,
+    "Austin_1": 76,
+    "New York_2": 21,
+    "San Francisco_2": 11,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120928",
+    "New York_1": 68,
+    "San Francisco_1": 52,
+    "Austin_1": 77,
+    "New York_2": 20,
+    "San Francisco_2": 11,
+    "Austin_2": 25
+  },
+  {
+    "date": "20120929",
+    "New York_1": 62,
+    "San Francisco_1": 53,
+    "Austin_1": 75,
+    "New York_2": 17,
+    "San Francisco_2": 12,
+    "Austin_2": 24
+  },
+  {
+    "date": "20120930",
+    "New York_1": 62,
+    "San Francisco_1": 55,
+    "Austin_1": 71,
+    "New York_2": 17,
+    "San Francisco_2": 13,
+    "Austin_2": 22
+  }
 ]

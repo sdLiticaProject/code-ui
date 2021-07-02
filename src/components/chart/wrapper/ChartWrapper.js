@@ -1,6 +1,6 @@
 import React from 'react';
-import {withTheme} from 'styled-components';
-import {ChartWrapperContainer, WrapperContainer} from './ChartWrapper.styles';
+import { withTheme } from 'styled-components';
+import { ChartWrapperContainer, WrapperContainer } from './ChartWrapper.styles';
 import ChartControl from '../control/ChartControl';
 import ExampleChart from '../Chart';
 

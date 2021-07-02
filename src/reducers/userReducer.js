@@ -1,7 +1,7 @@
-import {USER_ADD, USER_DELETE} from '../actions/userActions';
+import { USER_ADD, USER_DELETE } from '../actions/userActions';
 
 export const initialState = {
-  user: null
+  user: null,
 };
 
 export default (state = initialState, action) => {
@@ -9,13 +9,13 @@ export default (state = initialState, action) => {
     case USER_ADD:
       return {
         ...state,
-        user: action.payload
+        user: action.payload,
       };
 
     case USER_DELETE:
       return {
         ...state,
-        user: null
+        user: null,
       };
 
     default:
