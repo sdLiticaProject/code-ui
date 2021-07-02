@@ -4,6 +4,7 @@ import * as Sc from './HomePage.styles';
 import Dashboard from './dashboard/Dashboard';
 import History from './history/History';
 import Data from './data/Data';
+import Footer from './components/footer/Footer';
 import Tabs from './components/tabs/Tabs';
 import MenuWrapper from './components/header-menu/HeaderMenu';
 
@@ -32,13 +33,7 @@ function HomePage() {
           </Route>
         </Switch>
       </Sc.MainWrapper>
-      <Sc.FooterWrapper>
-        <Sc.FooterContent>
-          <p>by sdCloud</p>
-          <p>© Copyright 2019-{new Date().getFullYear()}</p>
-          <p>by sdCloud</p>
-        </Sc.FooterContent>
-      </Sc.FooterWrapper>
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import logo from './resources/logo2.png';
 
 const HEADER_HEIGHT = '100px';
-const FOOTER_HEIGHT = '100px';
+const FOOTER_HEIGHT = '74px';
 
 export const HeaderWrapper = styled.header`
   background: #3f88c5;
@@ -213,4 +213,21 @@ export const FooterContent = styled.div`
   line-height: 9px;
   color: #ffffff;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const FooterLogo = styled.svg``;
+
+export const FooterInfo = styled.div`
+  margin-left: 8px;
+  & div {
+    line-height: 21px;
+  }
+
+  a {
+    text-decoration: unset;
+    color: white;
+  }
 `;
