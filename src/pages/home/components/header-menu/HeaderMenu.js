@@ -9,7 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import PersonIcon from '@material-ui/icons/Person';
-import { LOGIN } from '../../../../constants/routes';
+import { LOGIN, PAGE_USER_PROFILE } from '../../../../constants/routes';
 import { logoutUser, LOGOUT_SUCCESS } from '../../../../actions/loginActions';
 import { del } from '../../../../actions/userActions';
 import * as Sc from '../../HomePage.styles';
@@ -73,7 +73,12 @@ function MenuWrapper() {
   return (
     <>
       <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-        <StyledMenuItem>
+        <StyledMenuItem
+          onClick={() => {
+            handleClose();
+            history.push(PAGE_USER_PROFILE);
+          }}
+        >
           <ListItemIcon>
             <PersonIcon fontSize="small" />
           </ListItemIcon>

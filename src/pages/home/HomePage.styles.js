@@ -231,3 +231,16 @@ export const FooterInfo = styled.div`
     color: white;
   }
 `;
+
+export const ColWrapper = styled.div`
+  margin-top: 46px;
+  display: flex;
+`;
+
+export const Row = styled.div``;
+
+export const Col = styled.div`
+  display: flex;
+`;
+
+export const InnerCol = styled.div``;
