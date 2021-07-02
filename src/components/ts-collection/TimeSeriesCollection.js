@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { withTheme } from 'styled-components';
 import useActions from '../../hooks/useAction';
 import {
   TIME_SERIES_LOADING_FAIL,
@@ -13,8 +12,8 @@ import {
 const TimeSeriesCollection = () => {
   const [listTimeSeries, createNewTimeSeries] = useActions([getTimeSeriesList, createTimeSeries]);
   const [timeSeriesList, setTimeSeriesList] = useState([]);
-  let [newSeriesName, setNewSeriesName] = useState('');
-  let [newSeriesDescription, setNewSeriesDescription] = useState('');
+  const [newSeriesName, setNewSeriesName] = useState('');
+  const [newSeriesDescription, setNewSeriesDescription] = useState('');
 
   const refreshTimeSeriesList = () => {
     listTimeSeries().then(e => {
@@ -109,4 +108,4 @@ const TimeSeriesCollection = () => {
   );
 };
 
-export default withTheme(TimeSeriesCollection);
+export default TimeSeriesCollection;

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import moment from 'moment';
-import { withTheme } from 'styled-components';
 import { connect } from 'react-redux';
-import data from '../../data/exampleDegrees.json';
+import data from './data/exampleDegrees.json';
 import { clearArea, drawLine, drawSVG, getBisectDate, getWidth, updateCurrencyInfo } from './ChartFunctions';
 import { colorScheme, height, height2, margin, margin2, timeFormat, transformTime } from './ChartConstants';
 import { Btn, Canvas, CurrencyInfo, ChartContainer, InfoWrapper, BtnWrapper, CanvasWrapper, LineName } from './Chart.styles';
@@ -485,4 +484,4 @@ const ExampleChart = props => {
   );
 };
 
-export default withTheme(connect(mapStateToProps, {})(ExampleChart));
+export default connect(mapStateToProps, {})(ExampleChart);
