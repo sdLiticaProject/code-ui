@@ -9,7 +9,7 @@ import { LOGIN, HOME } from './constants/routes';
 import PrivateRoute from './helpers/PrivateRoute';
 import { GlobalStyle } from './App.styles';
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <Provider store={store}>
       <GlobalStyle />
@@ -22,6 +22,6 @@ function App() {
       </CustomBrowserRouter>
     </Provider>
   );
-}
+};
 
 export default App;
