@@ -32,7 +32,7 @@ function RestoreForm() {
             },
           })}
           name="email"
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <Error>{errors.email && errors.email.message}</Error>
       </InputFormWrapper>

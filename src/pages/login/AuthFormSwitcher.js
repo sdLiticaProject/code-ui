@@ -5,8 +5,8 @@ import RegistrationForm from './components/forms/RegistrationForm';
 import { LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text } from './AuthFormSwitcher.styles';
 import { LOGIN } from '../../constants/routes';
 
-function AuthenticationPage(props) {
-  const params = new URLSearchParams(props.location.search).get('tab');
+function AuthenticationPage({ location }) {
+  const params = new URLSearchParams(location.search).get('tab');
 
   if (params == null) {
     return (

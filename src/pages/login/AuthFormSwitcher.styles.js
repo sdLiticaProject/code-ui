@@ -35,7 +35,7 @@ const BackImage = styled.img`
   height: 300px;
   position: absolute;
   left: -80%;
-  animation: ${move} ${props => props.timeAnimation} linear infinite;
+  animation: ${move} ${(props) => props.timeAnimation} linear infinite;
 `;
 
 const Logo = styled.img`

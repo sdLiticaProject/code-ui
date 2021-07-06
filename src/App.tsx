@@ -7,7 +7,7 @@ import HomePage from './pages/home/HomePage';
 import CustomBrowserRouter from './helpers/CustomBrowserRouter';
 import { LOGIN, HOME } from './constants/routes';
 import PrivateRoute from './helpers/PrivateRoute';
-import { GlobalStyle } from './App.styles';
+import GlobalStyle from './App.styles';
 
 const App = (): JSX.Element => {
   return (

@@ -14,12 +14,12 @@ function RegistrationForm() {
   // Alternative bindActionCreators
   const [submitAction] = useActions([registerUser]);
 
-  const isRegisterSuccess = useSelector(state => state.login.type) === REGISTER_SUCCESS;
-  const isRegisterLoading = useSelector(state => state.login.type) === REGISTER_LOADING;
+  const isRegisterSuccess = useSelector((state) => state.login.type) === REGISTER_SUCCESS;
+  const isRegisterLoading = useSelector((state) => state.login.type) === REGISTER_LOADING;
 
   useEffect(() => {
     if (isRegisterSuccess) {
-      dispatch(loginUser(getValues('login'), getValues('password'))).then(e => {
+      dispatch(loginUser(getValues('login'), getValues('password'))).then((e) => {
         if (e.type && e.type === LOGIN_SUCCESS) {
           history.push(HOME);
         }
@@ -27,7 +27,7 @@ function RegistrationForm() {
     }
   }, [isRegisterSuccess]);
 
-  const submit = data => {
+  const submit = (data) => {
     if (data.login !== '' && data.password !== '') {
       submitAction(data.login, data.password, data.firstName, data.lastName);
     }
@@ -41,7 +41,8 @@ function RegistrationForm() {
           ref={register({
             required: 'required',
           })}
-          name="firstName"
+          id="firstName"
+          name="firstame"
         />
         <Error>{errors.firstName && errors.firstName.message}</Error>
       </InputFormWrapper>
@@ -82,6 +83,7 @@ function RegistrationForm() {
               message: 'invalid password',
             },
           })}
+          id="password"
           type="password"
           name="password"
         />

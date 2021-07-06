@@ -4,20 +4,20 @@ import { ControlContainer, ShowInfoWrapper } from './ChartControl.styles';
 import { addLine, removeLine, showTooltip } from '../../../actions/chartActions';
 import { getDoShow, getLines } from '../../../reducers/controlReducer';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   doShow: getDoShow(state),
   lines: getLines(state),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   toggle: () => dispatch(showTooltip()),
-  addLine: line => dispatch(addLine(line)),
-  removeLine: line => dispatch(removeLine(line)),
+  addLine: (line) => dispatch(addLine(line)),
+  removeLine: (line) => dispatch(removeLine(line)),
 });
 
 const lines = ['New York_1', 'San Francisco_1', 'Austin_1', 'New York_2', 'San Francisco_2', 'Austin_2'];
 
-const ChartControl = props => {
+const ChartControl = (props) => {
   // if (!localStorage.getItem('doShow')) localStorage.setItem('doShow', 'true');
   // const [showInfo, setShowInfo] = React.useState(JSON.parse(localStorage.getItem('doShow')));
   return (

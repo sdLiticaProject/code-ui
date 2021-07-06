@@ -18,7 +18,7 @@ const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
   },
-})(props => (
+})((props) => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
@@ -30,11 +30,12 @@ const StyledMenu = withStyles({
       vertical: 'top',
       horizontal: 'center',
     }}
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
   />
 ));
 
-const StyledMenuItem = withStyles(theme => ({
+const StyledMenuItem = withStyles((theme) => ({
   root: {
     '&:focus': {
       backgroundColor: `#3f88c5`,
@@ -50,7 +51,7 @@ function MenuWrapper() {
   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -58,10 +59,10 @@ function MenuWrapper() {
     setAnchorEl(null);
   };
 
-  const user = useSelector(state => state.user.user);
+  const user = useSelector((state) => state.user.user);
 
   const logout = useCallback(() => {
-    dispatch(logoutUser()).then(e => {
+    dispatch(logoutUser()).then((e) => {
       if (e.type && e.type === LOGOUT_SUCCESS) {
         Cookies.remove('token');
         dispatch(del());

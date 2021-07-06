@@ -16,7 +16,7 @@ const TimeSeriesCollection = () => {
   const [newSeriesDescription, setNewSeriesDescription] = useState('');
 
   const refreshTimeSeriesList = () => {
-    listTimeSeries().then(e => {
+    listTimeSeries().then((e) => {
       if (e.type && e.type === TIME_SERIES_LOADING_FAIL) {
         // setSnackMessage(e.message);
         // setSnackbarOpen(true);
@@ -28,11 +28,11 @@ const TimeSeriesCollection = () => {
     });
   };
 
-  const handleNewSeriesNameChange = e => {
+  const handleNewSeriesNameChange = (e) => {
     setNewSeriesName(e.target.value);
   };
 
-  const handleNewSeriesDescriptionChange = e => {
+  const handleNewSeriesDescriptionChange = (e) => {
     setNewSeriesDescription(e.target.value);
   };
 
@@ -41,7 +41,7 @@ const TimeSeriesCollection = () => {
   }, []);
 
   const onClickCreateNewTimeSeries = () => {
-    createNewTimeSeries(newSeriesName, newSeriesDescription).then(e => {
+    createNewTimeSeries(newSeriesName, newSeriesDescription).then((e) => {
       if (e.type && e.type === TIME_SERIES_CREATION_FAIL) {
         // setSnackMessage(e.message);
         // setSnackbarOpen(true);
@@ -53,7 +53,7 @@ const TimeSeriesCollection = () => {
     });
   };
 
-  let tableHeader = (
+  const tableHeader = (
     <div style={{ width: '100%', height: '50px', display: 'table-row', textAlign: 'center' }}>
       <div style={{ display: 'table-cell', textAlign: 'center' }}>#</div>
       <div style={{ display: 'table-cell', textAlign: 'center' }}>Name</div>
@@ -64,7 +64,7 @@ const TimeSeriesCollection = () => {
     </div>
   );
 
-  const timeSeriesRows = timeSeriesList.map(timeSeries => {
+  const timeSeriesRows = timeSeriesList.map((timeSeries) => {
     return (
       <div style={{ width: '100%', height: '50px', display: 'table-row', textAlign: 'center' }}>
         <div style={{ display: 'table-cell', textAlign: 'center' }}>{timeSeries.id}</div>

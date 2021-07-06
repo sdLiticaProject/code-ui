@@ -11,7 +11,7 @@ import { getDoShow, getLines } from '../../reducers/controlReducer';
 const dataBtn = ['1d', '1w', '1m', '1y', 'All time'];
 const linesForExtent = ['New York_1', 'San Francisco_1', 'Austin_1', 'New York_2', 'San Francisco_2', 'Austin_2'];
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   doShow: getDoShow(state),
   lines: getLines(state),
 });
@@ -21,14 +21,14 @@ let colorCounter = 0;
 
 const parseTime = d3.timeParse('%Y%m%d');
 const formatValue = d3.format(',.0f');
-data.forEach(d => {
+data.forEach((d) => {
   d.date = parseTime(d.date);
   return d;
 });
 
-const ExampleChart = props => {
+const ExampleChart = (props) => {
   const { lines } = props;
-  lines.forEach(l => {
+  lines.forEach((l) => {
     if (!colorMap.has(l)) {
       colorMap.set(l, colorScheme[colorCounter]);
       colorCounter += 1;
@@ -57,19 +57,19 @@ const ExampleChart = props => {
   }
 
   useEffect(() => {
-    const multiData = lines.map(id => {
+    const multiData = lines.map((id) => {
       return {
         id,
-        values: data.map(d => {
+        values: data.map((d) => {
           return { x: d.date, y: +d[id] };
         }),
       };
     });
 
-    const multiDataForExtent = linesForExtent.map(id => {
+    const multiDataForExtent = linesForExtent.map((id) => {
       return {
         id,
-        values: data.map(d => {
+        values: data.map((d) => {
           return { x: d.date, y: +d[id] };
         }),
       };
@@ -87,10 +87,7 @@ const ExampleChart = props => {
     const y = d3.scaleLinear().range([height, 0]);
     const y2 = d3.scaleLinear().range([height2, 0]);
     const ticksCount = width / 60;
-    const xAxis = d3
-      .axisBottom(x)
-      .tickFormat(timeFormat)
-      .ticks(ticksCount);
+    const xAxis = d3.axisBottom(x).tickFormat(timeFormat).ticks(ticksCount);
     const xAxis2 = d3.axisBottom(x2).ticks(ticksCount);
     const yAxis = d3.axisLeft(y);
 
@@ -117,14 +114,14 @@ const ExampleChart = props => {
 
     const area = d3
       .area()
-      .x(d => x(d.x))
+      .x((d) => x(d.x))
       .y0(height)
-      .y1(d => y(d.y));
+      .y1((d) => y(d.y));
 
     const linePath = d3
       .line()
-      .x(d => x(d.x))
-      .y(d => y(d.y));
+      .x((d) => x(d.x))
+      .y((d) => y(d.y));
 
     svg
       .append('defs')
@@ -140,89 +137,38 @@ const ExampleChart = props => {
 
     const svgDefs = svg.append('defs');
 
-    const mainGradient = svgDefs
-      .append('linearGradient')
-      .attr('id', 'mainGradient')
-      .attr('x1', '0%')
-      .attr('x2', '0%')
-      .attr('y1', '0%')
-      .attr('y2', '100%');
-    mainGradient
-      .append('stop')
-      .attr('class', 'stop-left')
-      .style('stop-color', '#f28e2c')
-      .attr('offset', '0');
+    const mainGradient = svgDefs.append('linearGradient').attr('id', 'mainGradient').attr('x1', '0%').attr('x2', '0%').attr('y1', '0%').attr('y2', '100%');
+    mainGradient.append('stop').attr('class', 'stop-left').style('stop-color', '#f28e2c').attr('offset', '0');
 
-    mainGradient
-      .append('stop')
-      .attr('class', 'stop-right')
-      .attr('offset', '1');
+    mainGradient.append('stop').attr('class', 'stop-right').attr('offset', '1');
 
-    const lineChart = svg
-      .append('g')
-      .attr('class', 'chart')
-      .attr('transform', `translate(${margin.left},${margin.top})`)
-      .attr('clip-path', 'url(#clip)');
+    const lineChart = svg.append('g').attr('class', 'chart').attr('transform', `translate(${margin.left},${margin.top})`).attr('clip-path', 'url(#clip)');
 
-    const focus = svg
-      .append('g')
-      .attr('class', 'focus')
-      .attr('transform', `translate(${margin.left},${margin.top})`);
+    const focus = svg.append('g').attr('class', 'focus').attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const zoomscale = svg
-      .append('g')
-      .attr('class', 'context')
-      .attr('transform', `translate(${margin2.left},${margin2.top})`);
+    const zoomscale = svg.append('g').attr('class', 'context').attr('transform', `translate(${margin2.left},${margin2.top})`);
 
-    x.domain(d3.extent(data, d => d.date));
-    y.domain([d3.min(multiDataForExtent, d => d3.min(d.values, c => c.y - 10)), d3.max(multiDataForExtent, d => d3.max(d.values, c => c.y + 10))]);
+    x.domain(d3.extent(data, (d) => d.date));
+    y.domain([d3.min(multiDataForExtent, (d) => d3.min(d.values, (c) => c.y - 10)), d3.max(multiDataForExtent, (d) => d3.max(d.values, (c) => c.y + 10))]);
 
     x2.domain(x.domain());
     y2.domain(y.domain());
 
-    focus
-      .append('g')
-      .attr('class', 'axis axis--x')
-      .attr('transform', `translate(0,${height})`)
-      .call(xAxis);
+    focus.append('g').attr('class', 'axis axis--x').attr('transform', `translate(0,${height})`).call(xAxis);
 
-    focus
-      .append('g')
-      .attr('class', 'axis axis--y')
-      .call(yAxis);
+    focus.append('g').attr('class', 'axis axis--y').call(yAxis);
 
-    zoomscale
-      .append('g')
-      .attr('class', 'axis axis--x')
-      .attr('transform', `translate(0,${height2})`)
-      .call(xAxis2);
+    zoomscale.append('g').attr('class', 'axis axis--x').attr('transform', `translate(0,${height2})`).call(xAxis2);
 
-    zoomscale
-      .append('g')
-      .attr('class', 'brush')
-      .call(brush)
-      .call(brush.move, x.range());
+    zoomscale.append('g').attr('class', 'brush').call(brush).call(brush.move, x.range());
 
     // TOOLTIP START
 
-    const focusPoints = focus
-      .append('g')
-      .attr('class', 'focusPoints')
-      .style('display', 'none');
+    const focusPoints = focus.append('g').attr('class', 'focusPoints').style('display', 'none');
 
-    focusPoints
-      .append('line')
-      .attr('class', 'x-hover-line hover-line')
-      .attr('y1', 0)
-      .attr('y2', height);
+    focusPoints.append('line').attr('class', 'x-hover-line hover-line').attr('y1', 0).attr('y2', height);
 
-    focusPoints
-      .append('rect')
-      .attr('class', 'tooltip')
-      .attr('rx', 5)
-      .attr('ry', 5)
-      .attr('width', 120)
-      .attr('height', 90);
+    focusPoints.append('rect').attr('class', 'tooltip').attr('rx', 5).attr('ry', 5).attr('width', 120).attr('height', 90);
 
     const labels = focusPoints.selectAll('.lineHoverText').data(lines);
 
@@ -230,7 +176,7 @@ const ExampleChart = props => {
       .enter()
       .append('text')
       .attr('class', 'lineHoverText')
-      .style('fill', d => colorMap.get(d))
+      .style('fill', (d) => colorMap.get(d))
       .attr('text-anchor', 'start')
       .attr('font-size', 12)
       .attr('dy', (_, i) => `${1 + i * 2}em`)
@@ -242,16 +188,11 @@ const ExampleChart = props => {
       .enter()
       .append('circle')
       .attr('class', 'hoverCircle')
-      .style('fill', d => colorMap.get(d))
+      .style('fill', (d) => colorMap.get(d))
       .attr('r', 2.5)
       .merge(circles);
 
-    focusPoints
-      .append('text')
-      .attr('class', 'infoAxisX')
-      .attr('id', '#infoAxisX')
-      .attr('x', 15)
-      .attr('dy', '.31em');
+    focusPoints.append('text').attr('class', 'infoAxisX').attr('id', '#infoAxisX').attr('x', 15).attr('dy', '.31em');
 
     // TOOLTIP END
 
@@ -282,9 +223,9 @@ const ExampleChart = props => {
       d3.select(val.current).style('color', colorMap.get(lines[index]));
     });
 
-    btnsRef.forEach(el => d3.select(el.current).on('click', drawBrush));
+    btnsRef.forEach((el) => d3.select(el.current).on('click', drawBrush));
 
-    btnsRef.forEach(el => {
+    btnsRef.forEach((el) => {
       if (el.current != null) el.current.classList.remove('active');
     });
     // Выделяем последнюю нажатую кнопку (по-умолчанию - 'All time')
@@ -307,17 +248,17 @@ const ExampleChart = props => {
 
       focusPoints
         .selectAll('.hoverCircle')
-        .attr('cy', e => y(d[e]))
+        .attr('cy', (e) => y(d[e]))
         .attr('cx', x(d.date));
 
       focusPoints
         .selectAll('.lineHoverText')
         .attr('transform', `translate(${x(d.date)},${height / 3})`)
-        .text(e => `${e} º${formatValue(d[e])}`);
+        .text((e) => `${e} º${formatValue(d[e])}`);
 
       let maxLength = 80;
-      focusPoints.selectAll('.lineHoverText').call(k => {
-        k._groups[0].forEach(el => {
+      focusPoints.selectAll('.lineHoverText').call((k) => {
+        k._groups[0].forEach((el) => {
           if (el.getComputedTextLength() > maxLength) maxLength = el.getComputedTextLength();
         });
       });
@@ -327,10 +268,7 @@ const ExampleChart = props => {
       const computedTooltipHeight = 18 + 23 * lines.length;
 
       if (x(d.date) > width - width / 4) {
-        focusPoints
-          .selectAll('text.lineHoverText')
-          .attr('text-anchor', 'end')
-          .attr('dx', -20);
+        focusPoints.selectAll('text.lineHoverText').attr('text-anchor', 'end').attr('dx', -20);
         focusPoints
           .select('.tooltip')
           // Положение прямоугольника подсказски
@@ -348,10 +286,7 @@ const ExampleChart = props => {
             `translate(${x(d.date) - 100},${height / 3 - 10})`,
           );
       } else {
-        focusPoints
-          .selectAll('text.lineHoverText')
-          .attr('text-anchor', 'start')
-          .attr('dx', 20);
+        focusPoints.selectAll('text.lineHoverText').attr('text-anchor', 'start').attr('dx', 20);
         focusPoints
           .select('.tooltip')
           // Положение прямоугольника подсказски
@@ -375,7 +310,7 @@ const ExampleChart = props => {
       let dateStart = x.invert(0);
       let dateEnd = x.invert(0);
 
-      btnsRef.forEach(el => {
+      btnsRef.forEach((el) => {
         if (el.current != null) el.current.classList.remove('active');
       });
       // Выделяем только кнопку, на которую нажали
@@ -415,13 +350,7 @@ const ExampleChart = props => {
 
       const start = x2(dateStart);
       const end = x2(dateEnd) > width ? width : x2(dateEnd);
-      brush.move(
-        d3
-          .select('.brush')
-          .transition()
-          .duration(transformTime),
-        [start, end],
-      );
+      brush.move(d3.select('.brush').transition().duration(transformTime), [start, end]);
     }
 
     function applyZoom(t, isBrush) {

@@ -16,7 +16,7 @@ function LoginForm() {
   const history = useHistory();
   const [isSnackbarOpen, setSnackbarOpen] = React.useState(false);
   const [snackMessage, setSnackMessage] = React.useState('');
-  const isLoginLoading = useSelector(state => state.login.type) === LOGIN_LOADING;
+  const isLoginLoading = useSelector((state) => state.login.type) === LOGIN_LOADING;
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -26,9 +26,9 @@ function LoginForm() {
     setSnackbarOpen(false);
   };
 
-  const submit = data => {
+  const submit = (data) => {
     if (data.email !== '' && data.password !== '') {
-      submitAction(data.email, data.password).then(e => {
+      submitAction(data.email, data.password).then((e) => {
         if (e.type && e.type === LOGIN_FAIL) {
           setSnackMessage(e.message);
           setSnackbarOpen(true);
@@ -52,6 +52,7 @@ function LoginForm() {
               message: 'invalid email address',
             },
           })}
+          id="email"
           name="email"
         />
         <Error>{errors.email && errors.email.message}</Error>
@@ -73,9 +74,6 @@ function LoginForm() {
         />
         <Error>{errors.password && errors.password.message}</Error>
       </InputFormWrapper>
-      {/* <NavLink to={`${LOGIN}?tab=restore`}>
-        <Link>Forgot password</Link>
-      </NavLink> */}
       <br />
       <Button type="submit">Log in</Button>
       {isLoginLoading && <LoadIndicator />}
@@ -94,11 +92,9 @@ function LoginForm() {
         onClose={handleSnackbarClose}
         message={snackMessage}
         action={
-          <React.Fragment>
-            <IconButton size="small" aria-label="close" color="inherit" onClick={handleSnackbarClose}>
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </React.Fragment>
+          <IconButton size="small" aria-label="close" color="inherit" onClick={handleSnackbarClose}>
+            <CloseIcon fontSize="small" />
+          </IconButton>
         }
       />
     </FormWrapper>

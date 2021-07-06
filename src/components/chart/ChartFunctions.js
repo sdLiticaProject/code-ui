@@ -1,13 +1,11 @@
 import * as d3 from 'd3';
 import { height, margin, units, width } from './ChartConstants';
 
-export const clearArea = canvasRef => {
-  d3.select(canvasRef.current)
-    .selectAll('*')
-    .remove();
+export const clearArea = (canvasRef) => {
+  d3.select(canvasRef.current).selectAll('*').remove();
 };
 
-export const drawSVG = canvasRef => {
+export const drawSVG = (canvasRef) => {
   return d3
     .select(canvasRef.current)
     .append('svg')
@@ -15,7 +13,7 @@ export const drawSVG = canvasRef => {
     .attr('height', height + margin.top + margin.bottom);
 };
 
-export const getWidth = currentRef => {
+export const getWidth = (currentRef) => {
   return parseInt(d3.select(currentRef).style('width'), 10) - margin.left - margin.right;
 };
 
@@ -29,21 +27,17 @@ export const drawLine = (multiData, z, linePath, lineChart, area) => {
     .insert('g', '.somePath')
     .append('path')
     .attr('class', 'line multiData')
-    .style('stroke', d => z.get(d.id))
+    .style('stroke', (d) => z.get(d.id))
     .merge(mData)
-    .attr('d', d => linePath(d.values));
+    .attr('d', (d) => linePath(d.values));
 
   if (multiData.length === 1) {
-    lineChart
-      .append('path')
-      .datum(multiData[0].values)
-      .attr('class', 'area multiData')
-      .attr('d', area);
+    lineChart.append('path').datum(multiData[0].values).attr('class', 'area multiData').attr('d', area);
     d3.select('.stop-left').style('stop-color', z.get(multiData[0].id));
   }
 };
 
-export const getBisectDate = d3.bisector(d => d.date).left;
+export const getBisectDate = d3.bisector((d) => d.date).left;
 
 export const updateCurrencyInfo = (balanceRef, entirePercentRef, lastPercentRef, x, multiData, data, currentWidth) => {
   const x0 = x.invert(currentWidth);

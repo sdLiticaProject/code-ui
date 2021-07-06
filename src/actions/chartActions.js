@@ -6,12 +6,12 @@ export const showTooltip = () => ({
   type: SHOW_TOOLTIP,
 });
 
-export const addLine = line => ({
+export const addLine = (line) => ({
   type: ADD_LINE,
   payload: line,
 });
 
-export const removeLine = line => ({
+export const removeLine = (line) => ({
   type: REMOVE_LINE,
   payload: line,
 });

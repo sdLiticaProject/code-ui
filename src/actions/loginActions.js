@@ -14,7 +14,7 @@ export const REGISTER_LOADING = 'REGISTER_LOADING';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 
-export const loginUser = (email, password) => async dispatch => {
+export const loginUser = (email, password) => async (dispatch) => {
   dispatch({
     type: LOGIN_LOADING,
   });
@@ -37,7 +37,7 @@ export const loginUser = (email, password) => async dispatch => {
   }
 };
 
-export const logoutUser = () => async dispatch => {
+export const logoutUser = () => async (dispatch) => {
   dispatch({
     type: LOGOUT_LOADING,
   });
@@ -63,7 +63,7 @@ export const logoutUser = () => async dispatch => {
   }
 };
 
-export const registerUser = (email, password, firstName, lastName) => async dispatch => {
+export const registerUser = (email, password, firstName, lastName) => async (dispatch) => {
   dispatch({
     type: REGISTER_LOADING,
   });

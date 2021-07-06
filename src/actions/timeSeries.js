@@ -10,7 +10,7 @@ export const TIME_SERIES_CREATION = 'time_series_creation';
 export const TIME_SERIES_CREATION_SUCCESS = 'time_series_creation_success';
 export const TIME_SERIES_CREATION_FAIL = 'time_series_creation_fail';
 
-export const getTimeSeriesList = () => async dispatch => {
+export const getTimeSeriesList = () => async (dispatch) => {
   dispatch({
     type: TIME_SERIES_LOADING,
   });
@@ -36,7 +36,7 @@ export const getTimeSeriesList = () => async dispatch => {
   }
 };
 
-export const createTimeSeries = (name, description) => async dispatch => {
+export const createTimeSeries = (name, description) => async (dispatch) => {
   dispatch({
     type: TIME_SERIES_CREATION,
   });
@@ -46,17 +46,15 @@ export const createTimeSeries = (name, description) => async dispatch => {
     const res = await axios.post(
       api.timeSeriesList(),
       {
-        name: name,
-        description: description,
+        name,
+        description,
       },
       {
         headers: {
-          Authorization: 'cloudToken ' + token,
+          Authorization: `cloudToken ${token}`,
         },
       },
     );
-    console.log(res);
-    //console.log(...state);
 
     return dispatch({
       type: TIME_SERIES_CREATION_SUCCESS,
