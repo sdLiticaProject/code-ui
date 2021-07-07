@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
   return (
     <Provider store={store}>
       <GlobalStyle />
-      <CustomBrowserRouter>
+      <CustomBrowserRouter basename="/">
         <Switch>
           <Route path={LOGIN} component={LoginPage} />
           <PrivateRoute path={HOME} component={HomePage} />
