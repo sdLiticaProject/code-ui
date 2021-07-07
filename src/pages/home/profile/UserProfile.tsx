@@ -58,6 +58,4 @@ const UserProfile = (): JSX.Element => {
   );
 };
 
-UserProfile.propTypes = {};
-
 export default UserProfile;

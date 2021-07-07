@@ -104,6 +104,4 @@ const MenuWrapper = (): JSX.Element => {
   );
 };
 
-MenuWrapper.propTypes = {};
-
 export default MenuWrapper;

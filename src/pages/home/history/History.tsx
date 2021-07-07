@@ -19,6 +19,4 @@ const History = (): JSX.Element => {
   );
 };
 
-History.propTypes = {};
-
 export default History;
