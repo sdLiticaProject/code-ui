@@ -25,6 +25,7 @@ export interface FetchUsersAction {
 export interface AddUserAction {
   type: UserActionTypes.USER_ADD;
   payload: UserInnerState | null;
+  huynia?: string;
 }
 
 export interface DeleteUserAction {

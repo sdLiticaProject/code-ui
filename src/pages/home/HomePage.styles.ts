@@ -183,7 +183,11 @@ export const TabsWrapper = styled.div`
   background: #ffffff;
 `;
 
-export const Tab = styled.div`
+interface TabProps {
+  readonly isActive?: boolean;
+}
+
+export const Tab = styled.div<TabProps>`
   font-family: Roboto;
   font-style: normal;
   cursor: pointer;
