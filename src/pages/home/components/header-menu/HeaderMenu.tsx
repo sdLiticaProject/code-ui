@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'js-cookie';
 import { useHistory } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import Menu from '@material-ui/core/Menu';
+import Menu, { MenuProps } from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -13,12 +13,13 @@ import { LOGIN, PAGE_USER_PROFILE } from '../../../../constants/routes';
 import { logoutUser, LOGOUT_SUCCESS } from '../../../../actions/loginActions';
 import { del } from '../../../../actions/userActions';
 import * as Sc from '../../HomePage.styles';
+import { AppDispatch, RootState } from '../../../../store/createStore';
 
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
   },
-})((props) => (
+})((props: MenuProps) => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
@@ -46,12 +47,12 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-function MenuWrapper() {
-  const dispatch = useDispatch();
+const MenuWrapper = (): JSX.Element => {
+  const dispatch: AppDispatch = useDispatch();
   const history = useHistory();
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -59,9 +60,10 @@ function MenuWrapper() {
     setAnchorEl(null);
   };
 
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state: RootState) => state.user.user);
 
   const logout = useCallback(() => {
+    // TODO: fix this way
     dispatch(logoutUser()).then((e) => {
       if (e.type && e.type === LOGOUT_SUCCESS) {
         Cookies.remove('token');
@@ -100,7 +102,7 @@ function MenuWrapper() {
       </Sc.MenuWrapper>
     </>
   );
-}
+};
 
 MenuWrapper.propTypes = {};
 

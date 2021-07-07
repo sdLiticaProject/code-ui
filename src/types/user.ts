@@ -1,6 +1,7 @@
 export interface UserInnerState {
   firstName: string;
   lastName: string;
+  roleId?: number;
 }
 
 export interface UserState {
