@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing LoginForm component component renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div
+    className="sc-AxjAm cVoBpx"
+  >
+    <label
+      htmlFor="login"
+    >
+      Email
+    </label>
+    <input
+      name="login"
+      onChange={[Function]}
+    />
+    <text
+      className="sc-AxiKw cTDmNm"
+    />
+  </div>
+  <br />
+  <div
+    className="sc-AxjAm cVoBpx"
+  >
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <input
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <text
+      className="sc-AxiKw cTDmNm"
+    />
+  </div>
+  <a
+    aria-current={null}
+    href="/recovery"
+    onClick={[Function]}
+  >
+    <a
+      className="sc-AxhCb hMurPe"
+    >
+      Forgot password
+    </a>
+  </a>
+  <br />
+  <button
+    className="sc-AxirZ dygZym"
+    type="submit"
+  >
+    Log in
+  </button>
+  <a
+    aria-current={null}
+    href="/registr"
+    onClick={[Function]}
+  >
+    <a
+      className="sc-AxhUy hvhAfX"
+    >
+      Need an account?
+    </a>
+  </a>
+</form>
+`;
