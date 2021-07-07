@@ -13,7 +13,8 @@ const App = (): JSX.Element => {
   return (
     <Provider store={store}>
       <GlobalStyle />
-      <CustomBrowserRouter basename="/">
+      {/* @ts-ignore */}
+      <CustomBrowserRouter>
         <Switch>
           <Route path={LOGIN} component={LoginPage} />
           <PrivateRoute path={HOME} component={HomePage} />
