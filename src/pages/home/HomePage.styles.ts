@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const MainWrapper = styled.main`
-  height: calc(100% - ${HEADER_HEIGHT} - 20px - ${FOOTER_HEIGHT});
+  /* height: calc(100% - ${HEADER_HEIGHT} - 20px - ${FOOTER_HEIGHT}); */
   padding: 0px 0px 20px 0px;
   overflow-y: auto;
 `;

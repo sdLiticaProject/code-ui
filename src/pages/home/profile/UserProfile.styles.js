@@ -20,6 +20,16 @@ export const GeneralInfoWrapper = styled.div`
   min-height: 336px;
 `;
 
+export const AddKeyTitle = styled.div`
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #000000;
+`;
+
 export const GIInfoTitle = styled.div`
   font-family: Roboto;
   font-style: normal;
@@ -30,7 +40,9 @@ export const GIInfoTitle = styled.div`
   text-align: center;
   border-bottom: 2px solid #3f88c5;
 `;
-export const GIInfoContainer = styled.div``;
+export const GIInfoContainer = styled.div`
+  min-width: 70%;
+`;
 
 export const GIWImage = styled.img`
   position: absolute;

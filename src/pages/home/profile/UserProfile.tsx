@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as HpS from '../HomePage.styles';
 import * as UpS from './UserProfile.styles';
+import ApiKeys from '../components/api-keys/ApiKeysTable';
 import grp from '../../../image/grp.png';
 import { PAGE_USER_HISTORY } from '../../../constants/routes';
+import AddApiKeyForm from '../components/api-keys/AddApiKeyForm';
+import { ApiKeysProvider } from '../components/api-keys/ApiKeysContext';
 
 const UserProfile = (): JSX.Element => {
   return (
@@ -51,7 +54,12 @@ const UserProfile = (): JSX.Element => {
       </UpS.GeneralInfoWrapper>
       <UpS.GeneralInfoWrapper>
         <UpS.GIInfoContainer>
-          <UpS.GIInfoTitle>API access keys</UpS.GIInfoTitle>
+          <ApiKeysProvider>
+            <UpS.GIInfoTitle>API access keys</UpS.GIInfoTitle>
+            <ApiKeys />
+            <UpS.AddKeyTitle>Add new key</UpS.AddKeyTitle>
+            <AddApiKeyForm />
+          </ApiKeysProvider>
         </UpS.GIInfoContainer>
       </UpS.GeneralInfoWrapper>
     </>
