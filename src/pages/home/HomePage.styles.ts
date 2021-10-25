@@ -14,8 +14,9 @@ export const HeaderWrapper = styled.header`
 
 export const MainWrapper = styled.main`
   /* height: calc(100% - ${HEADER_HEIGHT} - 20px - ${FOOTER_HEIGHT}); */
-  padding: 0px 0px 20px 0px;
+  padding: 0px 6% 20px 6%;
   overflow-y: auto;
+  height: calc(100% - ${FOOTER_HEIGHT} - ${HEADER_HEIGHT});
 `;
 
 export const LogoGradient = styled.div`
@@ -181,6 +182,7 @@ export const TabsWrapper = styled.div`
   padding-top: 20px;
   z-index: 20;
   background: #ffffff;
+  position: sticky;
 `;
 
 interface TabProps {
