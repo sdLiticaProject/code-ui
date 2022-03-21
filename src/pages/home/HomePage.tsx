@@ -1,16 +1,16 @@
-import React from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
-import * as Sc from './HomePage.styles';
-import Dashboard from './dashboard/Dashboard';
-import History from './history/History';
-import Data from './data/Data';
-import UserProfile from './profile/UserProfile';
-import Footer from './components/footer/Footer';
-import Tabs from './components/tabs/Tabs';
-import MenuWrapper from './components/header-menu/HeaderMenu';
-import * as routes from '../../constants/routes';
+import React, { FunctionComponent } from "react";
+import { Switch, Route, useLocation } from "react-router-dom";
+import * as Sc from "./HomePage.styles";
+import Dashboard from "./dashboard/Dashboard";
+import History from "./history/History";
+import Data from "./data/Data";
+import UserProfile from "./profile/UserProfile";
+import Footer from "./components/footer/Footer";
+import Tabs from "./components/tabs/Tabs";
+import MenuWrapper from "./components/header-menu/HeaderMenu";
+import * as routes from "../../constants/routes";
 
-const HomePage = (): JSX.Element => {
+export const HomePage: FunctionComponent = () => {
   const location = useLocation();
 
   return (

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const WrapperContainer = styled.div`
   box-sizing: border-box;
@@ -12,7 +12,7 @@ const ChartWrapperContainer = styled.div`
 `;
 
 const Tittle = styled.span`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 46px;
   display: inline-block;
   padding-bottom: 20px;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ChartContainer = styled.div`
   border-radius: 5px;
@@ -14,7 +14,7 @@ const CurrencyInfo = styled.div`
 CurrencyInfo.Percents = styled.div`
   display: flex;
   flex-direction: row;
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -26,7 +26,7 @@ CurrencyInfo.Percents = styled.div`
 `;
 
 CurrencyInfo.Balance = styled.span`
-  font-family: Nunito;
+  font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -54,7 +54,7 @@ const Btn = styled.div`
   background: #313335;
   border-radius: 3px;
   > span {
-    font-family: Nunito;
+    font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -68,7 +68,7 @@ const Btn = styled.div`
 const BtnWrapper = styled.div`
   > ${Btn}:last-child {
     width: 80px;
-    margin-right: 0px;
+    margin-right: 0;
   }
 
   .active {
@@ -139,7 +139,7 @@ const Canvas = styled.span`
   }
 
   .tick {
-    font-family: Nunito;
+    font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 10px;
@@ -212,7 +212,7 @@ const Canvas = styled.span`
 
   .focusPoints text {
     background: #f1f3f3;
-    font-family: Nunito;
+    font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
@@ -230,4 +230,13 @@ const Canvas = styled.span`
   }
 `;
 
-export { CurrencyInfo, InfoWrapper, ChartContainer, Btn, BtnWrapper, Canvas, CanvasWrapper, LineName };
+export {
+  CurrencyInfo,
+  InfoWrapper,
+  ChartContainer,
+  Btn,
+  BtnWrapper,
+  Canvas,
+  CanvasWrapper,
+  LineName,
+};

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/createStore';
-import * as Sc from '../HomePage.styles';
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/createStore";
+import * as Sc from "../HomePage.styles";
 
 const Dashboard = (): JSX.Element => {
   const user = useSelector((state: RootState) => state.user.user);

@@ -1,35 +1,35 @@
-import React, { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Cookies from 'js-cookie';
-import { useHistory } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
-import Menu, { MenuProps } from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import PersonIcon from '@material-ui/icons/Person';
-import { LOGIN, PAGE_USER_PROFILE } from '../../../../constants/routes';
-import { logoutUser, LOGOUT_SUCCESS } from '../../../../actions/loginActions';
-import { del } from '../../../../actions/userActions';
-import * as Sc from '../../HomePage.styles';
-import { AppDispatch, RootState } from '../../../../store/createStore';
+import React, { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Cookies from "js-cookie";
+import { useHistory } from "react-router-dom";
+import { withStyles } from "@material-ui/core/styles";
+import Menu, { MenuProps } from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import PersonIcon from "@material-ui/icons/Person";
+import { LOGIN, PAGE_USER_PROFILE } from "../../../../constants/routes";
+import { logoutUser, LOGOUT_SUCCESS } from "../../../../actions/loginActions";
+import { del } from "../../../../actions/userActions";
+import * as Sc from "../../HomePage.styles";
+import { AppDispatch, RootState } from "../../../../store/createStore";
 
 const StyledMenu = withStyles({
   paper: {
-    border: '1px solid #d3d4d5',
+    border: "1px solid #d3d4d5",
   },
 })((props: MenuProps) => (
   <Menu
     elevation={0}
     getContentAnchorEl={null}
     anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
+      vertical: "bottom",
+      horizontal: "center",
     }}
     transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
+      vertical: "top",
+      horizontal: "center",
     }}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
@@ -38,9 +38,9 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles((theme) => ({
   root: {
-    '&:focus': {
+    "&:focus": {
       backgroundColor: `#3f88c5`,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
         color: theme.palette.common.white,
       },
     },
@@ -66,16 +66,22 @@ const MenuWrapper = (): JSX.Element => {
     // TODO: fix this way
     dispatch(logoutUser()).then((e) => {
       if (e.type && e.type === LOGOUT_SUCCESS) {
-        Cookies.remove('token');
+        Cookies.remove("token");
         dispatch(del());
         history.push(LOGIN);
       }
     });
-  }, []);
+  }, [dispatch, history]);
 
   return (
     <>
-      <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+      <StyledMenu
+        id="customized-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
         <StyledMenuItem
           onClick={() => {
             handleClose();

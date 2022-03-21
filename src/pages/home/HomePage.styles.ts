@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import logo from './resources/logo2.png';
+import styled from "styled-components";
+import logo from "./resources/logo2.png";
 
-const HEADER_HEIGHT = '100px';
-const FOOTER_HEIGHT = '74px';
+const HEADER_HEIGHT = "100px";
+const FOOTER_HEIGHT = "74px";
 
 export const HeaderWrapper = styled.header`
   background: #3f88c5;
@@ -12,9 +12,11 @@ export const HeaderWrapper = styled.header`
   align-items: center;
 `;
 
+HeaderWrapper.displayName = "HeaderWrapper";
+
 export const MainWrapper = styled.main`
   /* height: calc(100% - ${HEADER_HEIGHT} - 20px - ${FOOTER_HEIGHT}); */
-  padding: 0px 6% 20px 6%;
+  padding: 0 6% 20px 6%;
   overflow-y: auto;
   height: calc(100% - ${FOOTER_HEIGHT} - ${HEADER_HEIGHT});
 `;
@@ -92,7 +94,7 @@ export const InfoBlock = styled.div`
   border-radius: 10px;
   max-width: 300px;
   h2 {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -101,7 +103,7 @@ export const InfoBlock = styled.div`
   }
 
   h3 {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -118,7 +120,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const UserInfo = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
@@ -145,7 +147,7 @@ export const MenuLogoGradient = styled.div`
   width: 300px;
   height: 300px;
   margin-top: -130px;
-  margin-bottom: -90;
+  margin-bottom: -90px;
   background: radial-gradient(circle closest-side at 45% 60%, #ffffff, #3f88c5);
 `;
 
@@ -159,7 +161,7 @@ export const MenuLogoImage = styled.div`
 `;
 
 export const MenuWrapperText = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
@@ -177,7 +179,6 @@ export const TabsWrapper = styled.div`
   > div:last-child {
     margin-right: unset;
   }
-  position: fixed;
   width: 100%;
   padding-top: 20px;
   z-index: 20;
@@ -190,7 +191,7 @@ interface TabProps {
 }
 
 export const Tab = styled.div<TabProps>`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   cursor: pointer;
   user-select: none;
@@ -212,7 +213,7 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const FooterContent = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;

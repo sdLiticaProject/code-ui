@@ -1,18 +1,18 @@
-import Cookies from 'js-cookie';
-import axios from 'axios';
-import * as api from '../constants/api';
+import Cookies from "js-cookie";
+import axios from "axios";
+import * as apiUrls from "../constants/apiUrls";
 
-export const LOGIN_LOADING = 'login_loading';
-export const LOGIN_SUCCESS = 'login_success';
-export const LOGIN_FAIL = 'login_fail';
+export const LOGIN_LOADING = "login_loading";
+export const LOGIN_SUCCESS = "login_success";
+export const LOGIN_FAIL = "login_fail";
 
-export const LOGOUT_LOADING = 'LOGOUT_LOADING';
-export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
-export const LOGOUT_FAIL = 'LOGOUT_FAIL';
+export const LOGOUT_LOADING = "LOGOUT_LOADING";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+export const LOGOUT_FAIL = "LOGOUT_FAIL";
 
-export const REGISTER_LOADING = 'REGISTER_LOADING';
-export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
-export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const REGISTER_LOADING = "REGISTER_LOADING";
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
 
 export const loginUser = (email, password) => async (dispatch) => {
   dispatch({
@@ -20,19 +20,19 @@ export const loginUser = (email, password) => async (dispatch) => {
   });
 
   try {
-    const res = await axios.post(api.loginUser(), {
+    const res = await axios.post(apiUrls.loginUser, {
       email,
       password,
     });
 
-    Cookies.set('token', res.data.entity.token, { expires: 5 });
+    Cookies.set("token", res.data.entity.token, { expires: 5 });
     return dispatch({
       type: LOGIN_SUCCESS,
     });
   } catch (error) {
     return dispatch({
       type: LOGIN_FAIL,
-      message: 'login failed',
+      message: "login failed",
     });
   }
 };
@@ -43,10 +43,10 @@ export const logoutUser = () => async (dispatch) => {
   });
   try {
     const res = await axios.post(
-      api.logoutUser(),
+      apiUrls.logoutUser,
       {},
       {
-        headers: { Authorization: `cloudToken ${Cookies.get('token')}` },
+        headers: { Authorization: `cloudToken ${Cookies.get("token")}` },
       },
     );
     if (res.status !== 204) {
@@ -69,7 +69,7 @@ export const registerUser = (email, password, firstName, lastName) => async (dis
   });
 
   try {
-    const res = await axios.post(api.registerUser(), {
+    const res = await axios.post(apiUrls.registerUser, {
       email,
       password,
       firstName,

@@ -1,6 +1,6 @@
-import React from 'react';
-import * as Sc from '../HomePage.styles';
-import TimeSeriesCollection from '../../../components/ts-collection/TimeSeriesCollection';
+import React from "react";
+import * as Sc from "../HomePage.styles";
+import TimeSeriesCollection from "../../../components/ts-collection/TimeSeriesCollection";
 
 const Data = (): JSX.Element => {
   return (

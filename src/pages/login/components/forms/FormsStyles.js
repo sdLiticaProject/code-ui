@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
   from {
@@ -20,11 +20,9 @@ export const NavLinkWrapper = styled.div`
 `;
 
 export const LoadIndicator = styled.div`
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  margin: 15px;
   display: inline-block;
   font-size: 10px;
   text-indent: -9999em;
@@ -40,13 +38,10 @@ export const LoadIndicator = styled.div`
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  position: absolute;
-  top: 0px;
   z-index: 99;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 20px 15px 15px 20px;
 
-  ${({ tab }) => (tab === '/news' || tab === 'unknown') && `border-left-color: green !important;`};
+  ${({ tab }) => (tab === "/news" || tab === "unknown") && `border-left-color: green !important;`};
 `;
 
 const InputFormWrapper = styled.div`
@@ -127,10 +122,10 @@ const Button = styled.button`
 const Error = styled.text`
   color: #8b0000;
   font-size: 0.8rem;
-  font-family: sans-serife;
+  font-family: Roboto, sans-serif;
   text-decoration: none;
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 10px;
   padding-right: 67px;
 
@@ -145,7 +140,7 @@ const Link = styled.a`
   position: absolute;
   padding-right: 67px;
   right: 0;
-  font-family: sans-serife;
+  font-family: Roboto, sans-serif;
 
   @media (max-width: 500px) {
     padding-right: 60px;
@@ -157,7 +152,7 @@ const Transfer = styled.a`
   left: 176px;
   color: #3eacdc;
   text-decoration: none;
-  font-family: sans-serife;
+  font-family: Roboto, sans-serif;
 
   @media (max-width: 500px) {
     left: 150px;

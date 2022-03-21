@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ControlContainer = styled.div`
   margin: 0 30px;
@@ -9,20 +9,20 @@ const ControlContainer = styled.div`
 `;
 
 const ShowInfoWrapper = styled.div`
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border-radius: 20px;
   color: white;
   text-align: left;
   & span {
     & label {
       display: block;
-      padding: 10px 0px 10px 40px;
+      padding: 10px 0 10px 40px;
       position: relative;
       cursor: pointer;
       user-select: none;
       &::before {
-        left: 0px;
-        content: '';
+        left: 0;
+        content: "";
         position: absolute;
         height: 16px;
         width: 16px;

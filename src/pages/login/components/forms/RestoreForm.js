@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { LOGIN } from '../constants/routes';
-import { loginUser } from '../actions/loginActions';
-import useActions from '../hooks/useAction';
-import { Button, InputFormWrapper, Error, Link } from './FormsStyles';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { LOGIN } from "../../../../constants/routes";
+import { loginUser } from "../../../../actions/loginActions";
+import { useActions } from "../../../../hooks/useActions";
+import { Button, InputFormWrapper, Error, Link } from "./FormsStyles";
 
 function RestoreForm() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const { handleSubmit, register, errors } = useForm();
 
   // Alternative bindActionCreators
   const [submitAction] = useActions([loginUser]);
 
   const submit = () => {
-    if (email !== '') {
+    if (email !== "") {
       submitAction(email);
     }
   };
@@ -25,10 +25,10 @@ function RestoreForm() {
         <label htmlFor="email">Enter your email to recovery password</label>
         <input
           ref={register({
-            required: 'required',
+            required: "required",
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: 'invalid email address',
+              message: "invalid email address",
             },
           })}
           name="email"

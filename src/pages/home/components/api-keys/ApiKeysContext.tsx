@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React from "react";
 
 export function createCtx<A>(defaultValue: A) {
   type UpdateType = React.Dispatch<React.SetStateAction<typeof defaultValue>>;

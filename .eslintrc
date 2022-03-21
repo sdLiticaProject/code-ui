@@ -42,7 +42,15 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "singleQuote": false,
+        "printWidth": 100
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
       }
     ]
   },
@@ -50,7 +58,14 @@
     {
       "files": ["**/*.tsx", "**/*.js"],
       "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "import/prefer-default-export": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
       }
     }
   ]

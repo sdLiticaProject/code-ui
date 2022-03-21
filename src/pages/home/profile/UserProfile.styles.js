@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const UserProfileInfo = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
@@ -21,7 +21,7 @@ export const GeneralInfoWrapper = styled.div`
 `;
 
 export const AddKeyTitle = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -31,7 +31,7 @@ export const AddKeyTitle = styled.div`
 `;
 
 export const GIInfoTitle = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 40px;

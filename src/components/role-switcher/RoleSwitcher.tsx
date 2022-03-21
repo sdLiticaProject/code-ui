@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import HomePage from '../../pages/home/HomePage';
+import { HomePage } from '../../pages/home/HomePage';
 import { RootState } from '../../store/createStore';
 
 const RoleSwitcher = (): React.ReactNode => {

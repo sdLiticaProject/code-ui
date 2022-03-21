@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const LoginWrapper = styled.div`
   position: relative;
@@ -53,12 +53,11 @@ const LoginFormWrapper = styled.div`
   width: 450px;
   border-radius: 10px;
   margin: auto;
-  padding: auto;
 
   @media (max-width: 500px) {
     width: 100%;
     top: 50px;
-    border-radius: 0px;
+    border-radius: 0;
   }
 `;
 
@@ -80,13 +79,12 @@ const Button = styled.button`
   color: white;
   display: block;
   width: 230px;
-  margin: 5% auto;
   font-family: sans-serif;
   font-size: 18px;
   text-align: center;
   height: 40px;
   line-height: 20px;
-  margin-bottom: 10px;
+  margin: 5% auto 10px;
   padding: 4px 6px;
   vertical-align: middle;
   text-decoration: none;

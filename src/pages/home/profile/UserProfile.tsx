@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import * as HpS from '../HomePage.styles';
-import * as UpS from './UserProfile.styles';
-import ApiKeys from '../components/api-keys/ApiKeysTable';
-import grp from '../../../image/grp.png';
-import { PAGE_USER_HISTORY } from '../../../constants/routes';
-import AddApiKeyForm from '../components/api-keys/AddApiKeyForm';
-import { ApiKeysProvider } from '../components/api-keys/ApiKeysContext';
+import React from "react";
+import { Link } from "react-router-dom";
+import * as HpS from "../HomePage.styles";
+import * as UpS from "./UserProfile.styles";
+import ApiKeys from "../components/api-keys/ApiKeysTable";
+import grp from "../../../image/grp.png";
+import { PAGE_USER_HISTORY } from "../../../constants/routes";
+import AddApiKeyForm from "../components/api-keys/AddApiKeyForm";
+import { ApiKeysProvider } from "../components/api-keys/ApiKeysContext";
 
 const UserProfile = (): JSX.Element => {
   return (
@@ -17,14 +17,14 @@ const UserProfile = (): JSX.Element => {
         <UpS.GIInfoContainer>
           <UpS.GIInfoTitle>General information</UpS.GIInfoTitle>
           <HpS.ColWrapper>
-            <HpS.Col style={{ marginRight: '30px' }}>
+            <HpS.Col style={{ marginRight: "30px" }}>
               <HpS.InnerCol>
                 <HpS.Row>First name:</HpS.Row>
                 <HpS.Row>Last name:</HpS.Row>
                 <HpS.Row>Role:</HpS.Row>
                 <HpS.Row>Company:</HpS.Row>
               </HpS.InnerCol>
-              <HpS.InnerCol style={{ marginLeft: '30px' }}>
+              <HpS.InnerCol style={{ marginLeft: "30px" }}>
                 <HpS.Row>Cave</HpS.Row>
                 <HpS.Row>Johnson</HpS.Row>
                 <HpS.Row>Founder</HpS.Row>
@@ -42,7 +42,7 @@ const UserProfile = (): JSX.Element => {
                   Download as <span>CSV</span> / <span>JSON</span> ...
                 </HpS.Row>
               </HpS.InnerCol>
-              <HpS.InnerCol style={{ marginLeft: '30px' }}>
+              <HpS.InnerCol style={{ marginLeft: "30px" }}>
                 <HpS.Row>cave.john</HpS.Row>
                 <HpS.Row>16</HpS.Row>
                 <HpS.Row />

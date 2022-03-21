@@ -1,5 +1,5 @@
-import React from 'react';
-import * as Sc from '../HomePage.styles';
+import React from "react";
+import * as Sc from "../HomePage.styles";
 
 const History = (): JSX.Element => {
   return (

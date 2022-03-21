@@ -1,15 +1,24 @@
-import React from 'react';
-import * as Sc from '../../HomePage.styles';
+import React from "react";
+import * as Sc from "../../HomePage.styles";
 
 const Footer = (): JSX.Element => {
   return (
     <Sc.FooterWrapper>
       <Sc.FooterContent>
-        <Sc.FooterLogo width="84" height="43" viewBox="0 0 84 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Sc.FooterLogo
+          width="84"
+          height="43"
+          viewBox="0 0 84 43"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect width="84" height="43" fill="url(#pattern0)" />
           <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-              <use xlinkHref="#image0" transform="translate(0 -0.0112921) scale(0.00361011 0.0070523)" />
+              <use
+                xlinkHref="#image0"
+                transform="translate(0 -0.0112921) scale(0.00361011 0.0070523)"
+              />
             </pattern>
             <image
               id="image0"

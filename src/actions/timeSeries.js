@@ -1,14 +1,14 @@
-import axios from 'axios';
-import Cookies from 'js-cookie';
-import * as api from '../constants/api';
+import axios from "axios";
+import Cookies from "js-cookie";
+import * as apiUrls from "../constants/apiUrls";
 
-export const TIME_SERIES_LOADING = 'time_series_loading';
-export const TIME_SERIES_LOADING_SUCCESS = 'time_series_loading_success';
-export const TIME_SERIES_LOADING_FAIL = 'time_series_loading_fail';
+export const TIME_SERIES_LOADING = "time_series_loading";
+export const TIME_SERIES_LOADING_SUCCESS = "time_series_loading_success";
+export const TIME_SERIES_LOADING_FAIL = "time_series_loading_fail";
 
-export const TIME_SERIES_CREATION = 'time_series_creation';
-export const TIME_SERIES_CREATION_SUCCESS = 'time_series_creation_success';
-export const TIME_SERIES_CREATION_FAIL = 'time_series_creation_fail';
+export const TIME_SERIES_CREATION = "time_series_creation";
+export const TIME_SERIES_CREATION_SUCCESS = "time_series_creation_success";
+export const TIME_SERIES_CREATION_FAIL = "time_series_creation_fail";
 
 export const getTimeSeriesList = () => async (dispatch) => {
   dispatch({
@@ -16,13 +16,13 @@ export const getTimeSeriesList = () => async (dispatch) => {
   });
 
   try {
-    const token = Cookies.get('token');
-    const res = await axios.get(api.timeSeriesList(), {
+    const token = Cookies.get("token");
+    const res = await axios.get(apiUrls.timeSeriesList, {
       headers: {
         Authorization: `cloudToken ${token}`,
       },
     });
-    console.log(res);
+    // console.log(res);
 
     return dispatch({
       type: TIME_SERIES_LOADING_SUCCESS,
@@ -31,7 +31,7 @@ export const getTimeSeriesList = () => async (dispatch) => {
   } catch (error) {
     return dispatch({
       type: TIME_SERIES_LOADING_FAIL,
-      message: 'Failed to load time series list',
+      message: "Failed to load time series list",
     });
   }
 };
@@ -42,9 +42,9 @@ export const createTimeSeries = (name, description) => async (dispatch) => {
   });
 
   try {
-    const token = Cookies.get('token');
+    const token = Cookies.get("token");
     const res = await axios.post(
-      api.timeSeriesList(),
+      apiUrls.timeSeriesList,
       {
         name,
         description,
@@ -63,7 +63,7 @@ export const createTimeSeries = (name, description) => async (dispatch) => {
   } catch (error) {
     return dispatch({
       type: TIME_SERIES_CREATION_FAIL,
-      message: 'Failed to load time series list',
+      message: "Failed to load time series list",
     });
   }
 };

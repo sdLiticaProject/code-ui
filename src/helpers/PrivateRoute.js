@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import Cookies from 'js-cookie';
-import { useDispatch } from 'react-redux';
-import axios from 'axios';
-import { add, del } from '../actions/userActions';
-import * as api from '../constants/api';
-import Loader from '../components/loader/Loader';
+import React, { useEffect, useState } from "react";
+import { Route, Redirect } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { add, del } from "../actions/userActions";
+import * as apiUrls from "../constants/apiUrls";
+import { Loader } from "../components/loader/Loader";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const [user, setUser] = useState();
@@ -17,8 +17,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(api.getUser(), {
-          headers: { Authorization: `cloudToken ${Cookies.get('token')}` },
+        const res = await axios.get(apiUrls.getUser, {
+          headers: { Authorization: `cloudToken ${Cookies.get("token")}` },
         });
         const userData = { ...res.data, roleId: 2 };
         setUser(userData);
@@ -27,7 +27,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         setIsError(true);
         setUser();
         dispatch(del());
-        Cookies.remove('token');
+        Cookies.remove("token");
       }
       setIsLoading(false);
     };
@@ -39,7 +39,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
   if (isLoading) return <Loader />;
 
-  return <Route {...rest} render={(props) => (user !== null ? <Component {...props} /> : <Redirect to="/" />)} />;
+  return (
+    <Route
+      {...rest}
+      render={(props) => (user !== null ? <Component {...props} /> : <Redirect to="/" />)}
+    />
+  );
 };
 
 export default PrivateRoute;

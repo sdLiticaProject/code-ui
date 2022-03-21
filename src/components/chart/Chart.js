@@ -1,15 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import * as d3 from 'd3';
-import moment from 'moment';
-import { connect } from 'react-redux';
-import data from './data/exampleDegrees.json';
-import { clearArea, drawLine, drawSVG, getBisectDate, getWidth, updateCurrencyInfo } from './ChartFunctions';
-import { colorScheme, height, height2, margin, margin2, timeFormat, transformTime } from './ChartConstants';
-import { Btn, Canvas, CurrencyInfo, ChartContainer, InfoWrapper, BtnWrapper, CanvasWrapper, LineName } from './Chart.styles';
-import { getDoShow, getLines } from '../../reducers/controlReducer';
+import React, { useEffect, useState } from "react";
+import * as d3 from "d3";
+import moment from "moment";
+import { connect } from "react-redux";
+import data from "./data/exampleDegrees.json";
+import {
+  clearArea,
+  drawLine,
+  drawSVG,
+  getBisectDate,
+  getWidth,
+  updateCurrencyInfo,
+} from "./ChartFunctions";
+import {
+  colorScheme,
+  height,
+  height2,
+  margin,
+  margin2,
+  timeFormat,
+  transformTime,
+} from "./ChartConstants";
+import {
+  Btn,
+  Canvas,
+  CurrencyInfo,
+  ChartContainer,
+  InfoWrapper,
+  BtnWrapper,
+  CanvasWrapper,
+  LineName,
+} from "./Chart.styles";
+import { getDoShow, getLines } from "../../reducers/controlReducer";
 
-const dataBtn = ['1d', '1w', '1m', '1y', 'All time'];
-const linesForExtent = ['New York_1', 'San Francisco_1', 'Austin_1', 'New York_2', 'San Francisco_2', 'Austin_2'];
+const dataBtn = ["1d", "1w", "1m", "1y", "All time"];
+const linesForExtent = [
+  "New York_1",
+  "San Francisco_1",
+  "Austin_1",
+  "New York_2",
+  "San Francisco_2",
+  "Austin_2",
+];
 
 const mapStateToProps = (state) => ({
   doShow: getDoShow(state),
@@ -19,8 +50,8 @@ const mapStateToProps = (state) => ({
 const colorMap = new Map();
 let colorCounter = 0;
 
-const parseTime = d3.timeParse('%Y%m%d');
-const formatValue = d3.format(',.0f');
+const parseTime = d3.timeParse("%Y%m%d");
+const formatValue = d3.format(",.0f");
 data.forEach((d) => {
   d.date = parseTime(d.date);
   return d;
@@ -75,7 +106,7 @@ const ExampleChart = (props) => {
       };
     });
 
-    window.addEventListener('resize', handleUpdate);
+    window.addEventListener("resize", handleUpdate);
     clearArea(canvas);
 
     const svg = drawSVG(canvas);
@@ -102,7 +133,7 @@ const ExampleChart = (props) => {
         [0, 0],
         [width, height],
       ])
-      .on('zoom', zoomed);
+      .on("zoom", zoomed);
 
     const brush = d3
       .brushX()
@@ -110,7 +141,7 @@ const ExampleChart = (props) => {
         [0, 0],
         [width, height2],
       ])
-      .on('brush end', brushed);
+      .on("brush end", brushed);
 
     const area = d3
       .area()
@@ -124,92 +155,138 @@ const ExampleChart = (props) => {
       .y((d) => y(d.y));
 
     svg
-      .append('defs')
-      .append('svg:clipPath')
-      .attr('id', 'clip')
-      .append('svg:rect')
-      .attr('width', width)
-      .attr('height', height)
-      .attr('x', 0)
-      .attr('y', 0)
-      .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', `0 0 ${width} ${height}`);
+      .append("defs")
+      .append("svg:clipPath")
+      .attr("id", "clip")
+      .append("svg:rect")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", `0 0 ${width} ${height}`);
 
-    const svgDefs = svg.append('defs');
+    const svgDefs = svg.append("defs");
 
-    const mainGradient = svgDefs.append('linearGradient').attr('id', 'mainGradient').attr('x1', '0%').attr('x2', '0%').attr('y1', '0%').attr('y2', '100%');
-    mainGradient.append('stop').attr('class', 'stop-left').style('stop-color', '#f28e2c').attr('offset', '0');
+    const mainGradient = svgDefs
+      .append("linearGradient")
+      .attr("id", "mainGradient")
+      .attr("x1", "0%")
+      .attr("x2", "0%")
+      .attr("y1", "0%")
+      .attr("y2", "100%");
+    mainGradient
+      .append("stop")
+      .attr("class", "stop-left")
+      .style("stop-color", "#f28e2c")
+      .attr("offset", "0");
 
-    mainGradient.append('stop').attr('class', 'stop-right').attr('offset', '1');
+    mainGradient.append("stop").attr("class", "stop-right").attr("offset", "1");
 
-    const lineChart = svg.append('g').attr('class', 'chart').attr('transform', `translate(${margin.left},${margin.top})`).attr('clip-path', 'url(#clip)');
+    const lineChart = svg
+      .append("g")
+      .attr("class", "chart")
+      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .attr("clip-path", "url(#clip)");
 
-    const focus = svg.append('g').attr('class', 'focus').attr('transform', `translate(${margin.left},${margin.top})`);
+    const focus = svg
+      .append("g")
+      .attr("class", "focus")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const zoomscale = svg.append('g').attr('class', 'context').attr('transform', `translate(${margin2.left},${margin2.top})`);
+    const zoomscale = svg
+      .append("g")
+      .attr("class", "context")
+      .attr("transform", `translate(${margin2.left},${margin2.top})`);
 
     x.domain(d3.extent(data, (d) => d.date));
-    y.domain([d3.min(multiDataForExtent, (d) => d3.min(d.values, (c) => c.y - 10)), d3.max(multiDataForExtent, (d) => d3.max(d.values, (c) => c.y + 10))]);
+    y.domain([
+      d3.min(multiDataForExtent, (d) => d3.min(d.values, (c) => c.y - 10)),
+      d3.max(multiDataForExtent, (d) => d3.max(d.values, (c) => c.y + 10)),
+    ]);
 
     x2.domain(x.domain());
     y2.domain(y.domain());
 
-    focus.append('g').attr('class', 'axis axis--x').attr('transform', `translate(0,${height})`).call(xAxis);
+    focus
+      .append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", `translate(0,${height})`)
+      .call(xAxis);
 
-    focus.append('g').attr('class', 'axis axis--y').call(yAxis);
+    focus.append("g").attr("class", "axis axis--y").call(yAxis);
 
-    zoomscale.append('g').attr('class', 'axis axis--x').attr('transform', `translate(0,${height2})`).call(xAxis2);
+    zoomscale
+      .append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", `translate(0,${height2})`)
+      .call(xAxis2);
 
-    zoomscale.append('g').attr('class', 'brush').call(brush).call(brush.move, x.range());
+    zoomscale.append("g").attr("class", "brush").call(brush).call(brush.move, x.range());
 
     // TOOLTIP START
 
-    const focusPoints = focus.append('g').attr('class', 'focusPoints').style('display', 'none');
+    const focusPoints = focus.append("g").attr("class", "focusPoints").style("display", "none");
 
-    focusPoints.append('line').attr('class', 'x-hover-line hover-line').attr('y1', 0).attr('y2', height);
+    focusPoints
+      .append("line")
+      .attr("class", "x-hover-line hover-line")
+      .attr("y1", 0)
+      .attr("y2", height);
 
-    focusPoints.append('rect').attr('class', 'tooltip').attr('rx', 5).attr('ry', 5).attr('width', 120).attr('height', 90);
+    focusPoints
+      .append("rect")
+      .attr("class", "tooltip")
+      .attr("rx", 5)
+      .attr("ry", 5)
+      .attr("width", 120)
+      .attr("height", 90);
 
-    const labels = focusPoints.selectAll('.lineHoverText').data(lines);
+    const labels = focusPoints.selectAll(".lineHoverText").data(lines);
 
     labels
       .enter()
-      .append('text')
-      .attr('class', 'lineHoverText')
-      .style('fill', (d) => colorMap.get(d))
-      .attr('text-anchor', 'start')
-      .attr('font-size', 12)
-      .attr('dy', (_, i) => `${1 + i * 2}em`)
+      .append("text")
+      .attr("class", "lineHoverText")
+      .style("fill", (d) => colorMap.get(d))
+      .attr("text-anchor", "start")
+      .attr("font-size", 12)
+      .attr("dy", (_, i) => `${1 + i * 2}em`)
       .merge(labels);
 
-    const circles = focusPoints.selectAll('.hoverCircle').data(lines);
+    const circles = focusPoints.selectAll(".hoverCircle").data(lines);
 
     circles
       .enter()
-      .append('circle')
-      .attr('class', 'hoverCircle')
-      .style('fill', (d) => colorMap.get(d))
-      .attr('r', 2.5)
+      .append("circle")
+      .attr("class", "hoverCircle")
+      .style("fill", (d) => colorMap.get(d))
+      .attr("r", 2.5)
       .merge(circles);
 
-    focusPoints.append('text').attr('class', 'infoAxisX').attr('id', '#infoAxisX').attr('x', 15).attr('dy', '.31em');
+    focusPoints
+      .append("text")
+      .attr("class", "infoAxisX")
+      .attr("id", "#infoAxisX")
+      .attr("x", 15)
+      .attr("dy", ".31em");
 
     // TOOLTIP END
 
     svg
-      .append('rect')
-      .attr('class', 'zoom')
-      .attr('width', width)
-      .attr('height', height)
-      .attr('transform', `translate(${margin.left},${margin.top})`)
-      .on('mouseout', () => {
-        focusPoints.style('display', 'none');
+      .append("rect")
+      .attr("class", "zoom")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .on("mouseout", () => {
+        focusPoints.style("display", "none");
       })
-      .on('mousemove', mousemove)
+      .on("mousemove", mousemove)
       .call(zoom)
-      .on('wheel.zoom', null);
+      .on("wheel.zoom", null);
 
-    zoom.on('start', () => focusPoints.style('display', 'none')).on('end', mousemove);
+    zoom.on("start", () => focusPoints.style("display", "none")).on("end", mousemove);
 
     // Конец блока настройки графика
 
@@ -220,22 +297,22 @@ const ExampleChart = (props) => {
     updateCurrencyInfo(balanceRef, entirePercentRef, lastPercentRef, x, multiData, data, width);
 
     lineNameRef.forEach((val, index) => {
-      d3.select(val.current).style('color', colorMap.get(lines[index]));
+      d3.select(val.current).style("color", colorMap.get(lines[index]));
     });
 
-    btnsRef.forEach((el) => d3.select(el.current).on('click', drawBrush));
+    btnsRef.forEach((el) => d3.select(el.current).on("click", drawBrush));
 
     btnsRef.forEach((el) => {
-      if (el.current != null) el.current.classList.remove('active');
+      if (el.current != null) el.current.classList.remove("active");
     });
     // Выделяем последнюю нажатую кнопку (по-умолчанию - 'All time')
-    activeButton.current.classList.add('active');
+    activeButton.current.classList.add("active");
 
     // Начало блока содержащего вспомогательные функции
 
     function mousemove() {
       if (isNaN(d3.mouse(this)[0]) || !showInfo) return;
-      focusPoints.style('display', null);
+      focusPoints.style("display", null);
       const x0 = x.invert(d3.mouse(this)[0]);
       const i = getBisectDate(data, x0, 1);
       const d0 = data[i - 1];
@@ -244,20 +321,20 @@ const ExampleChart = (props) => {
       const currentX = x(d.date);
       if (currentX > width || currentX < 0) return;
 
-      focusPoints.select('.x-hover-line').attr('transform', `translate(${x(d.date)},${0})`);
+      focusPoints.select(".x-hover-line").attr("transform", `translate(${x(d.date)},${0})`);
 
       focusPoints
-        .selectAll('.hoverCircle')
-        .attr('cy', (e) => y(d[e]))
-        .attr('cx', x(d.date));
+        .selectAll(".hoverCircle")
+        .attr("cy", (e) => y(d[e]))
+        .attr("cx", x(d.date));
 
       focusPoints
-        .selectAll('.lineHoverText')
-        .attr('transform', `translate(${x(d.date)},${height / 3})`)
+        .selectAll(".lineHoverText")
+        .attr("transform", `translate(${x(d.date)},${height / 3})`)
         .text((e) => `${e} º${formatValue(d[e])}`);
 
       let maxLength = 80;
-      focusPoints.selectAll('.lineHoverText').call((k) => {
+      focusPoints.selectAll(".lineHoverText").call((k) => {
         k._groups[0].forEach((el) => {
           if (el.getComputedTextLength() > maxLength) maxLength = el.getComputedTextLength();
         });
@@ -268,38 +345,41 @@ const ExampleChart = (props) => {
       const computedTooltipHeight = 18 + 23 * lines.length;
 
       if (x(d.date) > width - width / 4) {
-        focusPoints.selectAll('text.lineHoverText').attr('text-anchor', 'end').attr('dx', -20);
+        focusPoints.selectAll("text.lineHoverText").attr("text-anchor", "end").attr("dx", -20);
         focusPoints
-          .select('.tooltip')
+          .select(".tooltip")
           // Положение прямоугольника подсказски
-          .attr('height', computedTooltipHeight)
-          .attr('width', computedTooltipWidth)
-          .attr('transform', `translate(${x(d.date) + 10 - computedTooltipWidth - 20},${height / 3 - 20})`);
+          .attr("height", computedTooltipHeight)
+          .attr("width", computedTooltipWidth)
+          .attr(
+            "transform",
+            `translate(${x(d.date) + 10 - computedTooltipWidth - 20},${height / 3 - 20})`,
+          );
         focusPoints
-          .select('.infoAxisX')
+          .select(".infoAxisX")
           .text(() => {
-            return `${moment(d.date).format('ddd, D MMM')}`;
+            return `${moment(d.date).format("ddd, D MMM")}`;
           })
           .attr(
-            'transform',
+            "transform",
             // Положение текста с доп информацией о точке
             `translate(${x(d.date) - 100},${height / 3 - 10})`,
           );
       } else {
-        focusPoints.selectAll('text.lineHoverText').attr('text-anchor', 'start').attr('dx', 20);
+        focusPoints.selectAll("text.lineHoverText").attr("text-anchor", "start").attr("dx", 20);
         focusPoints
-          .select('.tooltip')
+          .select(".tooltip")
           // Положение прямоугольника подсказски
-          .attr('height', computedTooltipHeight)
-          .attr('width', computedTooltipWidth)
-          .attr('transform', `translate(${x(d.date) + 10},${height / 3 - 20})`);
+          .attr("height", computedTooltipHeight)
+          .attr("width", computedTooltipWidth)
+          .attr("transform", `translate(${x(d.date) + 10},${height / 3 - 20})`);
         focusPoints
-          .select('.infoAxisX')
+          .select(".infoAxisX")
           .text(() => {
-            return `${moment(d.date).format('ddd, D MMM')}`;
+            return `${moment(d.date).format("ddd, D MMM")}`;
           })
           .attr(
-            'transform',
+            "transform",
             // Положение текста с доп информацией о точке
             `translate(${x(d.date) + 5},${height / 3 - 10})`,
           );
@@ -311,10 +391,10 @@ const ExampleChart = (props) => {
       let dateEnd = x.invert(0);
 
       btnsRef.forEach((el) => {
-        if (el.current != null) el.current.classList.remove('active');
+        if (el.current != null) el.current.classList.remove("active");
       });
       // Выделяем только кнопку, на которую нажали
-      this.classList.add('active');
+      this.classList.add("active");
 
       const allTime = dataBtn.length - 1;
       const oneYear = dataBtn.length - 2;
@@ -350,14 +430,14 @@ const ExampleChart = (props) => {
 
       const start = x2(dateStart);
       const end = x2(dateEnd) > width ? width : x2(dateEnd);
-      brush.move(d3.select('.brush').transition().duration(transformTime), [start, end]);
+      brush.move(d3.select(".brush").transition().duration(transformTime), [start, end]);
     }
 
     function applyZoom(t, isBrush) {
       x.domain(t.rescaleX(x2).domain());
       drawLine(multiData, colorMap, linePath, lineChart, area);
-      focus.select('.axis--x').call(xAxis);
-      if (!isBrush) brush.move(d3.select('.brush'), x.range().map(t.invertX, t));
+      focus.select(".axis--x").call(xAxis);
+      if (!isBrush) brush.move(d3.select(".brush"), x.range().map(t.invertX, t));
       updateCurrencyInfo(balanceRef, entirePercentRef, lastPercentRef, x, multiData, data, width);
     }
 
@@ -365,13 +445,13 @@ const ExampleChart = (props) => {
     function zoomed() {
       const t = d3.event.transform;
       if (d3.event.sourceEvent == null) return;
-      applyZoom(t, d3.event.sourceEvent.type === 'brush');
+      applyZoom(t, d3.event.sourceEvent.type === "brush");
       setZoomState(t);
     }
 
     // Вызывается при изменении временного периода
     function brushed() {
-      if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') {
+      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") {
         return;
       } // ignore brush-by-zoom
       const s = d3.event.selection || x2.range();
@@ -379,7 +459,9 @@ const ExampleChart = (props) => {
     }
 
     function doBrush(s) {
-      svg.select('.zoom').call(zoom.transform, d3.zoomIdentity.scale(width / (s[1] - s[0])).translate(-s[0], 0));
+      svg
+        .select(".zoom")
+        .call(zoom.transform, d3.zoomIdentity.scale(width / (s[1] - s[0])).translate(-s[0], 0));
     }
 
     // Конец блока содержащего вспомогательные функции

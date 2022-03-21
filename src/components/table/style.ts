@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const TablePage = styled.div`
   box-sizing: border-box;
@@ -22,7 +22,7 @@ const Table = styled.table`
   width: 100%;
   margin-top: 24px;
   text-align: right;
-  font-family: 'Hind Guntur', sans-serif;
+  font-family: "Hind Guntur", sans-serif;
   font-weight: 300;
   & td {
     padding: 6px 0;
@@ -34,7 +34,7 @@ const Table = styled.table`
   & thead {
     & td {
       color: #afafaf;
-      padding: 0px;
+      padding: 0;
       padding-right: 20px;
       padding-bottom: 3px;
       border-bottom: 1px solid #c5c5c5;
@@ -45,9 +45,9 @@ const Table = styled.table`
 `;
 
 const Tittle = styled.span`
-  padding: 12px 0px;
+  padding: 12px 0;
   display: block;
-  font-family: 'Chivo', sans-serif;
+  font-family: "Chivo", sans-serif;
   font-size: 30px;
   font-weight: bold;
 `;
@@ -63,16 +63,16 @@ const WrapperCheckbox = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-top: 12px;
   font-size: 13px;
 `;
 
 const Sort = styled.div`
-  font-family: 'Chivo', sans-serif;
+  font-family: "Chivo", sans-serif;
   & select {
     outline: none;
-    font-family: 'Chivo', sans-serif;
+    font-family: "Chivo", sans-serif;
     cursor: pointer;
     background-color: #395bff;
     color: white;
@@ -85,7 +85,7 @@ const Sort = styled.div`
 `;
 
 const Navigation = styled.div`
-  font-family: 'Chivo', sans-serif;
+  font-family: "Chivo", sans-serif;
   & button {
     outline: none;
     cursor: pointer;
@@ -104,4 +104,4 @@ const Navigation = styled.div`
   }
 `;
 
-export {TablePage, Tittle, Table, Wrapper, Sort, Navigation, WrapperCheckbox, ColumnHeader};
+export { TablePage, Tittle, Table, Wrapper, Sort, Navigation, WrapperCheckbox, ColumnHeader };

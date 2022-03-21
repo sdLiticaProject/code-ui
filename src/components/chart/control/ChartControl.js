@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { ControlContainer, ShowInfoWrapper } from './ChartControl.styles';
-import { addLine, removeLine, showTooltip } from '../../../actions/chartActions';
-import { getDoShow, getLines } from '../../../reducers/controlReducer';
+import React from "react";
+import { connect } from "react-redux";
+import { ControlContainer, ShowInfoWrapper } from "./ChartControl.styles";
+import { addLine, removeLine, showTooltip } from "../../../actions/chartActions";
+import { getDoShow, getLines } from "../../../reducers/controlReducer";
 
 const mapStateToProps = (state) => ({
   doShow: getDoShow(state),
@@ -15,7 +15,14 @@ const mapDispatchToProps = (dispatch) => ({
   removeLine: (line) => dispatch(removeLine(line)),
 });
 
-const lines = ['New York_1', 'San Francisco_1', 'Austin_1', 'New York_2', 'San Francisco_2', 'Austin_2'];
+const lines = [
+  "New York_1",
+  "San Francisco_1",
+  "Austin_1",
+  "New York_2",
+  "San Francisco_2",
+  "Austin_2",
+];
 
 const ChartControl = (props) => {
   // if (!localStorage.getItem('doShow')) localStorage.setItem('doShow', 'true');

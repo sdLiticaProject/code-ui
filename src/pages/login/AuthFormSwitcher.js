@@ -1,12 +1,19 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import LoginForm from './components/forms/LoginForm';
-import RegistrationForm from './components/forms/RegistrationForm';
-import { LoginWrapper, LoginFormWrapper, BackImage, Logo, CloudWrapper, Text } from './AuthFormSwitcher.styles';
-import { LOGIN } from '../../constants/routes';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import LoginForm from "./components/forms/LoginForm";
+import { RegistrationForm } from "./components/forms/RegistrationForm";
+import {
+  LoginWrapper,
+  LoginFormWrapper,
+  BackImage,
+  Logo,
+  CloudWrapper,
+  Text,
+} from "./AuthFormSwitcher.styles";
+import { LOGIN } from "../../constants/routes";
 
 function AuthenticationPage({ location }) {
-  const params = new URLSearchParams(location.search).get('tab');
+  const params = new URLSearchParams(location.search).get("tab");
 
   if (params == null) {
     return (
@@ -24,7 +31,7 @@ function AuthenticationPage({ location }) {
     );
   }
 
-  if (params === 'reg') {
+  if (params === "reg") {
     return (
       <LoginWrapper>
         <CloudWrapper>

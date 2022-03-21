@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TableWrapper = styled.div`
   margin: 30px;
@@ -23,7 +23,7 @@ export const TableRow = styled.div`
 `;
 
 export const TableRowHeader = styled(TableRow)`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -42,7 +42,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormTitle = styled.div`
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
