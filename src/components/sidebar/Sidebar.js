@@ -27,7 +27,7 @@ import {AppDispatch} from "../../store/createStore";
 import {useDispatch} from "react-redux";
 import {LOGOUT_SUCCESS, logoutUser} from "../../actions/loginActions";
 import {del} from "../../actions/userActions";
-import {EXPLORER, HOME, LOGIN, PAGE_USER_BUCKETS, PAGE_USER_DASHBOARD} from "../../constants/routes";
+import {EXPLORER, HOME, LOADDATA, LOGIN, PAGE_USER_BUCKETS, PAGE_USER_DASHBOARD} from "../../constants/routes";
 
 
 
@@ -99,7 +99,7 @@ const linksArray = [
   {
     label: 'Load data',
     icon: <CiImport />,
-    to: PAGE_USER_DASHBOARD,
+    to: LOADDATA,
   },
   {
     label: 'Data explorer',

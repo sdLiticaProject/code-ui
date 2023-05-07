@@ -45,16 +45,16 @@ const Buckets = (): JSX.Element => {
         setShowForm(!showForm);
     };
 
-    const filteredBuckets = listBuckets.filter(dashboard => dashboard.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredBuckets = listBuckets.filter(dashboard => dashboard.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     const sortedListBuckets = sortOrder === 'none'
         ? filteredBuckets :
         [...filteredBuckets].sort((a, b) => {
             switch (sortOrder) {
                 case'asc':
-                    return a.title.localeCompare(b.title);
+                    return a.name.localeCompare(b.name);
                 case 'desc':
-                    return b.title.localeCompare(a.title);
+                    return b.name.localeCompare(a.name);
                 default:
                     return 0;
             }
@@ -87,7 +87,7 @@ const Buckets = (): JSX.Element => {
                                 <>
                                     <RowDiv1>
                                         <TableRowBucket>
-                                            <TableCell style={titleSettings}>{bucket.title}</TableCell>
+                                            <TableCell style={titleSettings}>{bucket.name}</TableCell>
                                             <TableCell/>
                                             <TableCell/>
                                             <TableCell/>
@@ -100,10 +100,12 @@ const Buckets = (): JSX.Element => {
                                             <TableCell style={desSettings1}>ID: {bucket.id}</TableCell>
                                             <TableCell style={desSettings2}/>
                                             <TableCell>
-                                                <Button color={"#3F88C5"}>
-                                                    <MdVisibility/>
-                                                    View
-                                                </Button>
+                                                <Link to={"/bucket/" + bucket.id}>
+                                                    <Button color={"#3F88C5"} to={"/bucket/" + bucket.id}>
+                                                        <MdVisibility/>
+                                                        View
+                                                    </Button>
+                                                </Link>
                                             </TableCell>
                                             <TableCell>
                                                 <Button color={"white"}>
@@ -145,25 +147,25 @@ const Buckets = (): JSX.Element => {
 const listBuckets = [
     {
         id: "aa6dd6a228137717",
-        title: 'Name 1',
+        name: 'Name 1',
         description: 'Description 1',
         retention: "Forever / 10 ms"
     },
     {
         id: "fa981dfe1fbbcef3",
-        title: 'Name 2',
+        name: 'Name 2',
         description: 'Description 2',
         retention: "Forever / 10 ms"
     },
     {
         id: "fa981dfe1fbbcef3",
-        title: 'Name 2',
+        name: 'Name 2',
         description: 'Description 2',
         retention: "Forever / 10 ms"
     },
     {
         id: "fa981dfe1fbbcef3",
-        title: 'Name 2',
+        name: 'Name 2',
         description: 'Description 2',
         retention: "Forever / 10 ms"
     },

@@ -60,7 +60,7 @@ const Breadcrumb = ({routeSegments}): JSX.Element => {
                 {routeSegments
                     ? routeSegments.map((route, index) => {
                         return index !== routeSegments.length - 1 ? (
-                            <NavLink key={index} to={route.path}>
+                            <NavLink key={index} to={route.path} style={{textDecoration: "none"}}>
                                 <SubName>{route.name}</SubName>
                             </NavLink>
                         ) : (

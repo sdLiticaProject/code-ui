@@ -9,7 +9,7 @@ const DashboardHomePage = (): JSX.Element => {
     return (
         <>
             <Layout>
-                <>wtf</>
+                <>text</>
             </Layout>
         </>
     );

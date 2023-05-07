@@ -13,7 +13,7 @@ import {
     SmallPlot, TitleBox,
     TitleInfo
 } from "./Main.styles";
-import {EXPLORER, GUIDES, HOME, PAGE_USER_DASHBOARD} from "../../../constants/routes";
+import {EXPLORER, GUIDES, HOME, LOADDATA, PAGE_USER_DASHBOARD} from "../../../constants/routes";
 import DashboardPanel from "./DashboardPanel";
 import Breadcrumb from "../../../components/BreadCrumb";
 import {Version} from "./DashboardPanel.styles";
@@ -36,7 +36,7 @@ const Main = (): JSX.Element => {
                         <CircleNumber>1</CircleNumber>
                         <ImageBox src={guideImg1}/>
                         <LineDivider/>
-                        <ButtonBox to={HOME}>LOAD YOU DATA</ButtonBox>
+                        <ButtonBox to={LOADDATA}>LOAD YOU DATA</ButtonBox>
                     </SmallPlot>
                     <SmallPlot>
                         <CircleNumber>2</CircleNumber>

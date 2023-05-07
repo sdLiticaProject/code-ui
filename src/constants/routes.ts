@@ -4,6 +4,10 @@ export const HOME = '/home';
 export const DASHBOARD = '/dashboard';
 export const EXPLORER = '/explorer';
 
+export const BUCKET = '/bucket';
+
+export const LOADDATA = '/load'
+
 export const GUIDES = '/guide'
 
 

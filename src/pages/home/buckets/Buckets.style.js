@@ -269,7 +269,7 @@ export const LargePlot = styled.div`
   background-color: white;
   border-radius: 8px;
 
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.04)) drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.04));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   
   overflow-y: auto;
 

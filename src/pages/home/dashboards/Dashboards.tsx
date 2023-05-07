@@ -67,7 +67,6 @@ const Dashboards = (): JSX.Element => {
                     <DropdownOption value="none">Sort by ...</DropdownOption>
                     <DropdownOption value="asc">Sort by Name (A→Z)</DropdownOption>
                     <DropdownOption value="desc">Sort by Name (Z→A)</DropdownOption>
-                    <DropdownIcon/>
                     <AiOutlineRight/>
                 </Dropdown>
             </SortAndSearchBox>
@@ -92,11 +91,11 @@ const Dashboards = (): JSX.Element => {
                     {showForm ? (
                         // <NewForm title="Create new DashBoard" labels={[{"name": "Title", "type": "text", "placeholder": "Enter dashboard name"}, {"name": "Description", "type": "text", "placeholder": "Enter dashboard description"}]} />
                         <FormControl>
-                            <TextField label="Title" color="secondary" focused />
+                            <TextField label="Title" color="secondary" required/>
                             <dl/>
-                            <TextField label="Description" color="secondary" focused />
+                            <TextField label="Description" color="secondary" />
                             <dl/>
-                            <Button style={{backgroundColor: "#3F88C5", color: "white"}} variant="contained">Contained</Button>
+                            <Button style={{backgroundColor: "#3F88C5", color: "white"}} variant="contained">Create</Button>
                         </FormControl>
                     ) : (
                         <NewBlock onClick={handleNewDashboard}/>
