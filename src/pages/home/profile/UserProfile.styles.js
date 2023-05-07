@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import {v} from "../../../styles/variables";
+
+export const UserProfileLayout = styled.div`
+  padding: ${v.xxlSpacing} ${v.xxlSpacing} 0 ${v.xxlSpacing};
+`;
 
 export const UserProfileInfo = styled.div`
   font-family: Roboto;
@@ -17,7 +22,7 @@ export const GeneralInfoWrapper = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  min-height: 336px;
+  min-height: 320px;
 `;
 
 export const GIInfoTitle = styled.div`
@@ -35,5 +40,5 @@ export const GIInfoContainer = styled.div``;
 export const GIWImage = styled.img`
   position: absolute;
   left: 55px;
-  top: 75px;
+  top: 55px;
 `;

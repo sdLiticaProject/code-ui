@@ -76,13 +76,17 @@ export const MenuWrapper = styled.div`
 export const InfoBlocksWrapper = styled.div`
   border: red;
   display: flex;
-  margin-top: 20px;
+  margin-top: 30px;
 
   flex-wrap: wrap;
   justify-content: flex-start;
 
   a {
     text-decoration: none;
+  }
+  
+  > div {
+    margin-right: 30px;
   }
 
   > div:last-child {

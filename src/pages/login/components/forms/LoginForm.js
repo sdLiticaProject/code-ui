@@ -33,7 +33,6 @@ function LoginForm() {
           setSnackMessage(e.message);
           setSnackbarOpen(true);
         } else if (e.type && e.type === LOGIN_SUCCESS) {
-          // TODO: add push to dashboard page
           history.push(HOME);
         }
       });

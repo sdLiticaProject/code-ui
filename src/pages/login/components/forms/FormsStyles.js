@@ -116,11 +116,13 @@ const Button = styled.button`
   margin-bottom: 10px;
   padding: 4px 6px;
   text-decoration: none;
+  
   &:hover,
   &:focus {
     border-color: white;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.3);
     outline: 0 none;
+    background-color: #3F88C5;
   }
 `;
 

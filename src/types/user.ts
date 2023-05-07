@@ -1,6 +1,8 @@
 export interface UserInnerState {
   firstName: string;
   lastName: string;
+  id: string;
+  email: string;
   roleId?: number;
 }
 
