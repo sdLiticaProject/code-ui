@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../../store/createStore';
 import * as Sc from '../HomePage.styles';
@@ -21,12 +21,21 @@ import {
     MdSettings,
     MdVisibility
 } from "react-icons/all";
+import axios from "axios";
+import {enqueueSnackbar} from "notistack";
+import Cookies from "js-cookie/src/js.cookie";
+import * as api from '../../../constants/api';
+import AddBucketForm from "./forms/AddBucketForm";
+import UpdateBucketForm from "./forms/UpdateBucketForm";
+import {Tooltip} from "@material-ui/core";
 
 const Buckets = (): JSX.Element => {
     const user = useSelector((state: RootState) => state.user.user);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('none');
     const [showForm, setShowForm] = useState(false);
+    const [listBuckets, setListBuckets] = useState<any[]>([]);
+
     const history = useHistory();
 
     const handleInfoBlockClick = (id) => {
@@ -44,6 +53,88 @@ const Buckets = (): JSX.Element => {
     const handleNewDashboard = () => {
         setShowForm(!showForm);
     };
+
+    const fetchBuckets = async () => {
+        try {
+            const response = await axios.get(api.bucketList(), {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            setListBuckets(response.data);
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    };
+
+    const deleteBucket = async (bucketId) => {
+        try {
+            const response = await axios.delete(api.bucketList() + `/${bucketId}`, {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            enqueueSnackbar("Bucket delete successfully ", {
+                autoHideDuration: 2000,
+                variant: "success"
+            })
+            fetchBuckets()
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
+
+    useEffect(() => {
+        fetchBuckets();
+    }, []);
+
+    const handleUpdateBuckes = () => {
+        fetchBuckets();
+    };
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+        const year = Math.floor(days / 365);
+
+        const remainingDays = days % 365;
+        const remainingHours = hours % 24;
+        const remainingMinutes = minutes % 60;
+        const remainingSeconds = seconds % 60;
+
+        console.log(days)
+
+        let retention = ""
+
+        if (seconds === 0) {
+            return "Forever"
+        }
+
+        if (year > 0) {
+            retention += `${year} year `
+        }
+
+        if (remainingDays > 0) {
+            retention += `${remainingDays} days `;
+        }
+
+        if (remainingHours > 0) {
+            retention += `${remainingHours} hours `;
+        }
+
+        if (remainingMinutes > 0) {
+            retention += `${remainingMinutes} minutes`;
+        }
+
+        if (remainingSeconds > 0) {
+            retention += `${remainingSeconds} seconds`;
+        }
+
+        return retention
+    }
 
     const filteredBuckets = listBuckets.filter(dashboard => dashboard.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -87,17 +178,20 @@ const Buckets = (): JSX.Element => {
                                 <>
                                     <RowDiv1>
                                         <TableRowBucket>
-                                            <TableCell style={titleSettings}>{bucket.name}</TableCell>
+                                            <Tooltip title={bucket.description}>
+                                                <TableCell style={titleSettings}>{bucket.name}</TableCell>
+                                            </Tooltip>
                                             <TableCell/>
                                             <TableCell/>
                                             <TableCell/>
                                             <TableCell style={{textAlign: "right"}}>
-                                                <BsFillTrashFill/>
+                                                <BsFillTrashFill onClick={() => deleteBucket(bucket.id)}/>
                                             </TableCell>
                                         </TableRowBucket>
                                         <TableRowBucket>
-                                            <TableCell style={desSettings1}>Retention: {bucket.retention}</TableCell>
-                                            <TableCell style={desSettings1}>ID: {bucket.id}</TableCell>
+                                            <TableCell
+                                                style={desSettings11}>Retention: {formatTime(bucket.retentionPeriod)}</TableCell>
+                                            <TableCell style={desSettings12}>ID: {bucket.id}</TableCell>
                                             <TableCell style={desSettings2}/>
                                             <TableCell>
                                                 <Link to={"/bucket/" + bucket.id}>
@@ -108,11 +202,11 @@ const Buckets = (): JSX.Element => {
                                                 </Link>
                                             </TableCell>
                                             <TableCell>
-                                                <Button color={"white"}>
-                                                    <MdSettings/>
-                                                    Settings
-                                                </Button>
+                                                <UpdateBucketForm onOk={handleUpdateBuckes} bucketId={bucket.id}/>
                                             </TableCell>
+                                        </TableRowBucket>
+                                        <TableRowBucket>
+
                                         </TableRowBucket>
                                     </RowDiv1>
                                     <RowDiv2>
@@ -128,10 +222,7 @@ const Buckets = (): JSX.Element => {
                     </LargeTable>
                 </LargePlot>
                 <div>
-                    <ButtonBucket>
-                        <AiFillPlusCircle style={{width: "25px", height: "25px"}}/>
-                        New
-                    </ButtonBucket>
+                    <AddBucketForm onOk={handleUpdateBuckes}/>
                     <BucketInfoBox>
                         <h2>What is a Bucket?</h2>
                         <h3>A bucket is a designated place for storing time series information, with a specified
@@ -143,34 +234,6 @@ const Buckets = (): JSX.Element => {
     );
 };
 
-// TODO: Исправить на получение списка с backend'а
-const listBuckets = [
-    {
-        id: "aa6dd6a228137717",
-        name: 'Name 1',
-        description: 'Description 1',
-        retention: "Forever / 10 ms"
-    },
-    {
-        id: "fa981dfe1fbbcef3",
-        name: 'Name 2',
-        description: 'Description 2',
-        retention: "Forever / 10 ms"
-    },
-    {
-        id: "fa981dfe1fbbcef3",
-        name: 'Name 2',
-        description: 'Description 2',
-        retention: "Forever / 10 ms"
-    },
-    {
-        id: "fa981dfe1fbbcef3",
-        name: 'Name 2',
-        description: 'Description 2',
-        retention: "Forever / 10 ms"
-    },
-];
-
 const titleSettings = {
     fontFamily: 'Roboto',
     fontStyle: "normal",
@@ -180,24 +243,36 @@ const titleSettings = {
     color: "#000000",
 }
 
-const desSettings1 = {
-    width: "300px",
+const desSettings11 = {
+    width: "355px",
     fontFamily: 'Roboto',
     fontStyle: "normal",
     fontWeight: 400,
-    fontSize: "20px",
+    fontSize: "16px",
     lineHeight: "23px",
-    color: "#828294"
+    color: "#828294",
+    whiteSpace: 'nowrap'
+}
+
+const desSettings12 = {
+    width: "350px",
+    fontFamily: 'Roboto',
+    fontStyle: "normal",
+    fontWeight: 400,
+    fontSize: "16px",
+    lineHeight: "23px",
+    color: "#828294",
+    whiteSpace: 'nowrap'
 }
 
 const desSettings2 = {
-    paddingRight: "400px",
+    paddingRight: "230px",
     fontFamily: 'Roboto',
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: "20px",
     lineHeight: "23px",
-    color: "#828294"
+    color: "#828294",
 }
 
 export default Buckets;

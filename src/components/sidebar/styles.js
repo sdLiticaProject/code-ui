@@ -10,9 +10,7 @@ export const SSidebar = styled.div`
   padding: ${v.mdSpacing};
   color: white;
   transition: all 0.5s ease 0s;
-
-
-position: relative;
+  position: relative;
 `;
 
 export const SSidebarButton = styled.button`

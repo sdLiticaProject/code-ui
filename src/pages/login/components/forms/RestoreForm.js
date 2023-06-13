@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { LOGIN } from '../constants/routes';
 import { loginUser } from '../actions/loginActions';
 import useActions from '../hooks/useAction';
-import { Button, InputFormWrapper, Error, Link } from './FormsStyles';
+import { MyButton, InputFormWrapper, Error, Link } from './FormsStyles';
 
 function RestoreForm() {
   const [email, setEmail] = useState('');
@@ -41,7 +41,7 @@ function RestoreForm() {
         <Link>Back to authorization</Link>
       </NavLink>
       <br />
-      <Button type="submit">Get the code</Button>
+      <MyButton type="submit">Get the code</MyButton>
     </form>
   );
 }

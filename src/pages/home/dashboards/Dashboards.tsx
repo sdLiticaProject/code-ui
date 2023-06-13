@@ -1,27 +1,83 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../../store/createStore';
 import * as Sc from '../HomePage.styles';
 import Breadcrumb from "../../../components/BreadCrumb";
 import {Link, useHistory} from 'react-router-dom';
 import {
+    ButtonsLayout,
     Dropdown, DropdownIcon, DropdownOption, NewBlock,
     SearchBox,
     SearchIcon,
     SearchInputField, SortAndSearchBox
 } from "./Dashboards.styles";
-import {AiOutlineRight, AiOutlineSearch} from "react-icons/all";
+import {AiFillEdit, AiOutlineRight, AiOutlineSearch, BsTrashFill} from "react-icons/all";
 import {Title, Description, InfoBlock, TitleAndDescriptionBox, Line, Stats, Circle, Param} from "./Dashboards.styles";
 import NewForm from "../../../components/NewForm";
 import {Button, FormControl, FormHelperText, Input, InputLabel, TextField} from "@material-ui/core";
+import axios from "axios";
+import * as api from "../../../constants/api";
+import Cookies from "js-cookie/src/js.cookie";
+import {enqueueSnackbar} from "notistack";
+import {dashboard} from "../../../constants/api";
 
 const Dashboards = (): JSX.Element => {
     const user = useSelector((state: RootState) => state.user.user);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('none');
     const [showForm, setShowForm] = useState(false);
+    const [listDashboards, setListDashboards] = useState<any[]>([])
     const filteredDashboard = listDashboards.filter(dashboard => dashboard.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
     const history = useHistory();
+
+    const fetchDashboards = async () => {
+        try {
+            const response = await axios.get(api.dashboard(), {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            setListDashboards(response.data);
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    };
+
+    useEffect(() => {
+        fetchDashboards();
+    }, []);
+
+    // TODO: Исправить на получение списка с backend'а
+    const widgetList = [
+        {id: "1", widgets: []},
+    ];
+
+    async function handleCreateDashboard(title, description) {
+        const requestBody = {
+            "title": title,
+            "description": description
+        }
+
+        try {
+            const response = await axios.post(api.dashboard(), requestBody,{
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            enqueueSnackbar("Dashboard created successfully", {
+                autoHideDuration: 2000,
+                variant: "success"
+            })
+            fetchDashboards()
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
 
     const handleInfoBlockClick = (id) => {
         console.log(history.push("/"));
@@ -78,24 +134,31 @@ const Dashboards = (): JSX.Element => {
                                 <Title>{dashboard.title}</Title>
                                 <Line/>
                                 <Description>{dashboard.description}</Description>
+                                <ButtonsLayout>
+                                    <Button style={{minWidth: "30px"}}>
+                                        <AiFillEdit/>
+                                    </Button>
+                                    <Button style={{minWidth: "30px"}}>
+                                        <BsTrashFill/>
+                                    </Button>
+                                </ButtonsLayout>
                             </TitleAndDescriptionBox>
-                            <Stats>
-                                {dashboard.widgets.map((widget, index) => (
-                                    <Param key={index}><Circle/>{widget}</Param>
-                                ))}
-                            </Stats>
+                            {/*<Stats>*/}
+                            {/*    {widgetList[index].widgets.map((widget, index) => (*/}
+                            {/*        <Param key={index}><Circle/>{widget}</Param>*/}
+                            {/*    ))}*/}
+                            {/*</Stats>*/}
                         </InfoBlock>
                     </Link>
                 ))}
                 <InfoBlock style={{alignItems: "center", justifyContent: "center", display: "flex"}}>
                     {showForm ? (
-                        // <NewForm title="Create new DashBoard" labels={[{"name": "Title", "type": "text", "placeholder": "Enter dashboard name"}, {"name": "Description", "type": "text", "placeholder": "Enter dashboard description"}]} />
                         <FormControl>
-                            <TextField label="Title" color="secondary" required/>
+                            <TextField value={title} onChange={(e) => setTitle(e.target.value)} label="Title" color="secondary" required/>
                             <dl/>
-                            <TextField label="Description" color="secondary" />
+                            <TextField value={description} onChange={(e) => setDescription(e.target.value)} label="Description" color="secondary" />
                             <dl/>
-                            <Button style={{backgroundColor: "#3F88C5", color: "white"}} variant="contained">Create</Button>
+                            <Button style={{backgroundColor: "#3F88C5", color: "white"}} variant="contained" onClick={() => handleCreateDashboard(title, description)}>Create</Button>
                         </FormControl>
                     ) : (
                         <NewBlock onClick={handleNewDashboard}/>
@@ -105,22 +168,5 @@ const Dashboards = (): JSX.Element => {
         </Sc.ContentWrapper>
     );
 };
-
-// TODO: Исправить на получение списка с backend'а
-const listDashboards = [
-    {
-        id: "1",
-        title: 'Uploaded data',
-        description: 'Types of uploaded data',
-        widgets: ['Widget 1', 'Widget 2', 'Widget 3', 'Widget 4']
-    },
-    {id: "2", title: 'Uploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "3", title: 'AUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "4", title: 'BUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "5", title: 'DUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "6", title: 'ZUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "7", title: 'TUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "8", title: 'Uploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-];
 
 export default Dashboards;

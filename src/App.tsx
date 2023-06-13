@@ -13,6 +13,10 @@ import {SnackbarProvider} from "notistack";
 import DashboardHomePage from "./pages/dashboard/DashboardHomePage";
 import BucketPage from "./pages/bucket/BucketPage";
 import LoadDataPage from "./pages/loadData/LoadDataPage";
+import ExplorerPage from "./pages/explorer/ExplorerPage";
+
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 
 export const APP_VERSION = '0.2.0';
 const App = (): JSX.Element => {
@@ -36,7 +40,7 @@ const App = (): JSX.Element => {
                         <PrivateRoute path={BUCKET} component={BucketPage}/>
                         <PrivateRoute path={LOADDATA} component={LoadDataPage}/>
                         <PrivateRoute path={GUIDES} component={HomePage}/>
-                        <PrivateRoute path={EXPLORER} component={HomePage}/>
+                        <PrivateRoute path={EXPLORER} component={ExplorerPage}/>
                         <Redirect from="*" to={LOGIN}/>
                     </Switch>
                 </CustomBrowserRouter>

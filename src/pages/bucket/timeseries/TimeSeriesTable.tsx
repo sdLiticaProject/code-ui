@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../../store/createStore';
 import * as Sc from '../../home/HomePage.styles';
@@ -14,7 +14,7 @@ import {
     AiFillFile,
     AiFillPlusCircle,
     AiOutlineRight,
-    AiOutlineSearch, CiStreamOn,
+    AiOutlineSearch, BsFillTrashFill, CiStreamOn,
     MdKeyboardArrowDown,
     MdKeyboardArrowUp, MdPhotoCamera,
     MdVisibility
@@ -42,16 +42,47 @@ import {
     TextField, Typography
 } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
+import axios from "axios";
+import * as api from "../../../constants/api";
+import Cookies from "js-cookie/src/js.cookie";
+import {enqueueSnackbar} from "notistack";
+import styled from "styled-components";
 
-const TimeSeriesTable = (data): JSX.Element => {
+const DeleteButton = styled(Button)`
+  background-color: #FF5733;
+  color: #ffffff;
+  cursor: pointer;
+
+  :hover {
+    background-color: #a10000;
+  }
+`
+
+const TimeSeriesTable = ({bucketInfo}): JSX.Element => {
     const user = useSelector((state: RootState) => state.user.user);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('none');
     const [showForm, setShowForm] = useState(false);
+    const [listTimeSeries, setListTimeSeries] = useState([]);
+    // @ts-ignore
     const filteredTimeSeries = listTimeSeries.filter(timeseries => timeseries.name.toLowerCase().includes(searchTerm.toLowerCase()));
     const history = useHistory();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+    const fetchTimeSeriesList = async () => {
+        try {
+            const response = await axios.get(api.timeSeries() + `/bucket/${bucketInfo.id}`, {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            setListTimeSeries(response.data);
+        } catch (error) {
+        }
+    };
+
+    useEffect(() => {
+        fetchTimeSeriesList();
+    }, [bucketInfo]);
 
     const handleInfoBlockClick = (id) => {
         console.log(history.push("/"));
@@ -83,36 +114,87 @@ const TimeSeriesTable = (data): JSX.Element => {
         window.location.replace('/load');
     }
 
+    async function handleDownloadTS (tsName, tsId) {
+        try {
+            const response = await axios.get(api.timeSeries() + `/${tsId}/download`, {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+                responseType: 'blob', // Set the response type to 'blob'
+            });
+
+            // Create a download link
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `${tsName}.csv`);
+            document.body.appendChild(link);
+            link.click();
+
+            // Clean up the object URL
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            enqueueSnackbar("TimeSeries not found", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
+
+    async function handleDeleteTS(event) {
+        try {
+            await axios.delete(api.timeSeries() + `/${event.target.value}`, {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            enqueueSnackbar("TimeSeries delete", {
+                autoHideDuration: 2000,
+                variant: "success"
+            })
+            fetchTimeSeriesList();
+        } catch (error) {
+            enqueueSnackbar("TimeSeries not found", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
+
     const sortedListTimeSeries = sortOrder === 'none'
         ? filteredTimeSeries :
         [...filteredTimeSeries].sort((a, b) => {
             switch (sortOrder) {
                 case'asc':
+                    // @ts-ignore
                     return a.name.localeCompare(b.name);
                 case 'desc':
+                    // @ts-ignore
                     return b.name.localeCompare(a.name);
                 default:
                     return 0;
             }
         });
 
-    console.log(data)
-
-    function Row(props: { row }) {
-        const {row} = props;
+    function Row(props: { row, index }) {
+        const {row, index} = props;
         const [open, setOpen] = React.useState(false);
 
         return (
             <React.Fragment>
                 <TableRowBorder sx={{'& > *': {borderBottom: 'unset'}}}>
-                    <TableCellBorder>
-                        {row.id}
+                    <TableCellBorder style={{ width: '60px', textAlign: "center" }}>
+                        {index + 1}
                     </TableCellBorder>
-                    <TableCellBorder scope="row">
+                    <TableCellBorder scope="row" style={{ width: '60px' }}>
                         {row.type === 'file' ? <AiFillFile style={{width: "30px", height: "30px"}}/> : (row.type === 'stream' ? <CiStreamOn style={{width: "30px", height: "30px"}}/> : <MdPhotoCamera style={{width: "30px", height: "30px"}}/>)}
                     </TableCellBorder>
                     <TableCellBorder align="left">{row.name}</TableCellBorder>
-                    <TableCellBorder component="th" align="right">
+                    <TableCellBorder align="right">
+                        <DeleteButton color={"white"} value={row.id} onClick={handleDeleteTS}>
+                            Delete
+                        </DeleteButton>
+                        <Link to={"/explorer/" + row.id}>
+                            <Button color="white">
+                                View
+                            </Button>
+                        </Link>
                         <IconButton
                             aria-label="expand row"
                             size="small"
@@ -129,35 +211,35 @@ const TimeSeriesTable = (data): JSX.Element => {
                                 <Table size="small" aria-label="purchases">
                                     <TableBody>
                                         <TableRow>
-                                            <TableCell component="th" scope="row" rowSpan={3}>
-                                                {row.description}ㅤ
+                                            <TableCell scope="row" rowSpan={3} style={{width: "60%"}}>
+                                                ㅤ{row.description}ㅤ
                                             </TableCell>
                                             <TableCell >
                                                 Created date:
                                             </TableCell>
                                             <TableCell >
-                                                {row.createDate}
+                                                {row.dateCreated}
                                             </TableCell>
                                             <TableCell >
                                                 Number of lines:
                                             </TableCell>
                                             <TableCell >
-                                                {row.numberOFLines}
+                                                {row.rowsCount}
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell>Last updated:</TableCell>
-                                            <TableCell>{row.lastUpdate}</TableCell>
+                                            <TableCell>{row.dateModified}</TableCell>
                                             <TableCell>Number of columns:</TableCell>
                                             <TableCell >
-                                                {row.numberOfColumns}
+                                                {row.columnsCount}
                                             </TableCell>
                                         </TableRow>
                                         <TableRow>
                                             <TableCell>Size:</TableCell>
                                             <TableCell>{row.size}</TableCell>
                                             <TableCell colSpan={2}>
-                                                Download as CSV
+                                                Download as <a style={{color: "#3F88C5"}} onClick={() => handleDownloadTS(row.name, row.id)} download>CSV</a>
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>
@@ -172,7 +254,7 @@ const TimeSeriesTable = (data): JSX.Element => {
 
     return (
         <Sc.ContentWrapper>
-            <Breadcrumb routeSegments={[{'name': 'Buckets', 'path': '/home/buckets'}, {'name': data.data.name}]}/>
+            <Breadcrumb routeSegments={[{'name': 'Buckets', 'path': '/home/buckets'}, {'name': bucketInfo.name}]}/>
             <SortAndSearchBox>
                 <SearchBox>
                     <SearchIcon>
@@ -195,7 +277,7 @@ const TimeSeriesTable = (data): JSX.Element => {
                     <Table aria-label="collapsible sticky table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>#</TableCell>
+                                <TableCell style={{ width: '60px', textAlign: "center" }}>#</TableCell>
                                 <TableCell>Type</TableCell>
                                 <TableCell>Name</TableCell>
                                 <TableCell align="right">
@@ -211,7 +293,7 @@ const TimeSeriesTable = (data): JSX.Element => {
                             {sortedListTimeSeries
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => (
-                                <Row key={index} row={row}/>
+                                <Row key={index} row={row} index={index}/>
                             ))}
                         </TableBody>
                     </Table>
@@ -231,107 +313,5 @@ const TimeSeriesTable = (data): JSX.Element => {
     );
 };
 
-// TODO: Исправить на получение списка с backend'а
-const listTimeSeries = [
-    {
-        id: "1",
-        type: "file",
-        name: 'My time series snapshot from CSV file',
-        description: 'hferufhewruipjbfeiur gbfiue ufiewiufhiweuahfiuawehfuihweiufhweiuhfiuweh',
-        createDate: 'some date',
-        lastUpdate: 'some date',
-        size: '256Mb',
-        numberOFLines: '25k',
-        numberOfColumns: '16'
-    },
-    {
-        id: "2",
-        type: "stream",
-        name: 'Time series accepting live data stream from somewhere',
-        description: '',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-    {
-        id: "3",
-        type: "rest",
-        name: 'My first time series snapshot from JTS file',
-        description: 'Time series accepting live data stream from somewhere',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-    {
-        id: "1",
-        type: "file",
-        name: 'My time series snapshot from CSV file',
-        description: 'hferufhewruipjbfeiur gbfiue ufiewiufhiweuahfiuawehfuihweiufhweiuhfiuweh',
-        createDate: 'some date',
-        lastUpdate: 'some date',
-        size: '256Mb',
-        numberOFLines: '25k',
-        numberOfColumns: '16'
-    },
-    {
-        id: "2",
-        type: "stream",
-        name: 'Time series accepting live data stream from somewhere',
-        description: '',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-    {
-        id: "3",
-        type: "rest",
-        name: 'My first time series snapshot from JTS file',
-        description: 'Time series accepting live data stream from somewhere',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-    {
-        id: "1",
-        type: "file",
-        name: 'My time series snapshot from CSV file',
-        description: 'hferufhewruipjbfeiur gbfiue ufiewiufhiweuahfiuawehfuihweiufhweiuhfiuweh',
-        createDate: 'some date',
-        lastUpdate: 'some date',
-        size: '256Mb',
-        numberOFLines: '25k',
-        numberOfColumns: '16'
-    },
-    {
-        id: "2",
-        type: "stream",
-        name: 'Time series accepting live data stream from somewhere',
-        description: '',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-    {
-        id: "3",
-        type: "rest",
-        name: 'My first time series snapshot from JTS file',
-        description: 'Time series accepting live data stream from somewhere',
-        createDate: '',
-        lastUpdate: '',
-        size: '',
-        numberOFLines: '',
-        numberOfColumns: ''
-    },
-];
 
 export default TimeSeriesTable;

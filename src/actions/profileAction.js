@@ -26,7 +26,7 @@ export const updateUser = (userId, firstName, lastName) => async (dispatch) => {
             }
         ).then(res => {
             enqueueSnackbar("Update complete", {
-                autoHideDuration: 5000,
+                autoHideDuration: 2000,
                 variant: "success"
             })
             return dispatch({

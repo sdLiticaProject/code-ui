@@ -5,6 +5,7 @@ import {AiOutlineRight, BsPlusSquare} from "react-icons/all";
 export const InfoBlock = styled.div`
   height: 275px;
   width: 320px;
+  position: relative;
 
   margin-right: 20px;
   margin-bottom: 20px;
@@ -191,3 +192,9 @@ export const DropdownIcon = styled(AiOutlineRight)`
   width: 100%;
   height: 100%;
 `;
+
+export const ButtonsLayout = styled.div`
+  position: absolute;
+  left: 81%;
+  top: 1%
+`

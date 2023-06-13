@@ -8,8 +8,6 @@ import * as routes from '../../constants/routes';
 import Header from "../header/Header";
 
 const Layout = ({children}) => {
-    const location = useLocation();
-
     return (
         <SLayout>
             <Sidebar/>

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { LOGIN, HOME } from '../../../../constants/routes';
 import { registerUser, loginUser, REGISTER_SUCCESS, LOGIN_SUCCESS, REGISTER_LOADING } from '../../../../actions/loginActions';
 import useActions from '../../../../hooks/useAction';
-import { Button, InputFormWrapper, Error, Transfer, NavLinkWrapper, FormWrapper, LoadIndicator } from './FormsStyles';
+import { MyButton, InputFormWrapper, Error, Transfer, NavLinkWrapper, FormWrapper, LoadIndicator } from './FormsStyles';
 
 function RegistrationForm() {
   const { handleSubmit, register, errors, getValues } = useForm();
@@ -91,7 +91,7 @@ function RegistrationForm() {
       </InputFormWrapper>
       <br />
       {isRegisterLoading && <LoadIndicator />}
-      <Button type="submit">Sign up</Button>
+      <MyButton type="submit">Sign up</MyButton>
       <NavLinkWrapper>
         <NavLink to={LOGIN}>
           <Transfer>Have an account?</Transfer>

@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import useActions from '../../../../hooks/useAction';
 import { HOME, LOGIN } from '../../../../constants/routes';
 import { loginUser, LOGIN_FAIL, LOGIN_LOADING, LOGIN_SUCCESS } from '../../../../actions/loginActions';
-import { Button, InputFormWrapper, LoadIndicator, NavLinkWrapper, Error, Transfer, FormWrapper } from './FormsStyles';
+import { MyButton, InputFormWrapper, LoadIndicator, NavLinkWrapper, Error, Transfer, FormWrapper } from './FormsStyles';
 
 function LoginForm() {
   const { handleSubmit, register, errors } = useForm();
@@ -74,7 +74,7 @@ function LoginForm() {
         <Error>{errors.password && errors.password.message}</Error>
       </InputFormWrapper>
       <br />
-      <Button type="submit">Log in</Button>
+      <MyButton type="submit">Log in</MyButton>
       {isLoginLoading && <LoadIndicator />}
       <NavLinkWrapper>
         <NavLink to={`${LOGIN}?tab=reg`}>

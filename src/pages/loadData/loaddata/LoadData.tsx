@@ -1,5 +1,5 @@
 import Layout from "../../../components/layout/Layout";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Breadcrumb from "../../../components/BreadCrumb";
 import * as Sc from '../../home/HomePage.styles';
 import ProgressBar from "../progress-bar/ProgressBar";
@@ -11,18 +11,45 @@ import MenuItem from "@material-ui/core/MenuItem";
 import {enqueueSnackbar} from "notistack";
 import {Image} from "@material-ui/icons";
 import {loadingImg} from "../../../assets";
+import axios from "axios";
+import * as api from "../../../constants/api";
+import Cookies from "js-cookie/src/js.cookie";
 
 const LoadData = (): JSX.Element => {
     const [progress, setProgress] = useState(0);
     const [typeLoad, setTypeLoad] = useState('');
-    const [formData, setFormData] = useState({});
+    const [formData, setFormData] = useState<any>({});
     const [bucket, setBucket] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
-    const [file, setFile] = useState();
+    const [file, setFile] = useState('');
+    const [buckets, setBuckets] = useState<any[]>([])
+    const [timeSeriesId, setTimeSeriesId] = useState('')
+    const [apikey, setApikey] = useState('')
+    const [tsLink, setTsLink] = useState('')
 
-    function handleTypeChange(event) {
-        setTypeLoad(event.target.closest('button').querySelector('input[type="hidden"]').getAttribute('data-value'))
+    useEffect(() => {
+        const fetchBucket = async () => {
+            try {
+                const response = await axios.get(api.bucketList(), {
+                    headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+                });
+                setBuckets(response.data);
+            } catch (error) {
+                enqueueSnackbar("Some problems", {
+                    autoHideDuration: 5000,
+                    variant: "error"
+                })
+            }
+        };
+        fetchBucket();
+
+    }, []);
+
+    async function handleTypeChange(event) {
+        const value = event.currentTarget.querySelector('input[type="hidden"]').getAttribute('data-value')
+        await setTypeLoad(value)
+        await handleCreateTimeSeries(value);
         handleButtonNextClick()
     }
 
@@ -36,21 +63,55 @@ const LoadData = (): JSX.Element => {
 
     const handleOnFileChange = (e) => {
         setFile(e.target.files[0]);
-    };
+    }
 
-    const handleBucketChange = (event) => {
-        setBucket(event.target.value);
-    };
+    async function handleCreateTimeSeries(type) {
+        const requestBody = {
+            "name": formData.name,
+            "description": formData.description,
+            "bucketId": formData.bucket,
+            "type": type
+        }
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
+        try {
+            await axios.post(api.timeSeries(), requestBody,
+                {
+                    headers: {
+                        Authorization: `cloudToken ${Cookies.get('token')}`,
+                        'Content-Type': 'application/json',
+                    },
+                }).then(res => {
+                setTimeSeriesId(res.data.id);
+                handleGetLink(res.data.id, type);
+            });
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
 
-    const handleDescriptionChange = (event) => {
-        setDescription(event.target.value);
-    };
+    async function handleGetLink(tsId, type) {
 
-    // TODO: Оправляет запрос на создание временного ряда
+        try {
+            const response = await axios.get(api.timeSeries() + `/${tsId}/link?typeLink=${type}`,
+                {
+                    headers: {
+                        Authorization: `cloudToken ${Cookies.get('token')}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+            setApikey(response.data.apiKey)
+            setTsLink(response.data.uri)
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
+
     function handeFormSave(event) {
         event.preventDefault();
         const fields = event.currentTarget.form.querySelectorAll('input, select, textarea');
@@ -85,23 +146,45 @@ const LoadData = (): JSX.Element => {
         handleButtonNextClick()
     }
 
+    async function starUploadHandler() {
+        const formData = new FormData();
+        formData.append('formFile', file);
+
+        try {
+            const response = await axios.post(api.timeSeries() + "/" + timeSeriesId + "/data/file", formData,
+                {
+                    headers: {
+                        Authorization: `cloudToken ${Cookies.get('token')}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+            console.log(response.data)
+            handleButtonNextClick();
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    }
+
     const SelectType = () => {
         return (
             <>
                 <SelectTypeButton onClick={handleTypeChange}>
-                    <input type="hidden" value="file" data-value="file" />
+                    <input type="hidden" value="file" data-value="file"/>
                     <AiFillFile style={{width: 80, height: 80}}/>
-                    <span >Create new time-series from uploaded CSV-file</span>
+                    <span>Create new time-series from uploaded CSV-file</span>
                 </SelectTypeButton>
                 <SelectTypeButton onClick={handleTypeChange}>
-                    <input type="hidden" value="stream" data-value="stream" />
-                    <CiStreamOn style={{width: 80, height: 80}}/>
-                    <span>Configure input stream to accept data pushed from outside (using WebSocket)</span>
-                </SelectTypeButton>
-                <SelectTypeButton onClick={handleTypeChange}>
-                    <input type="hidden" value="rest" data-value="rest" />
+                    <input type="hidden" value="rest" data-value="rest"/>
                     <MdPhotoCamera style={{width: 80, height: 80}}/>
                     <span>Create a new time-series by uploading through the JTS format using REST API.</span>
+                </SelectTypeButton>
+                <SelectTypeButton onClick={handleTypeChange}>
+                    <input type="hidden" value="stream" data-value="stream"/>
+                    <CiStreamOn style={{width: 80, height: 80}}/>
+                    <span>Configure input stream to accept data pushed from outside (using WebSocket)</span>
                 </SelectTypeButton>
             </>
         );
@@ -175,9 +258,7 @@ const LoadData = (): JSX.Element => {
                                     labelId="bucket"
                                     id="bucket"
                                     name="bucket"
-                                    value={bucket}
                                     label="Select bucket"
-                                    onChange={handleBucketChange}
                                 >
                                     {buckets.map((item) => (
                                         <MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>
@@ -199,7 +280,7 @@ const LoadData = (): JSX.Element => {
                                 color: "white",
                                 background: "#3F88C5"
                             }} onClick={handeFormSave}>
-                                Continue
+                                Create
                             </Button>
                         </Grid>
                         <Grid item xs={12} sm={5}/>
@@ -209,7 +290,7 @@ const LoadData = (): JSX.Element => {
         )
     }
 
-    const FormData = () => {
+    const FormForData = () => {
         return (
             <LargePlot>
                 <TitlePlot>{
@@ -250,8 +331,66 @@ const LoadData = (): JSX.Element => {
                                             </Fab>
                                         </label>
                                     </Grid>,
-                                'stream': '',
-                                'rest': ''
+                                'stream': <>
+                                    <Grid item xs={12} sm={12}>
+                                        <TextField
+                                            required
+                                            id="url"
+                                            name="url"
+                                            label="URL"
+                                            fullWidth
+                                            value={tsLink}
+                                            size="small"
+                                            disabled={true}
+                                            autoComplete="off"
+                                            variant="outlined"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                        <TextField
+                                            required
+                                            id="apikey"
+                                            name="apikey"
+                                            label="API KEY"
+                                            fullWidth
+                                            value={apikey}
+                                            size="small"
+                                            disabled={true}
+                                            autoComplete="off"
+                                            variant="outlined"
+                                        />
+                                    </Grid>
+                                </>,
+                                'rest': <>
+                                    <Grid item xs={12} sm={12}>
+                                        <TextField
+                                            required
+                                            id="url"
+                                            name="url"
+                                            label="URL"
+                                            fullWidth
+                                            value={tsLink}
+                                            size="small"
+                                            disabled={true}
+                                            autoComplete="off"
+                                            variant="outlined"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                        <TextField
+                                            required
+                                            id="apikey"
+                                            name="apikey"
+                                            label="API KEY"
+                                            fullWidth
+                                            value={apikey}
+                                            size="small"
+                                            disabled={true}
+                                            autoComplete="off"
+                                            variant="outlined"
+                                        />
+                                    </Grid>
+                                </>
                             }[typeLoad]
                         }
                         <Grid item xs={12} sm={12}/>
@@ -261,15 +400,25 @@ const LoadData = (): JSX.Element => {
                                     onClick={handleButtonBackClick}>
                                 Back
                             </Button>
-                            <Button variant="contained" style={{
-                                margin: 10,
-                                paddingLeft: "10%",
-                                paddingRight: "10%",
-                                color: "white",
-                                background: "#3F88C5"
-                            }} onClick={handleUploadData}>
-                                Continue
-                            </Button>
+                            {
+                                (typeLoad === 'file') ? <Button variant="contained" style={{
+                                    margin: 10,
+                                    paddingLeft: "10%",
+                                    paddingRight: "10%",
+                                    color: "white",
+                                    background: "#3F88C5"
+                                }} onClick={handleUploadData}>
+                                    Continue
+                                </Button> : <Button variant="contained" style={{
+                                    margin: 10,
+                                    paddingLeft: "10%",
+                                    paddingRight: "10%",
+                                    color: "white",
+                                    background: "#3F88C5"
+                                }} onClick={handleButtonNextClick}>
+                                    Continue
+                                </Button>
+                            }
                         </Grid>
                         <Grid item xs={12} sm={5}/>
                     </Grid>
@@ -337,6 +486,11 @@ const LoadData = (): JSX.Element => {
     }
 
     const ProcessingForm = () => {
+
+        if (file !== '' && typeLoad === 'file') {
+            starUploadHandler()
+        }
+
         return (
             <LargePlot>
                 <TitlePlot>{
@@ -362,13 +516,13 @@ const LoadData = (): JSX.Element => {
                             {
                                 {
                                     'file': 'We are trying to make initial data pull into our cloud',
-                                    'stream': 'Now you can try pushing data to the newly created WSS:\n' + 'wss://sdlitica.sdcloud.io/ws/19dsfwef31ew5fsd',
-                                    'rest': 'Now you can try pushing data to the newly created URL:\n' + 'https://sdlitica.sdcloud.io/api/v1/timeseries/19dsfwef31ew5fsd/data',
+                                    'stream': 'Now you can try pushing data to the newly created WS:\n' + tsLink,
+                                    'rest': 'Now you can try pushing data to the newly created URL:\n' + tsLink,
                                 }[typeLoad]
                             }
                         </Grid>
                         <Grid item xs={12} sm={12} style={{textAlign: "center"}}>
-                            <img src={loadingImg} alt={"Loading data..."} style={{width: "60px"}}/>
+                            <img src={loadingImg} alt={"Loading data..."} style={{width: "50px"}}/>
                         </Grid>
                         <Grid item xs={12} sm={12}/>
                         {
@@ -444,7 +598,7 @@ const LoadData = (): JSX.Element => {
                     {
                         0: <FormInfo/>,
                         1: <SelectType/>,
-                        2: <FormData/>,
+                        2: <FormForData/>,
                         3: <ConfirmationForm/>,
                         4: <ProcessingForm/>,
                         5: <Finish/>
@@ -463,21 +617,5 @@ const styleSettings1 = {
     lineHeight: "28px",
     color: "#000000",
 }
-
-// TODO: список Buckets с backend'а
-const buckets = [
-    {
-        id: '1232',
-        name: "bucket 1",
-    },
-    {
-        id: '12324',
-        name: "bucket 2",
-    },
-    {
-        id: '123256',
-        name: "bucket 3",
-    }
-]
 
 export default LoadData;

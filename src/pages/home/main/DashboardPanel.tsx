@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/createStore";
 import * as Sc from "../HomePage.styles";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     ButtonBox,
     CircleNumber,
@@ -25,15 +25,38 @@ import {
 import {AiOutlineSearch} from "react-icons/all";
 import {Link} from "react-router-dom";
 import {APP_VERSION} from "../../../App";
+import axios from "axios";
+import * as api from "../../../constants/api";
+import Cookies from "js-cookie/src/js.cookie";
+import {enqueueSnackbar} from "notistack";
 
 const DashboardPanel = (): JSX.Element => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [listDashboards, setListDashboards] = useState<any[]>([]);
 
     function handleSearchChange(event) {
         setSearchTerm(event.target.value);
     }
 
+    const fetchDashboards = async () => {
+        try {
+            const response = await axios.get(api.dashboard(), {
+                headers: {Authorization: `cloudToken ${Cookies.get('token')}`},
+            });
+            setListDashboards(response.data);
+        } catch (error) {
+            enqueueSnackbar("Some problems", {
+                autoHideDuration: 5000,
+                variant: "error"
+            })
+        }
+    };
+
     const filteredDashboards = listDashboards.filter(obj => obj.title.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    useEffect(() => {
+        fetchDashboards();
+    }, []);
 
     return (
         <DashboardPanelDiv>
@@ -59,21 +82,5 @@ const DashboardPanel = (): JSX.Element => {
         </DashboardPanelDiv>
     );
 };
-
-// TODO: Исправить на получение списка с backend'а
-const listDashboards = [
-    {
-        id: "1",
-        title: 'Uploaded data',
-        description: 'Types of uploaded data',
-        widgets: ['Widget 1', 'Widget 2', 'Widget 3', 'Widget 4']
-    },
-    {id: "2", title: 'Uploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "3", title: 'AUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "4", title: 'BUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "5", title: 'DUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-    {id: "6", title: 'ZUploaded data 2', description: 'Types of uploaded data 2', widgets: ['Widget 1', 'Widget 2']},
-
-];
 
 export default DashboardPanel;

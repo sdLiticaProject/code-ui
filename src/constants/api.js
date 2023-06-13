@@ -9,4 +9,11 @@ export const registerUser = () => `${PLATFORM_API}${VERSION_API}/Profile`;
 export const updateUser = () => `${PLATFORM_API}${VERSION_API}/Profile/update`;
 
 // Set of API endpoints to work with time series entities
-export const timeSeriesList = () => `${PLATFORM_API}${VERSION_API}/timeseries`;
+export const timeSeries = () => `${PLATFORM_API}${VERSION_API}/timeseries`;
+
+export const dashboard = () => `${PLATFORM_API}${VERSION_API}/dashboard`;
+
+export const apikeyList = () => `${PLATFORM_API}${VERSION_API}/Profile/apikeys`;
+
+
+export const bucketList = () => `${PLATFORM_API}${VERSION_API}/bucket`;

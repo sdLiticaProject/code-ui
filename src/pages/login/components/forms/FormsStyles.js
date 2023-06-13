@@ -96,7 +96,7 @@ const InputFormWrapper = styled.div`
   }
 `;
 
-const Button = styled.button`
+const MyButton = styled.button`
   background-color: #87c6f8;
   cursor: pointer;
   user-select: none;
@@ -166,4 +166,4 @@ const Transfer = styled.a`
   }
 `;
 
-export { Button, InputFormWrapper, Link, Error, Transfer };
+export { MyButton, InputFormWrapper, Link, Error, Transfer };

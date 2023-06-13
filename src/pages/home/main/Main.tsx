@@ -63,13 +63,13 @@ const Main = (): JSX.Element => {
                     <TitleBox>Some Handy Guides and Tutorials</TitleBox>
                     <NavbarLinkContainer>
                         <LinksGuide to={GUIDES + "/1"} styled={{}}>
-                            Guide 1
+                            How to use the analytical platform?
                         </LinksGuide>
                         <LinksGuide to={GUIDES + "/2"} styled={{}}>
-                            Guide 2
+                            How do I upload data to the system?
                         </LinksGuide>
                         <LinksGuide to={GUIDES + "/3"} styled={{}}>
-                            Guide 3
+                            How does the data explorer work?
                         </LinksGuide>
                     </NavbarLinkContainer>
 
