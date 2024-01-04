@@ -45,6 +45,7 @@ pipeline {
                     pwd
                     echo "----------------------"
                     ls -la
+                    apt-get update && apt-get install -y openssl ca-certificates
                     echo "----------------------"
                     npm install
                     echo "----------------------"
