@@ -20,8 +20,4 @@ RUN mkdir -p /opt/sdlitica/SDLitica.WebUI \
 COPY --chown=sdlitica-admin:sdlitica-admin ./build /opt/sdlitica/SDLitica.WebUI/
 COPY ./Docker/default.conf /etc/nginx/conf.d/default.conf
 
-COPY --chown=sdlitica-admin:sdlitica-admin token.file /var/secret/hc_vault_token
-COPY --chown=sdlitica-admin:sdlitica-admin ./Docker/configResolver.sh ./Docker/resolveConfiguration.sh ./Docker/environment.template /opt/cloud/
-
-
 CMD ["nginx", "-g", "daemon off;"]
