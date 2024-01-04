@@ -47,6 +47,9 @@ pipeline {
                     ls -la
                     export NODE_OPTIONS=--openssl-legacy-provider
                     echo "----------------------"
+                    npm config set proxy http://system-npm-proxy-cache:8080/
+                    npm config set https-proxy http://system-npm-proxy-cache:8080/
+                    npm config set strict-ssl false
                     npm install
                     echo "----------------------"
                     npm run build
