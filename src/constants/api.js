@@ -1,4 +1,4 @@
-const PLATFORM_API = 'http://localhost:5000';
+const PLATFORM_API = '';
 const VERSION_API = '/api/v1';
 
 export const loginUser = () => `${PLATFORM_API}${VERSION_API}/Profile/login`;
