@@ -2,7 +2,7 @@
   "name": "sdlitica-ui",
   "version": "0.2.0",
   "private": true,
-  "proxy": "http://sdlitica.sdcloud.io:5000",
+  "proxy1": "http://sdlitica.sdcloud.io:5000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

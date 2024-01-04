@@ -143,11 +143,11 @@ const Dashboards = (): JSX.Element => {
                                     </Button>
                                 </ButtonsLayout>
                             </TitleAndDescriptionBox>
-                            {/*<Stats>*/}
-                            {/*    {widgetList[index].widgets.map((widget, index) => (*/}
-                            {/*        <Param key={index}><Circle/>{widget}</Param>*/}
-                            {/*    ))}*/}
-                            {/*</Stats>*/}
+                            <Stats>
+                                {widgetList[index].widgets.map((widget, index) => (
+                                    <Param key={index}><Circle/>{widget}</Param>
+                                ))}
+                            </Stats>
                         </InfoBlock>
                     </Link>
                 ))}
