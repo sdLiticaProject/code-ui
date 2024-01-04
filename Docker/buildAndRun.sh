@@ -45,6 +45,11 @@ echo ""
 echo $HC_VAULT_TOKEN > token.file
 
 echo "# *******************************************"
+echo "#  Updating web-site configuration"
+echo "# *******************************************"
+sed -i "s/__(PREFIX)__/$PREFIX/g" Docker/default.conf
+
+echo "# *******************************************"
 echo "#  Building container image"
 echo "# *******************************************"
 docker build \
