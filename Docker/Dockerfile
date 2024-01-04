@@ -17,7 +17,7 @@ RUN mkdir -p /opt/sdlitica/SDLitica.WebUI \
         && mkdir -p /opt/cloud \
         && chown -R sdlitica-admin:sdlitica-admin /opt/cloud
 
-COPY --chown=sdlitica-admin:sdlitica-admin . /opt/sdlitica/SDLitica.WebUI/
+COPY --chown=sdlitica-admin:sdlitica-admin ./build /opt/sdlitica/SDLitica.WebUI/
 COPY ./Docker/default.conf /etc/nginx/conf.d/default.conf
 
 COPY --chown=sdlitica-admin:sdlitica-admin token.file /var/secret/hc_vault_token

@@ -74,7 +74,7 @@ pipeline {
  		                export HC_VAULT_HOST="secrets.cloud.cosm-lab.science"
  		                sed -i 's|#!/bin/sh|#!/bin/bash|g' ./Docker/buildAndRun.sh
                         chmod +x ./Docker/buildAndRun.sh
- 		                #./Docker/buildAndRun.sh preprod "$GIT_REVISION"
+ 		                ./Docker/buildAndRun.sh preprod "$GIT_REVISION"
                     '''
                }
             }
