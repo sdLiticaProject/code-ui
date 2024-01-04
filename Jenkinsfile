@@ -45,7 +45,7 @@ pipeline {
                     pwd
                     echo "----------------------"
                     ls -la
-                    apt-get update && apt-get install -y openssl ca-certificates
+                    export NODE_OPTIONS=--openssl-legacy-provider
                     echo "----------------------"
                     npm install
                     echo "----------------------"
