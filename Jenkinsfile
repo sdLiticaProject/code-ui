@@ -33,7 +33,7 @@ pipeline {
                     // top-level of the Pipeline, in the same workspace,
                     // rather than on a new node entirely:
                     reuseNode true
-                    args '-u root'
+                    args '-u root --network main_bridge'
                 } }
             environment {
                 CI = false          // do not treat warnings as errors
