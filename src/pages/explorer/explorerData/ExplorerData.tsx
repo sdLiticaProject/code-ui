@@ -263,7 +263,7 @@ const ExplorerData = (timeseries): JSX.Element => {
             // Извлечение данных из timeseriesData
             const data = selectedFields.map(field => {
                 return {
-                    x: filteredData.map(entity => moment(entity.timestamp, "DD.MM.YYYY H:mm:ss").toDate()),
+                    x: filteredData.map(entity => moment(entity.timestamp, "MM/DD/YYYY H:mm:ss").toDate()),
                     y: filteredData.map(entity => entity.fields[field]),
                     name: field,
                 };
