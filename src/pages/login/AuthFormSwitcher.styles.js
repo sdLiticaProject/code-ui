@@ -15,7 +15,7 @@ const LoginWrapper = styled.div`
 
 const move = keyframes`
   from {
-    left: -80%;
+    left: -30%;
   }
   to {
     left: 100%;

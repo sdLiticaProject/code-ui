@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import logo from './resources/logo2.png';
+import logo from '../../assets/resources/logo2.png';
 
-const HEADER_HEIGHT = '100px';
+const HEADER_HEIGHT = '64px';
 const FOOTER_HEIGHT = '74px';
 
 export const HeaderWrapper = styled.header`
-  background: #3f88c5;
+  background: #C0D4EC;
   height: ${HEADER_HEIGHT};
   display: flex;
   padding: 0 40px 0 40px;
@@ -13,9 +13,10 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const MainWrapper = styled.main`
-  height: calc(100% - ${HEADER_HEIGHT} - 20px - ${FOOTER_HEIGHT});
+  height: calc(100% - ${HEADER_HEIGHT} - 20px);
   padding: 0px 0px 20px 0px;
   overflow-y: auto;
+  align-items: center;
 `;
 
 export const LogoGradient = styled.div`
@@ -61,11 +62,12 @@ export const Logo = styled.div`
 
 export const MenuWrapper = styled.div`
   margin-left: auto;
-  border: 1px solid #ffffff;
+  border: 1px;
   box-sizing: border-box;
   border-radius: 10px;
   display: flex;
   padding: 8px 12px 8px 12px;
+  width: 200px;
   height: 60px;
   user-select: none;
   cursor: pointer;
@@ -74,9 +76,13 @@ export const MenuWrapper = styled.div`
 export const InfoBlocksWrapper = styled.div`
   border: red;
   display: flex;
-  margin-top: 30px;
-  > div {
-    margin-right: 30px;
+  margin-top: 20px;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  a {
+    text-decoration: none;
   }
 
   > div:last-child {
@@ -91,7 +97,7 @@ export const InfoBlock = styled.div`
   border-radius: 10px;
   max-width: 300px;
   h2 {
-    font-family: Roboto;
+    font-family: Roboto,sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -100,7 +106,7 @@ export const InfoBlock = styled.div`
   }
 
   h3 {
-    font-family: Roboto;
+    font-family: Roboto,sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -112,24 +118,23 @@ export const InfoBlock = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  margin-top: 30px;
-  padding: 50px 150px 0 150px;
+  padding: 30px 30px 0 30px;
 `;
 
 export const UserInfo = styled.div`
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
+  font-family: Roboto,serif;
   font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
   line-height: 42px;
 
   color: #000000;
 `;
 
-export const MenuWrapperLogo = styled.svg`
-  height: 35px;
+export const MenuWrapperLogo = styled.img`
+  height: 45px;
   position: relative;
-  top: 3px;
+  bottom: 2px;
   fill: #ffffff;
 `;
 
@@ -161,10 +166,12 @@ export const MenuWrapperText = styled.div`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
-  color: #ffffff;
+  font-size: 15px;
+  color: black;
   line-height: 42px;
-  margin-left: 20px;
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const TabsWrapper = styled.div`
@@ -237,11 +244,32 @@ export const FooterInfo = styled.div`
 `;
 
 export const ColWrapper = styled.div`
-  margin-top: 46px;
+  margin-top: 20px;
   display: flex;
 `;
 
-export const Row = styled.div``;
+export const Row = styled.div`
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-right: 5px;
+`;
+
+export const Form = styled.form``;
+
+export const InputRow = styled.input`
+  border: none;
+  outline: none;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  &:focus {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+`;
 
 export const Col = styled.div`
   display: flex;

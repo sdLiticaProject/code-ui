@@ -17,7 +17,7 @@ export const getTimeSeriesList = () => async (dispatch) => {
 
   try {
     const token = Cookies.get('token');
-    const res = await axios.get(api.timeSeriesList(), {
+    const res = await axios.get(api.timeSeries(), {
       headers: {
         Authorization: `cloudToken ${token}`,
       },
@@ -44,7 +44,7 @@ export const createTimeSeries = (name, description) => async (dispatch) => {
   try {
     const token = Cookies.get('token');
     const res = await axios.post(
-      api.timeSeriesList(),
+      api.timeSeries(),
       {
         name,
         description,

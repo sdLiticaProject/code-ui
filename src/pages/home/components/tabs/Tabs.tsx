@@ -12,7 +12,7 @@ const Tabs = (): JSX.Element => {
       <Sc.Tab isActive={location.pathname === routes.HOME} onClick={() => history.push(routes.HOME)}>
         Dashboard
       </Sc.Tab>
-      <Sc.Tab isActive={location.pathname === routes.PAGE_USER_DATA} onClick={() => history.push(routes.PAGE_USER_DATA)}>
+      <Sc.Tab isActive={location.pathname === routes.PAGE_USER_DASHBOARD} onClick={() => history.push(routes.PAGE_USER_DASHBOARD)}>
         My data
       </Sc.Tab>
       <Sc.Tab isActive={location.pathname === routes.PAGE_USER_HISTORY} onClick={() => history.replace(routes.PAGE_USER_HISTORY)}>
