@@ -358,12 +358,12 @@ const ExplorerData = (timeseries): JSX.Element => {
                                     {tsData.entities.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((ts) => (
                                         <TableRow>
                                             <TableCell size={"small"}>{ts.timestamp}</TableCell>
-                                            {Object.keys(ts.fields).map((field) => (
-                                                <TableCell size={"small"} key={field}>{ts.fields[field]}</TableCell>
+                                            {table.table.columns.map((column) => (
+                                                <TableCell key={column}>{ts.fields[column]}</TableCell>
                                             ))}
 
-                                            {Object.keys(ts.tags).map((tag) => (
-                                                <TableCell size={"small"} key={tag}>{ts.tags[tag]}</TableCell>
+                                            {Object.keys(table.table.tags).map((tag) => (
+                                                <TableCell key={tag}>{ts.tags[tag]}</TableCell>
                                             ))}
                                         </TableRow>
                                     ))
